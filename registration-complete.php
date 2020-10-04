@@ -13,8 +13,28 @@
 
       if(isset($_POST["register"])) {
 
-        echo "<p>Welcome to the new world of fonts, " . $_POST["name"] . "!</p>";
-        echo "<p>Find news and updates in our monthly newsletter sent to your email " . $_POST["email-address"] . ".</p>";
+        // 1 - Define form responses.
+        $member_name = $_POST["name"];
+        $member_email = $_POST["email-address"];
+        $member_password = $_POST["password"];
+
+
+        // 2 - Write to the registered members file.
+        $file = "registered-members.txt";
+        $file_write_handle = fopen($file, 'w');
+
+        if($file_write_handle) {
+          fwrite($file_write_handle, $member_name . ", " . $member_email . ", " . $member_password);
+          fclose($file_write_handle);
+        }
+        else {
+          echo "Could not open file for writing.";
+        }
+
+
+        // 3 - Prompt the new member.
+        echo "<p>Welcome to the new world of fonts, " . $member_name . "!</p>";
+        echo "<p>Find news and updates in our monthly newsletter sent to your email " . $member_email . ".</p>";
         echo "<p>Hope you enjoy exploring Beak and Spur!</p>";
 
       }
