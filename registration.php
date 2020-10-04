@@ -9,7 +9,7 @@
 
     <h1>Register for Beak and Spur</h1>
 
-    <form>
+    <form action="registration-complete.php" method="post">
 
       <p>Name:
         <input type="text" name="name" size="50" maxlength="30" />
