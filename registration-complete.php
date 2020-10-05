@@ -21,10 +21,12 @@
 
         // 2 - Write to the registered members file.
         $file = "registered-members.txt";
-        $file_write_handle = fopen($file, 'w');
+
+        // Source for using "a+" instead of 'w': https://stackoverflow.com/questions/103593/using-php-how-to-insert-text-without-overwriting-to-the-beginning-of-a-text-fil
+        $file_write_handle = fopen($file, "a+");
 
         if($file_write_handle) {
-          fwrite($file_write_handle, $member_name . ", " . $member_email . ", " . $member_password);
+          fwrite($file_write_handle, $member_name . ", " . $member_email . ", " . $member_password . "\n");
           fclose($file_write_handle);
         }
         else {
