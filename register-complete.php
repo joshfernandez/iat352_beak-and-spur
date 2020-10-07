@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <title>Registration completed page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
+  
   <body>
 
     <h1>Thank you for registering for Beak and Spur!</h1>
@@ -48,4 +50,5 @@
     </p>
 
   </body>
+
 </html>
