@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <title>Registration page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
+
   <body>
 
     <h1>Register for Beak and Spur</h1>
 
-    <form action="registration-complete.php" method="post">
+    <form action="register-complete.php" method="post">
 
-      <p>Name:
-        <input type="text" name="name" size="50" maxlength="30" />
+      <p>Username:
+        <input type="text" name="username" size="50" maxlength="30" />
       </p>
 
       <p>Email address:
@@ -28,4 +30,5 @@
     </form>
 
   </body>
+
 </html>
