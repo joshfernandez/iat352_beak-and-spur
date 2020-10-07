@@ -13,8 +13,8 @@
 
     <form action="register-complete.php" method="post">
 
-      <p>Name:
-        <input type="text" name="name" size="50" maxlength="30" />
+      <p>Username:
+        <input type="text" name="username" size="50" maxlength="30" />
       </p>
 
       <p>Email address:

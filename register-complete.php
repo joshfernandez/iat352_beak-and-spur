@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-  
+
   <body>
 
     <h1>Thank you for registering for Beak and Spur!</h1>
@@ -16,7 +16,7 @@
       if(isset($_POST["register"])) {
 
         // 1 - Define form responses.
-        $member_name = $_POST["name"];
+        $member_username = $_POST["username"];
         $member_email = $_POST["email-address"];
         $member_password = $_POST["password"];
 
@@ -28,7 +28,7 @@
         $file_write_handle = fopen($file, "a+");
 
         if($file_write_handle) {
-          fwrite($file_write_handle, $member_name . ", " . $member_email . ", " . $member_password . "\n");
+          fwrite($file_write_handle, $member_username . ", " . $member_email . ", " . $member_password . "\n");
           fclose($file_write_handle);
         }
         else {
@@ -37,7 +37,7 @@
 
 
         // 3 - Prompt the new member.
-        echo "<p>Welcome to the new world of fonts, " . $member_name . "!</p>";
+        echo "<p>Welcome to the new world of fonts, " . $member_username . "!</p>";
         echo "<p>Find news and updates in our monthly newsletter sent to your email " . $member_email . ".</p>";
         echo "<p>Hope you enjoy exploring Beak and Spur!</p>";
 
