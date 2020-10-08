@@ -15,7 +15,8 @@ body {
   padding: 1rem;
 }
 
-.register-page {
+.register-page,
+.login-page {
   width: 35%;
 
   /* Sources:

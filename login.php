@@ -11,22 +11,26 @@
 
   <body>
 
-    <h1>Login to Beak and Spur</h1>
+    <div class="login-page">
 
-    <!-- <form action="login-successful.php" method="post"> -->
-    <form>
+      <h1>Login to Beak and Spur</h1>
 
-      <p>Username:
-        <input type="text" name="username" size="50" maxlength="30" />
-      </p>
+      <!-- <form action="login-successful.php" method="post"> -->
+      <form>
 
-      <p>Password:
-        <input type="password" name="password" size="20" maxlength="20" />
-      </p>
+        <p>Username
+          <input type="text" name="username" size="50" maxlength="30" />
+        </p>
 
-      <input type="submit" name="login" value="Login" />
+        <p>Password
+          <input type="password" name="password" size="20" maxlength="20" />
+        </p>
 
-    </form>
+        <input type="submit" name="login" value="Login" />
+
+      </form>
+
+    </div>
 
   </body>
 
