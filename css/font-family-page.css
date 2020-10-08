@@ -1,0 +1,24 @@
+h1 {
+  color: blue;
+}
+
+.item-a {
+  grid-area: header;
+}
+
+.item-b {
+  grid-area: main;
+}
+
+.item-c {
+  grid-area: sidebar;
+}
+
+.item-d {
+  grid-area: footer;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
