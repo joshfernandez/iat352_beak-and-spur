@@ -5,29 +5,35 @@
     <title>Registration page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/styles-login-and-reg-pages.css">
   </head>
 
   <body>
 
-    <h1>Register for Beak and Spur</h1>
+    <div class="register-page">
 
-    <form action="register-complete.php" method="post">
+      <h1>Register for Beak and Spur</h1>
 
-      <p>Username:
-        <input type="text" name="username" size="50" maxlength="30" />
-      </p>
+      <form action="register-complete.php" method="post">
 
-      <p>Email address:
-        <input type="text" name="email-address" size="50" maxlength="30" />
-      </p>
+        <p>Username
+          <input type="text" name="username" size="50" maxlength="30" />
+        </p>
 
-      <p>Password:
-        <input type="password" name="password" size="20" maxlength="20" />
-      </p>
+        <p>Email address
+          <input type="text" name="email-address" size="50" maxlength="30" />
+        </p>
 
-      <input type="submit" name="register" value="Register" />
+        <p>Password
+          <input type="password" name="password" size="20" maxlength="20" />
+        </p>
 
-    </form>
+        <input type="submit" name="register" value="Register" />
+
+      </form>
+
+    </div>
 
   </body>
 
