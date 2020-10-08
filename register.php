@@ -5,6 +5,8 @@
     <title>Registration page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/styles-login-and-reg-pages.css">
   </head>
 
   <body>
