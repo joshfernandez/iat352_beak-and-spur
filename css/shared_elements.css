@@ -1,4 +1,5 @@
 /* things for headers and footers */
+
 .logo-size {
   width: 7em;
   height: auto;
@@ -19,4 +20,8 @@ nav {
 .profile-photo {
   grid-column-start: 8;
   grid-column-end: 9;
+}
+
+header {
+  width: 100vw;
 }
