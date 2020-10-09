@@ -6,7 +6,7 @@
   box-sizing: border-box;
   word-wrap: break-word;
   cursor: default;
-  background-color: black;
+  background-color: white;
 }
 
 body,
@@ -19,16 +19,18 @@ html {
   max-width: 1500px;
   margin: 0 auto !important;
   float: none !important;
-  background-color: blue;
 }
 
 p {
   font-size: 1rem;
   line-height: 1.7em;
-  color: white;
 }
 
 a {
+  cursor: pointer;
+}
+
+button {
   cursor: pointer;
 }
 
