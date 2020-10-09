@@ -1,14 +1,15 @@
 body {
-  background-color: lightblue;
+  /* background-color: lightblue; */
 }
 .container {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   background-color: white;
-  margin: 2em 7em;
+  margin: 0em 7em;
 }
 
 #title-container {
+  margin-top: 4em;
   grid-column-start: 1;
   grid-column-end: 7;
   grid-row-start: 0;
@@ -34,7 +35,7 @@ body {
 
 button > h5 {
   margin-top: 1em;
-  margin-right: 2em;
+  margin-right: 3em;
 }
 
 #attributes-container {
@@ -64,4 +65,35 @@ button > h5 {
   grid-column-end: 7;
   grid-row-start: 2;
   grid-row-end: 3;
+  border-top: solid black 1px;
+  border-bottom: solid black 1px;
+}
+
+.description {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+}
+
+.description-row {
+  align-items: center;
+}
+
+.contributor-img-size {
+  width: 2.2em;
+}
+
+.tag-styling {
+  padding: 0.5em;
+  border-radius: 0.2em;
+  border: solid black 1px;
+}
+
+input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: Epilogue;
+  font-size: 4em;
+  background-color: white;
+  padding: 1em 0px;
 }

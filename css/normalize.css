@@ -34,41 +34,6 @@ button {
   cursor: pointer;
 }
 
-h1 {
-  font-family: NHG_Extrabold, sans-serif;
-  font-size: 2.6em;
-}
-h2 {
-  font-family: NHG_Bold, sans-serif;
-  font-size: 2.2em;
-}
-h3 {
-  font-family: NHG_Bold, sans-serif;
-  font-size: 1.5rem;
-}
-h4 {
-  font-family: NHG_Bold, sans-serif;
-  font-size: 1.3rem;
-}
-h5 {
-  font-family: NHG_Roman, sans-serif;
-  font-size: 0.9rem;
-}
-h6 {
-  font-family: NHG_Thin, sans-serif;
-  font-size: 0.8rem;
-}
-
-p {
-  font-family: NHG_Roman, sans-serif;
-  font-size: 1.1rem;
-}
-
-a {
-  font-family: NHG_Regular, sans-serif;
-  font-size: 1rem;
-}
-
 ol {
   margin-left: 2%;
 }
@@ -159,4 +124,12 @@ ol {
 /* opacity */
 .opacity-50 {
   opacity: 50%;
+}
+
+.flex {
+  display: flex;
+}
+
+.block {
+  display: block;
 }
