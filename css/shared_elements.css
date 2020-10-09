@@ -1,0 +1,22 @@
+/* things for headers and footers */
+.logo-size {
+  width: 7em;
+  height: auto;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-column-start: 1;
+  grid-column-end: 7;
+  background-color: white;
+  padding: 2em 7em;
+  border-bottom: solid black 0.4px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile-photo {
+  grid-column-start: 8;
+  grid-column-end: 9;
+}
