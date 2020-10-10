@@ -25,3 +25,16 @@ nav {
 header {
   width: 100vw;
 }
+
+.person-icon {
+  width: 1.2em;
+  height: auto;
+}
+
+.dropbtn {
+  background-color: transparent;
+  padding: 16px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+}

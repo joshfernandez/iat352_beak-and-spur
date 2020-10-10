@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Registration completed page</title>
 
     <link rel="stylesheet" href="css/styles-login-and-reg-pages.css">
-  </head>
+</head>
 
-  <body>
+<body>
 
     <div class="register-complete-page">
 
-      <h1>Thank you for registering for Beak and Spur!</h1>
+        <h1>Thank you for registering for Beak and Spur!</h1>
 
-      <?php
+        <?php
 
         if(isset($_POST["register"])) {
 
@@ -50,12 +50,12 @@
 
       ?>
 
-      <p>
-        <a href="index.php">Return to the home page</a>
-      </p>
+        <p>
+            <a href="filter.php">Return to the home page</a>
+        </p>
 
     </div>
 
-  </body>
+</body>
 
 </html>

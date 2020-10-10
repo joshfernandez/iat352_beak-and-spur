@@ -13,16 +13,29 @@
 
     <!-- page specific sheet -->
     <link href="css/font-family-page.css" media="screen" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/filter.css">
 
+    <!-- jquery from google -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
 
 <body>
-
     <nav>
-        <img class="logo-size" src="assets/img/logo.png" alt="logo!">
-        <div class="profile-photo">
-            <img class="contributor-img-size" src="assets/img/designer_img.png" alt="no-designer">
+        <a href="filter.php">
+            <img class="logo-size" src="assets/img/logo.png" alt="logo!">
+        </a>
+        <input type="text" placeholder="Search..">
+
+        <div class="dropdown">
+            <img class="person-icon" src="https://img.icons8.com/material-sharp/64/000000/person-male.png" />
+            <button class="dropbtn">˅</button>
+            <h4></h4>
+            <div class="dropdown-content">
+                <a href="#">Login</a>
+                <a href="#">Preferences</a>
+                <a href="#">Your Fonts</a>
+            </div>
         </div>
     </nav>
 
@@ -52,7 +65,7 @@
             </div>
 
             <div class="font">
-                <form action="">
+                <form class="font" action="">
                     <input class="ibm-font" type="text" name="text" placeholder="IBM Plex Sans">
                 </form>
             </div>

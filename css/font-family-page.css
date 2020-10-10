@@ -51,6 +51,15 @@ button > h5 {
   margin-bottom: 3em;
 }
 
+.font > input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: Epilogue;
+  font-size: 4em;
+  background-color: white;
+  padding: 1em 0px;
+}
+
 /* attribute rows styling */
 .border-top {
   border-top: solid black 1px;
@@ -87,13 +96,4 @@ button > h5 {
   padding: 0.5em;
   border-radius: 0.2em;
   border: solid black 1px;
-}
-
-input[type="text"] {
-  width: 100%;
-  box-sizing: border-box;
-  font-family: Epilogue;
-  font-size: 4em;
-  background-color: white;
-  padding: 1em 0px;
 }
