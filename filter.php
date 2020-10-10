@@ -46,14 +46,14 @@
 
    <main>
       <h1>Explore & Remix</h1>
-      
+
       <section class="content-cont">
-         
-         
+
+
          <article class="c-block">
-            
+
             <div class="c-block-settings">
-               
+
                <div class="c-block-settings__weight">
                   <label>
                      Font Weight
@@ -76,322 +76,10 @@
             </div>
             <div class="c-block-info">
                <a class="c-block-info__headings">
-                  
-                  <h3> IBM Plex Sans
-                     
-                     </h3>
-                     <h4>
-                     12 Styles
-                  </h4>
-               </a>
-               <div class="c-block-info__meta">
-                  <h6 class="status">
-                     Original
-                  </h6>
-                  <div class="tags-cont">
-                     <button>sans-serif</button>
-                     <button>grotesque</button>
-                     <button>Bold Monday</button>
-                     <button>ibm</button>
-                     <button>variable</button>
-                     
-                  </div>
-               </div>
-            </div>
-            
-            
-         </article>
-         
-         <article class="c-block">
-            
-            <div class="c-block-settings">
-               
-               <div class="c-block-settings__weight">
-                  <label>
-                     Font Weight
-                  </label>
-                  <input type="range" min="100" max="900" value="4" class="w-slider" id="myRange" step="100">
-               </div>
-               <div class="c-block-settings__italic">
-                  <label>
-                     Italics
-                  </label>
-                  <label class="switch">
-                     <input type="checkbox" checked>
-                     <span class="i-slider round"></span>
-                  </label>
-               </div>
-               
-            </div>
-            <div class="c-block-tester">
-               <input type="text" name="c-block-tester__textarea" id="" placeholder="Sphinx of black quartz, judge my vow">
-            </div>
-            <div class="c-block-info">
-               <a class="c-block-info__headings">
 
                   <h3> IBM Plex Sans
-                     
-                     </h3>
-                     <h4>
-                     12 Styles
-                  </h4>
-               </a>
-               <div class="c-block-info__meta">
-                  <h6 class="status">
-                     Original
-                  </h6>
-                  <div class="tags-cont">
-                     <button>sans-serif</button>
-                     <button>grotesque</button>
-                     <button>Bold Monday</button>
-                     <button>ibm</button>
-                     <button>variable</button>
-                     
-                  </div>
-               </div>
-            </div>
-            
 
-         </article>
-         
-         <article class="c-block">
-            
-            <div class="c-block-settings">
-               
-               <div class="c-block-settings__weight">
-                  <label>
-                     Font Weight
-                  </label>
-                  <input type="range" min="100" max="900" value="4" class="w-slider" id="myRange" step="100">
-               </div>
-               <div class="c-block-settings__italic">
-                  <label>
-                     Italics
-                  </label>
-                  <label class="switch">
-                     <input type="checkbox" checked>
-                     <span class="i-slider round"></span>
-                  </label>
-               </div>
-               
-            </div>
-            <div class="c-block-tester">
-               <input type="text" name="c-block-tester__textarea" id="" placeholder="Sphinx of black quartz, judge my vow">
-            </div>
-            <div class="c-block-info">
-               <a class="c-block-info__headings">
-                  
-                  <h3> IBM Plex Sans
-
-                     </h3>
-                     <h4>
-                     12 Styles
-                  </h4>
-               </a>
-               <div class="c-block-info__meta">
-                  <h6 class="status">
-                     Original
-                  </h6>
-                  <div class="tags-cont">
-                     <button>sans-serif</button>
-                     <button>grotesque</button>
-                     <button>Bold Monday</button>
-                     <button>ibm</button>
-                     <button>variable</button>
-                     
-                  </div>
-               </div>
-            </div>
-
-            
-         </article>
-         
-         <article class="c-block">
-
-            <div class="c-block-settings">
-               
-               <div class="c-block-settings__weight">
-                  <label>
-                     Font Weight
-                  </label>
-                  <input type="range" min="100" max="900" value="4" class="w-slider" id="myRange" step="100">
-               </div>
-               <div class="c-block-settings__italic">
-                  <label>
-                     Italics
-                  </label>
-                  <label class="switch">
-                     <input type="checkbox" checked>
-                     <span class="i-slider round"></span>
-                  </label>
-               </div>
-
-            </div>
-            <div class="c-block-tester">
-               <input type="text" name="c-block-tester__textarea" id="" placeholder="Sphinx of black quartz, judge my vow">
-            </div>
-            <div class="c-block-info">
-               <a class="c-block-info__headings">
-                  
-                  <h3> IBM Plex Sans
-                     
-                     </h3>
-                  <h4>
-                     12 Styles
-                  </h4>
-               </a>
-               <div class="c-block-info__meta">
-                  <h6 class="status">
-                     Original
-                  </h6>
-                  <div class="tags-cont">
-                     <button>sans-serif</button>
-                     <button>grotesque</button>
-                     <button>Bold Monday</button>
-                     <button>ibm</button>
-                     <button>variable</button>
-                     
-                  </div>
-               </div>
-            </div>
-            
-            
-         </article>
-
-         <article class="c-block">
-            
-            <div class="c-block-settings">
-               
-               <div class="c-block-settings__weight">
-                  <label>
-                     Font Weight
-                  </label>
-                  <input type="range" min="100" max="900" value="4" class="w-slider" id="myRange" step="100">
-               </div>
-               <div class="c-block-settings__italic">
-                  <label>
-                     Italics
-                  </label>
-                  <label class="switch">
-                     <input type="checkbox" checked>
-                     <span class="i-slider round"></span>
-                  </label>
-               </div>
-
-            </div>
-            <div class="c-block-tester">
-               <input type="text" name="c-block-tester__textarea" id="" placeholder="Sphinx of black quartz, judge my vow">
-            </div>
-            <div class="c-block-info">
-               <a class="c-block-info__headings">
-                  
-                  <h3> IBM Plex Sans
-                     
-                     </h3>
-                     <h4>
-                     12 Styles
-                  </h4>
-               </a>
-               <div class="c-block-info__meta">
-                  <h6 class="status">
-                     Original
-                  </h6>
-                  <div class="tags-cont">
-                     <button>sans-serif</button>
-                     <button>grotesque</button>
-                     <button>Bold Monday</button>
-                     <button>ibm</button>
-                     <button>variable</button>
-                     
-                  </div>
-               </div>
-            </div>
-            
-            
-         </article>
-         
-         <article class="c-block">
-            
-            <div class="c-block-settings">
-               
-               <div class="c-block-settings__weight">
-                  <label>
-                     Font Weight
-                  </label>
-                  <input type="range" min="100" max="900" value="4" class="w-slider" id="myRange" step="100">
-               </div>
-               <div class="c-block-settings__italic">
-                  <label>
-                     Italics
-                  </label>
-                  <label class="switch">
-                     <input type="checkbox" checked>
-                     <span class="i-slider round"></span>
-                  </label>
-               </div>
-               
-            </div>
-            <div class="c-block-tester">
-               <input type="text" name="c-block-tester__textarea" id="" placeholder="Sphinx of black quartz, judge my vow">
-            </div>
-            <div class="c-block-info">
-               <a class="c-block-info__headings">
-                  
-                  <h3> IBM Plex Sans
-                     
-                     </h3>
-                     <h4>
-                     12 Styles
-                  </h4>
-               </a>
-               <div class="c-block-info__meta">
-                  <h6 class="status">
-                     Original
-                  </h6>
-                  <div class="tags-cont">
-                     <button>sans-serif</button>
-                     <button>grotesque</button>
-                     <button>Bold Monday</button>
-                     <button>ibm</button>
-                     <button>variable</button>
-                     
-                  </div>
-               </div>
-            </div>
-            
-            
-         </article>
-         
-         <article class="c-block">
-            
-            <div class="c-block-settings">
-               
-               <div class="c-block-settings__weight">
-                  <label>
-                     Font Weight
-                  </label>
-                  <input type="range" min="100" max="900" value="4" class="w-slider" id="myRange" step="100">
-               </div>
-               <div class="c-block-settings__italic">
-                  <label>
-                     Italics
-                  </label>
-                  <label class="switch">
-                     <input type="checkbox" checked>
-                     <span class="i-slider round"></span>
-                  </label>
-               </div>
-
-            </div>
-            <div class="c-block-tester">
-               <input type="text" name="c-block-tester__textarea" id="" placeholder="Sphinx of black quartz, judge my vow">
-            </div>
-            <div class="c-block-info">
-               <a class="c-block-info__headings">
-                  
-                  <h3> IBM Plex Sans
-                     
-                     </h3>
+                  </h3>
                   <h4>
                      12 Styles
                   </h4>
@@ -410,38 +98,485 @@
                   </div>
                </div>
             </div>
-            
-            
+
+
          </article>
-         
+         <article class="c-block">
+
+            <div class="c-block-settings">
+
+               <div class="c-block-settings__weight">
+                  <label>
+                     Font Weight
+                  </label>
+                  <input type="range" min="100" max="900" value="4" class="w-slider" id="myRange" step="100">
+               </div>
+               <div class="c-block-settings__italic">
+                  <label>
+                     Italics
+                  </label>
+                  <label class="switch">
+                     <input type="checkbox" checked>
+                     <span class="i-slider round"></span>
+                  </label>
+               </div>
+
+            </div>
+            <div class="c-block-tester">
+               <input type="text" name="c-block-tester__textarea" id="" placeholder="Sphinx of black quartz, judge my vow">
+            </div>
+            <div class="c-block-info">
+               <a class="c-block-info__headings">
+
+                  <h3> IBM Plex Sans
+
+                  </h3>
+                  <h4>
+                     12 Styles
+                  </h4>
+               </a>
+               <div class="c-block-info__meta">
+                  <h6 class="status">
+                     Original
+                  </h6>
+                  <div class="tags-cont">
+                     <button>sans-serif</button>
+                     <button>grotesque</button>
+                     <button>Bold Monday</button>
+                     <button>ibm</button>
+                     <button>variable</button>
+
+                  </div>
+               </div>
+            </div>
+
+
+         </article>
+         <article class="c-block">
+
+            <div class="c-block-settings">
+
+               <div class="c-block-settings__weight">
+                  <label>
+                     Font Weight
+                  </label>
+                  <input type="range" min="100" max="900" value="4" class="w-slider" id="myRange" step="100">
+               </div>
+               <div class="c-block-settings__italic">
+                  <label>
+                     Italics
+                  </label>
+                  <label class="switch">
+                     <input type="checkbox" checked>
+                     <span class="i-slider round"></span>
+                  </label>
+               </div>
+
+            </div>
+            <div class="c-block-tester">
+               <input type="text" name="c-block-tester__textarea" id="" placeholder="Sphinx of black quartz, judge my vow">
+            </div>
+            <div class="c-block-info">
+               <a class="c-block-info__headings">
+
+                  <h3> IBM Plex Sans
+
+                  </h3>
+                  <h4>
+                     12 Styles
+                  </h4>
+               </a>
+               <div class="c-block-info__meta">
+                  <h6 class="status">
+                     Original
+                  </h6>
+                  <div class="tags-cont">
+                     <button>sans-serif</button>
+                     <button>grotesque</button>
+                     <button>Bold Monday</button>
+                     <button>ibm</button>
+                     <button>variable</button>
+
+                  </div>
+               </div>
+            </div>
+
+
+         </article>
+         <article class="c-block">
+
+            <div class="c-block-settings">
+
+               <div class="c-block-settings__weight">
+                  <label>
+                     Font Weight
+                  </label>
+                  <input type="range" min="100" max="900" value="4" class="w-slider" id="myRange" step="100">
+               </div>
+               <div class="c-block-settings__italic">
+                  <label>
+                     Italics
+                  </label>
+                  <label class="switch">
+                     <input type="checkbox" checked>
+                     <span class="i-slider round"></span>
+                  </label>
+               </div>
+
+            </div>
+            <div class="c-block-tester">
+               <input type="text" name="c-block-tester__textarea" id="" placeholder="Sphinx of black quartz, judge my vow">
+            </div>
+            <div class="c-block-info">
+               <a class="c-block-info__headings">
+
+                  <h3> IBM Plex Sans
+
+                  </h3>
+                  <h4>
+                     12 Styles
+                  </h4>
+               </a>
+               <div class="c-block-info__meta">
+                  <h6 class="status">
+                     Original
+                  </h6>
+                  <div class="tags-cont">
+                     <button>sans-serif</button>
+                     <button>grotesque</button>
+                     <button>Bold Monday</button>
+                     <button>ibm</button>
+                     <button>variable</button>
+
+                  </div>
+               </div>
+            </div>
+
+
+         </article>
+         <article class="c-block">
+
+            <div class="c-block-settings">
+
+               <div class="c-block-settings__weight">
+                  <label>
+                     Font Weight
+                  </label>
+                  <input type="range" min="100" max="900" value="4" class="w-slider" id="myRange" step="100">
+               </div>
+               <div class="c-block-settings__italic">
+                  <label>
+                     Italics
+                  </label>
+                  <label class="switch">
+                     <input type="checkbox" checked>
+                     <span class="i-slider round"></span>
+                  </label>
+               </div>
+
+            </div>
+            <div class="c-block-tester">
+               <input type="text" name="c-block-tester__textarea" id="" placeholder="Sphinx of black quartz, judge my vow">
+            </div>
+            <div class="c-block-info">
+               <a class="c-block-info__headings">
+
+                  <h3> IBM Plex Sans
+
+                  </h3>
+                  <h4>
+                     12 Styles
+                  </h4>
+               </a>
+               <div class="c-block-info__meta">
+                  <h6 class="status">
+                     Original
+                  </h6>
+                  <div class="tags-cont">
+                     <button>sans-serif</button>
+                     <button>grotesque</button>
+                     <button>Bold Monday</button>
+                     <button>ibm</button>
+                     <button>variable</button>
+
+                  </div>
+               </div>
+            </div>
+
+
+         </article>
+         <article class="c-block">
+
+            <div class="c-block-settings">
+
+               <div class="c-block-settings__weight">
+                  <label>
+                     Font Weight
+                  </label>
+                  <input type="range" min="100" max="900" value="4" class="w-slider" id="myRange" step="100">
+               </div>
+               <div class="c-block-settings__italic">
+                  <label>
+                     Italics
+                  </label>
+                  <label class="switch">
+                     <input type="checkbox" checked>
+                     <span class="i-slider round"></span>
+                  </label>
+               </div>
+
+            </div>
+            <div class="c-block-tester">
+               <input type="text" name="c-block-tester__textarea" id="" placeholder="Sphinx of black quartz, judge my vow">
+            </div>
+            <div class="c-block-info">
+               <a class="c-block-info__headings">
+
+                  <h3> IBM Plex Sans
+
+                  </h3>
+                  <h4>
+                     12 Styles
+                  </h4>
+               </a>
+               <div class="c-block-info__meta">
+                  <h6 class="status">
+                     Original
+                  </h6>
+                  <div class="tags-cont">
+                     <button>sans-serif</button>
+                     <button>grotesque</button>
+                     <button>Bold Monday</button>
+                     <button>ibm</button>
+                     <button>variable</button>
+
+                  </div>
+               </div>
+            </div>
+
+
+         </article>
+         <article class="c-block">
+
+            <div class="c-block-settings">
+
+               <div class="c-block-settings__weight">
+                  <label>
+                     Font Weight
+                  </label>
+                  <input type="range" min="100" max="900" value="4" class="w-slider" id="myRange" step="100">
+               </div>
+               <div class="c-block-settings__italic">
+                  <label>
+                     Italics
+                  </label>
+                  <label class="switch">
+                     <input type="checkbox" checked>
+                     <span class="i-slider round"></span>
+                  </label>
+               </div>
+
+            </div>
+            <div class="c-block-tester">
+               <input type="text" name="c-block-tester__textarea" id="" placeholder="Sphinx of black quartz, judge my vow">
+            </div>
+            <div class="c-block-info">
+               <a class="c-block-info__headings">
+
+                  <h3> IBM Plex Sans
+
+                  </h3>
+                  <h4>
+                     12 Styles
+                  </h4>
+               </a>
+               <div class="c-block-info__meta">
+                  <h6 class="status">
+                     Original
+                  </h6>
+                  <div class="tags-cont">
+                     <button>sans-serif</button>
+                     <button>grotesque</button>
+                     <button>Bold Monday</button>
+                     <button>ibm</button>
+                     <button>variable</button>
+
+                  </div>
+               </div>
+            </div>
+
+
+         </article>
+         <article class="c-block">
+
+            <div class="c-block-settings">
+
+               <div class="c-block-settings__weight">
+                  <label>
+                     Font Weight
+                  </label>
+                  <input type="range" min="100" max="900" value="4" class="w-slider" id="myRange" step="100">
+               </div>
+               <div class="c-block-settings__italic">
+                  <label>
+                     Italics
+                  </label>
+                  <label class="switch">
+                     <input type="checkbox" checked>
+                     <span class="i-slider round"></span>
+                  </label>
+               </div>
+
+            </div>
+            <div class="c-block-tester">
+               <input type="text" name="c-block-tester__textarea" id="" placeholder="Sphinx of black quartz, judge my vow">
+            </div>
+            <div class="c-block-info">
+               <a class="c-block-info__headings">
+
+                  <h3> IBM Plex Sans
+
+                  </h3>
+                  <h4>
+                     12 Styles
+                  </h4>
+               </a>
+               <div class="c-block-info__meta">
+                  <h6 class="status">
+                     Original
+                  </h6>
+                  <div class="tags-cont">
+                     <button>sans-serif</button>
+                     <button>grotesque</button>
+                     <button>Bold Monday</button>
+                     <button>ibm</button>
+                     <button>variable</button>
+
+                  </div>
+               </div>
+            </div>
+
+
+         </article>
+
+
       </section>
-      
-      <aside class="filter-s-bar">
-         
-         <div class="font-size-cont">
-         
-            <label>
+
+      <aside class="filter-bar">
+
+         <div class="filter-bar__f-size">
+
+            <h2>
                Font Size
-            </label>
+            </h2>
             <input type="range" min=".5" max="4.5" value="1" class="w-slider" id="myRange" step=".1">
          </div>
-         <label for="cars">Choose a car:</label>
-         <select name="cars" id="cars">
-            <optgroup label="Swedish Cars">
-               <option value="volvo">Volvo</option>
-               <option value="saab">Saab</option>
-            </optgroup>
-            <optgroup label="German Cars">
-               <option value="mercedes">Mercedes</option>
-               <option value="audi">Audi</option>
-            </optgroup>
-         </select>
-         <br><br>
-         <input type="submit" value="Submit">
-      </form>
+         <div class="filter-bar__lang">
 
-      
+            <h2 for="lang">Language:</h2>
 
+            <div class="lang-holder">
+
+               <input type="radio" value="latin" name="lang" id="latin">
+               <label for="latin">Latin</label>
+
+               <input type="radio" value="chinese" name="lang" id="chinese">
+               <label for="chinese"> Chinese (Simplified)</label>
+
+               <input type="radio" value="arabic" name="lang" id="arabic">
+               <label for="arabic">Arabic</label>
+
+               <input type="radio" value="devanagari" name="lang" id="devanagari">
+               <label for="devanagari">Devanagari</label>
+
+               <input type="radio" value="cyrillic" name="lang" id="cyrillic">
+               <label for="cyrillic">Cyrillic</label>
+
+            </div>
+
+         </div>
+
+
+         <div class="filter-bar__class">
+            <h2> Classification </h2>
+
+            <h3> Serif </h3>
+
+            <div class="class-holder">
+
+               <input type="checkbox" value="Transitional" name="class" id="Transitional">
+               <label for="Transitional"> Transitional </label>
+
+               <input type="checkbox" value="Didone" name="class" id="Didone">
+               <label for="Didone"> Neoclassical/Didone </label>
+
+               <input type="checkbox" value="Slab" name="class" id="Slab">
+               <label for="Slab">Slab</label>
+
+               <input type="checkbox" value="Clarendon" name="class" id="Clarendon">
+               <label for="Clarendon">Clarendon</label>
+
+               <input type="checkbox" value="Glyphic" name="class" id="Glyphic">
+               <label for="Glyphic">Glyphic</label>
+
+            </div>
+
+            <h3> Sans-serif </h3>
+
+            <div class="class-holder">
+
+               <input type="checkbox" value="Geometric" name="class" id="Geometric">
+               <label for="Geometric">Geometric</label>
+
+               <input type="checkbox" value="Humanistic" name="class" id="serif">
+               <label for="Humanistic"> Humanistic</label>
+
+               <input type="checkbox" value="Square" name="class" id="Square">
+               <label for="Square">Square</label>
+
+               <input type="checkbox" value="Grotesque" name="class" id="Grotesque">
+               <label for="Grotesque">Grotesque</label>
+
+
+            </div>
+            <h3> Display </h3>
+
+            <div class="class-holder">
+
+               <input type="checkbox" value="Reverse-contrast" name="class" id="Reverse-contrast">
+               <label for="Reverse-contrast">Reverse-contrast</label>
+
+               <input type="checkbox" value="Calligraphic" name="class" id="Calligraphic">
+               <label for="Calligraphic"> Calligraphic</label>
+
+               <input type="checkbox" value="Display-version" name="class" id="Display-version">
+               <label for="Display-version">Display-version</label>
+
+               <input type="checkbox" value="handwritten" name="class" id="handwritten">
+               <label for="handwritten">Hand-written</label>
+
+            </div>
+            <h3> Fixed-width </h3>
+
+            <div class="class-holder">
+
+               <input type="checkbox" value="Typewriter" name="class" id="Typewriter">
+               <label for="Typewriter">Typewriter</label>
+
+               <input type="checkbox" value="Monospaced" name="class" id="Monospaced">
+               <label for="Monospaced"> Monospaced</label>
+
+               <input type="checkbox" value="duo-spaced" name="class" id="duo-spaced">
+               <label for="duo-spaced">Duospaced</label>
+
+               <input type="checkbox" value="programming" name="class" id="programming">
+               <label for="programming">Programming</label>
+
+
+            </div>
+
+
+         </div>
       </aside>
 
    </main>
