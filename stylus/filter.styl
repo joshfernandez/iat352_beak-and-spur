@@ -1,0 +1,166 @@
+html, body
+    margin 0
+    padding 0
+
+header
+    width 100vw
+
+nav
+    width 100%
+    display flex
+    justify-content space-between
+
+main
+
+    margin-left 3vw
+    display grid
+    grid-template-columns 6fr 2fr
+    gap 1rem
+    h1
+        grid-column 1/2
+        font-size 3rem
+        font-weight 400
+    font-size-cont
+        grid-column 1/2
+        font-size 3rem
+        font-weight 400
+    .content-cont
+        display grid
+        grid-template-columns 1fr 1fr
+        grid-column 1/2
+
+aside
+    grid-column 2/3
+
+.c-block
+    background-color #C0DAF2
+    display flex
+    flex-direction column
+
+.c-block-settings
+    display flex
+    flex-direction row
+
+.c-block-settings__weight
+    padding 1rem
+    flex-grow 1
+    input
+        width 100%
+        &::-webkit-slider-thumb
+            -webkit-appearance none
+            appearance none
+            width 25px
+            height 25px
+            background #C0DAF2
+            cursor pointer
+        &::-moz-range-thumb
+            width 25px
+            height 25px
+            background #C0DAF2
+            cursor pointer
+    label
+        font-family Epilogue
+        font-size .95rem
+        font-style normal
+        font-weight 300
+        line-height 1
+        letter-spacing 0em
+        text-align center
+        margin auto
+        display block
+    italic
+        width 100%
+
+.c-block-settings__italic
+    padding 1rem 1rem 1rem 0
+    label
+        font-family Epilogue
+        font-size .95rem
+        font-style normal
+        font-weight 300
+        line-height 1
+        letter-spacing 0em
+        text-align center
+        margin auto
+        display block
+
+.switch
+    position relative
+    display inline-block
+    width 2.5rem
+    height 1.5rem
+    input
+        opacity 0
+        width 0
+        height 0
+        &:checked
+            & + .i-slider
+                background #C0DAF2
+                &:before
+                    -webkit-transform translateX(1rem)
+                    -ms-transform translateX(1rem)
+                    transform translateX(1rem)
+        &:focus
+            & + .i-slider
+                box-shadow 0 0 1px #C0DAF2
+
+.i-slider
+    position absolute
+    cursor pointer
+    top 0
+    left 0
+    right 0
+    bottom 0
+    background-color #ccc
+    -webkit-transition .4s
+    transition .4s
+    &:before
+        position absolute
+        content ""
+        width 1rem
+        left .25rem
+        bottom .25rem
+        top .25rem
+        background-color white
+        -webkit-transition .4s
+        transition .4s
+
+}
+    .c-block-tester
+        input[type="text"]
+            width 100%
+            border 0
+            margin 0
+            font-size 3rem
+
+.dropbtn
+    background-color transparent
+    padding 16px
+    font-size 1rem
+    border none
+    cursor pointer
+
+.dropdown
+    position relative
+    display inline-block
+    img
+        width 2rem
+    &:hover
+        .dropdown-content
+            display block
+
+.dropdown-content
+    display none
+    position absolute
+    right 0
+    background-color #f9f9f9
+    min-width 160px
+    box-shadow 0px 8px 16px 0px rgba(0, 0, 0, 0.2)
+    z-index 1
+    a
+        color black
+        padding 12px 16px
+        text-decoration none
+        display block
+        &:hover
+            background-color #f1f1f1
