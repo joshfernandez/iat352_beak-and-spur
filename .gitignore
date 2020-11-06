@@ -1,2 +1,9 @@
 registered-members.txt
 node_modules/
+*.yml
+,yarn/
+.vscode/
+
+.yarn/
+
+build/
