@@ -20,7 +20,7 @@
         <form action="register-complete.php" method="post">
 
             <p>Username
-                <input type="text" name="username" size="50" maxlength="30" />
+                <input type="text" name="username" size="20" maxlength="30" />
             </p>
 
             <p>Email address
