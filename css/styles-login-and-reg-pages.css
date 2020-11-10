@@ -31,11 +31,13 @@ a {
 
 /* COMPLETION PAGES */
 
-.register-complete-page h1 {
+.register-complete-page h1,
+.login-complete-page h1 {
   margin: 0 0 2rem 0;
 }
 
-.register-complete-page p {
+.register-complete-page p,
+.login-complete-page h1 {
   font-size: 1.25rem;
   margin: 1.5rem 0;
 }
@@ -45,7 +47,8 @@ a {
 
 .register-page,
 .register-complete-page,
-.login-page {
+.login-page,
+.login-complete-page {
   width: 35%;
 
   /* Sources:

@@ -37,11 +37,10 @@
 
         <h1>Login to Beak and Spur</h1>
 
-        <!-- <form action="login-successful.php" method="post"> -->
-        <form>
+        <form action="login-complete.php" method="post">
 
             <p>Username
-                <input type="text" name="username" size="50" maxlength="30" />
+                <input type="text" name="username" size="20" maxlength="30" />
             </p>
 
             <p>Password
@@ -50,9 +49,10 @@
 
             <h4>No Account? <a href="register.php">Sign Up!</a></h4>
 
-            <a href="filter.php">
+            <input type="submit" name="login" value="Login" />
+            <!-- <a href="filter.php">
                 <input href="filter.php" type="submit" name="login" value="Login" />
-            </a>
+            </a> -->
 
         </form>
     </div>

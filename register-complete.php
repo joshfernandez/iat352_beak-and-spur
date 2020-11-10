@@ -57,7 +57,7 @@
 
         }
 
-      ?>
+        ?>
 
         <p>
             <a href="filter.php">Return to the home page</a>

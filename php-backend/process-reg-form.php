@@ -50,7 +50,6 @@ if(isset($_POST["register"])) {
   $result = mysqli_query($db_connection, $insert_query);
 
   if(!$result) {
-    echo $insert_query;
     die("Database query failed.");
   }
 
