@@ -24,7 +24,7 @@ function appendWithComma($item, &$list_items) {
 }
 
 // Main procedure
-if(isset($_POST["register"])) {
+if(isset($_POST["register"]) && !empty($_POST["register"])) {
 
   // 1A & 1B - Define and validate form responses for the registered member.
   // Already handled by register-complete.php

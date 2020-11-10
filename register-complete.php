@@ -18,7 +18,7 @@
 
         <?php
 
-        if(isset($_POST["register"])) {
+        if(isset($_POST["register"]) && !empty($_POST["register"])) {
 
           // 1A - Define and validate form responses for the registered member.
           $member_username = (!empty($_POST["username"]) ? $_POST["username"] : "");

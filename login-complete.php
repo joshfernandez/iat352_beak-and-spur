@@ -18,7 +18,7 @@
 
         <?php
 
-        if(isset($_POST["login"])) {
+        if(isset($_POST["login"]) && !empty($_POST["login"])) {
 
           // 1A - Define and validate form responses for the login user.
           $login_username = (!empty($_POST["username"]) ? $_POST["username"] : "");

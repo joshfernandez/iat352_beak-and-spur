@@ -24,7 +24,7 @@ function appendWithAndTerm($clause, &$list_clauses) {
 }
 
 // Main procedure
-if(isset($_POST["login"])) {
+if(isset($_POST["login"]) && !empty($_POST["login"])) {
 
   // 1A & 1B - Define and validate form responses for the registered member.
   // Already handled by login-complete.php
