@@ -19,7 +19,8 @@ if(isset($_POST["login"]) && !empty($_POST["login"])) {
 
   // 0 - Import helper methods and procedures.
   include "helpers/db-connection-methods.php";
-  include "helpers/query-string-methods.php";
+  include "helpers/query-append-methods.php";
+  include "helpers/query-perform-methods.php";
 
   // 1A & 1B - Define and validate form responses for the registered member.
   // Already handled by login-complete.php
@@ -38,15 +39,7 @@ if(isset($_POST["login"]) && !empty($_POST["login"])) {
   appendWithAndTerm($login_password_clause, $list_of_conditions, false);
 
   // 3B - Write the SELECT SQL query.
-  $select_query = "SELECT " . $list_of_attributes .
-            " FROM " . $list_of_tables .
-            " WHERE " . $list_of_conditions . ";";
-
-  $result = mysqli_query($db_connection, $select_query);
-
-  if(!$result) {
-    die("Database query failed.");
-  }
+  $result = writeSelectQuery($db_connection, $list_of_attributes, $list_of_tables, $list_of_conditions);
 
 
 } // End of main procedure. Return to login-complete.php.

@@ -19,7 +19,8 @@ if(isset($_POST["register"]) && !empty($_POST["register"])) {
 
   // 0 - Import helper methods and procedures.
   include "helpers/db-connection-methods.php";
-  include "helpers/query-string-methods.php";
+  include "helpers/query-append-methods.php";
+  include "helpers/query-perform-methods.php";
 
   // 1A & 1B - Define and validate form responses for the registered member.
   // Already handled by register-complete.php
@@ -38,15 +39,7 @@ if(isset($_POST["register"]) && !empty($_POST["register"])) {
   $final_list_of_attributes = "(" . $list_of_attributes . ")";
 
   // 3B - Write the INSERT INTO SQL query.
-  $insert_query = "INSERT INTO " . $table_name .
-                  " " . $list_of_columns .
-                  " VALUES " . $final_list_of_attributes . ";";
-
-  $result = mysqli_query($db_connection, $insert_query);
-
-  if(!$result) {
-    die("Database query failed.");
-  }
+  $result = writeInsertQuery($db_connection, $table_name, $list_of_columns, $final_list_of_attributes);
 
   // 4 - Close the database connection.
   closeDBConnection($db_connection);
