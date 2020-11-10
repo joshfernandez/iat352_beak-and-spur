@@ -14,20 +14,12 @@
 
 // Source: https://stackoverflow.com/questions/17333901/php-form-on-submit-stay-on-same-page
 
-function appendWithComma($item, &$list_items) {
-  if(empty($list_items)) {
-    $list_items .= "'" . $item . "'";
-  }
-  else {
-    $list_items .= ", '" . $item . "'";
-  }
-}
-
 // Main procedure
 if(isset($_POST["register"]) && !empty($_POST["register"])) {
 
   // 0 - Import helper methods and procedures.
   include "helpers/db-connection-methods.php";
+  include "helpers/query-string-methods.php";
 
   // 1A & 1B - Define and validate form responses for the registered member.
   // Already handled by register-complete.php
@@ -40,9 +32,9 @@ if(isset($_POST["register"]) && !empty($_POST["register"])) {
   $list_of_columns = "(username, email, password)";
 
   $list_of_attributes = "";
-  appendWithComma($member_username, $list_of_attributes);
-  appendWithComma($member_email, $list_of_attributes);
-  appendWithComma($member_password, $list_of_attributes);
+  appendWithComma($member_username, $list_of_attributes, true);
+  appendWithComma($member_email, $list_of_attributes, true);
+  appendWithComma($member_password, $list_of_attributes, true);
   $final_list_of_attributes = "(" . $list_of_attributes . ")";
 
   // 3B - Write the INSERT INTO SQL query.
