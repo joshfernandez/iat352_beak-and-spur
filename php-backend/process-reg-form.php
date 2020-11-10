@@ -26,11 +26,14 @@ function appendWithComma($item, &$list_items) {
 // Main procedure
 if(isset($_POST["register"]) && !empty($_POST["register"])) {
 
+  // 0 - Import helper methods and procedures.
+  include "helpers/db-connection-methods.php";
+
   // 1A & 1B - Define and validate form responses for the registered member.
   // Already handled by register-complete.php
 
   // 2 - Open a connection to the josh_fenandez database.
-  include "open-db-connection.php";
+  $db_connection = openDBConnection();
 
   // 3A - Define query attributes.
   $table_name = "members";
@@ -54,7 +57,7 @@ if(isset($_POST["register"]) && !empty($_POST["register"])) {
   }
 
   // 4 - Close the database connection.
-  include "close-db-connection.php";
+  closeDBConnection($db_connection);
 
 
 } // End of main procedure. Return to register-complete.php.

@@ -26,11 +26,14 @@ function appendWithAndTerm($clause, &$list_clauses) {
 // Main procedure
 if(isset($_POST["login"]) && !empty($_POST["login"])) {
 
+  // 0 - Import helper methods and procedures.
+  include "helpers/db-connection-methods.php";
+
   // 1A & 1B - Define and validate form responses for the registered member.
   // Already handled by login-complete.php
 
   // 2 - Open a connection to the josh_fenandez database.
-  include "open-db-connection.php";
+  $db_connection = openDBConnection();
 
   // 3A - Define query attributes.
   $list_of_attributes = "*";

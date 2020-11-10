@@ -62,7 +62,7 @@
           mysqli_free_result($result);
 
           // 6 - Close the database connection.
-          include "php-backend/close-db-connection.php";
+          closeDBConnection($db_connection);
 
         }
 
