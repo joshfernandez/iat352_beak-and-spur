@@ -20,10 +20,13 @@
 
         if(isset($_POST["register"]) && !empty($_POST["register"])) {
 
+          // 0 - Import helper methods and procedures.
+          include "php-backend/helpers/form-analysis-methods.php";
+
           // 1A - Define and validate form responses for the registered member.
-          $member_username = (!empty($_POST["username"]) ? $_POST["username"] : "");
-          $member_email = (!empty($_POST["email-address"]) ? $_POST["email-address"] : "");
-          $member_password = (!empty($_POST["password"]) ? $_POST["password"] : "");
+          $member_username = initializeField($_POST["username"]);
+          $member_email = initializeField($_POST["email-address"]);
+          $member_password = initializeField($_POST["password"]);
 
           // 1B - If any of the fields are empty, don't continue.
           if(!($member_username != "" && $member_email != "" && $member_password != "")) {

@@ -4,7 +4,7 @@
   Beak & Spur
   Bread-wy Woo
 
-  query-methods.php
+  query-perform-methods.php
 -->
 
 <?php

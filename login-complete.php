@@ -20,9 +20,12 @@
 
         if(isset($_POST["login"]) && !empty($_POST["login"])) {
 
+          // 0 - Import helper methods and procedures.
+          include "php-backend/helpers/form-analysis-methods.php";
+
           // 1A - Define and validate form responses for the login user.
-          $login_username = (!empty($_POST["username"]) ? $_POST["username"] : "");
-          $login_password = (!empty($_POST["password"]) ? $_POST["password"] : "");
+          $login_username = initializeField($_POST["username"]);
+          $login_password = initializeField($_POST["password"]);
 
           // 1B - If any of the fields are empty, don't continue.
           if(!($login_username != "" && $login_password != "")) {
