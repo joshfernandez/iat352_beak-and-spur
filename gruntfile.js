@@ -62,7 +62,8 @@ module.exports = function (grunt) {
                 files: [
                     { src: '*.php', dest: 'build/' },
                     { src: 'img/**', dest: 'build/imgs/' },
-                    { src: 'fonts/**', dest: 'build/fonts/' }
+                    { src: 'fonts/**', dest: 'build/fonts/' },
+                    { src: 'assets/**', dest: 'build/assets/' }
                 ]
 
             },
@@ -72,6 +73,12 @@ module.exports = function (grunt) {
                     { src: '*.php', dest: 'build/' }
                 ]
 
+            }
+            ,
+            assets: {
+                files: [
+                    { src: 'assets/**', dest: 'build/assets/' }
+                ]
             }
             ,
             images: {
@@ -113,10 +120,10 @@ module.exports = function (grunt) {
             },
             other: {
                 files: [
-                    'img/**', 'fonts/**'
+                    'img/**', 'fonts/**', 'assets/**'
                 ],
                 tasks: [
-                    'copy:images', 'copy:fonts'
+                    'copy:images', 'copy:fonts', 'copy:assets'
                 ]
             },
 
