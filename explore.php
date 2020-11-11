@@ -22,23 +22,56 @@
 
 <body>
     <nav class="explore-nav">
-        <img src="../assets/img/search-icon.png" alt="search-icon">
+        <div class="flex">
+            <h5>Home</h5>
+            <h5 class="margin-left-lv3">Search for Typefaces</h5>
+        </div>
         <img src="../assets/img/designer-img.png" alt="designer-img">
     </nav>
 
     <main>
         <div class="explore-slideshow">
-            <div class="explore-slide">
-                <h4>4 Styles</h4>
-                <h1>League Gothic</h1>
-                <h4>Designed by Tyler Finck</h4>
+
+            <div class="explore-container">
+                <a href="explore-prev">&#10094;</a>
+
+                <div class="explore-slide">
+                    <h6 class="margin-bottom-lv1">4 Styles</h6>
+                    <h5>Designed by <span class="italic">Tyler Finck</span></h5>
+                    <h1 style='font-size: 7em; font-family:LeagueGothic'>League Gothic</h1>
+
+                    <div class="explore-font-tags-container">
+                        <div class="explore-font-tags">
+                            <img src="../assets/img/tag-lines.png" alt="no tag lines">
+                            <h6>Serif</h6>
+                        </div>
+
+                        <div class="explore-font-tags">
+                            <img src="../assets/img/tag-lines.png" alt="no tag lines">
+                            <h6>Slab Serif</h6>
+                        </div>
+
+                    </div>
+                </div>
+
+                <a href="explore-next">&#10095;</a>
             </div>
+
+            <footer>
+                <div class="flex">
+                    <div class="explore-slidecontainer">
+                        <input type="range" min="1" max="100" value="50" id="myRange">
+                    </div>
+                    <div class="explore-slidecontainer">
+                        <input type="range" min="1" max="100" value="50" id="myRange">
+                    </div>
+
+                    <button>Italicize</button>
+                    <button>View Font Family</button>
+                </div>
+            </footer>
         </div>
-        <p class="test">is this working</p>
     </main>
-
-
-
 
 </body>
 
