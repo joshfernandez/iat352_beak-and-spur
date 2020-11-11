@@ -1,4 +1,4 @@
-// 'use strict';
+'use strict';
 module.exports = function (grunt) {
 
     grunt.initConfig({
@@ -14,9 +14,7 @@ module.exports = function (grunt) {
         // },
         clean: {
             dist: [
-                'build/main.css',
-                'build/main.js',
-                'build/*'
+                'build/'
             ]
         },
         uglify: {
@@ -57,17 +55,6 @@ module.exports = function (grunt) {
             }
         },
         copy: {
-            dist: {
-
-                files: [
-                    { src: '*.php', dest: 'build/' },
-                    { src: 'img/**', dest: 'build/imgs/' },
-                    { src: 'fonts/**', dest: 'build/fonts/' },
-                    { src: 'assets/**', dest: 'build/assets/' }
-                ]
-
-            },
-
             html: {
                 files: [
                     { src: '*.php', dest: 'build/' }
@@ -77,21 +64,21 @@ module.exports = function (grunt) {
             ,
             assets: {
                 files: [
-                    { src: 'assets/**', dest: 'build/assets/' }
+                    { src: 'assets/**', dest: 'build/' }
                 ]
             }
-            ,
-            images: {
-                files: [
-                    { src: 'img/**', dest: 'build/imgs/' }
-                ]
-            }
-            ,
-            fonts: {
-                files: [
-                    { src: 'fonts/**', dest: 'build/fonts/' }
-                ]
-            }
+            // ,
+            // images: {
+            //     files: [
+            //         { src: 'img/**', dest: 'build/imgs/' }
+            //     ]
+            // }
+            // ,
+            // fonts: {
+            //     files: [
+            //         { src: 'fonts/**', dest: 'build/fonts/' }
+            //     ]
+            // }
 
 
         },
@@ -120,10 +107,10 @@ module.exports = function (grunt) {
             },
             other: {
                 files: [
-                    'img/**', 'fonts/**', 'assets/**'
+                    'assets/'
                 ],
                 tasks: [
-                    'copy:images', 'copy:fonts', 'copy:assets'
+                    'copy:assets'
                 ]
             },
 

@@ -62,7 +62,7 @@
 
 
         <div class="filter-block">
-            <div class="filter-font-block">
+            <article class="filter-font-block">
                 <div class="filter-font-block-text">
                     <p>4 STYLES</p>
                     <h3>League Gothic</h3>
@@ -73,8 +73,8 @@
                     <img src="../assets/img/tag-lines.png" alt="no tag lines">
                     <h6>Serif</h6>
                 </div>
-            </div>
-            <div class="filter-font-block">
+            </article>
+            <article class="filter-font-block">
                 <div class="filter-font-block-text">
                     <p>4 STYLES</p>
                     <h3>League Gothic</h3>
@@ -85,8 +85,8 @@
                     <img src="../assets/img/tag-lines.png" alt="no tag lines">
                     <h6>Serif</h6>
                 </div>
-            </div>
-            <div class="filter-font-block">
+            </article>
+            <article class="filter-font-block">
                 <div class="filter-font-block-text">
                     <p>4 STYLES</p>
                     <h3>League Gothic</h3>
@@ -97,8 +97,8 @@
                     <img src="../assets/img/tag-lines.png" alt="no tag lines">
                     <h6>Serif</h6>
                 </div>
-            </div>
-            <div class="filter-font-block">
+            </article>
+            <article class="filter-font-block">
                 <div class="filter-font-block-text">
                     <p>4 STYLES</p>
                     <h3>League Gothic</h3>
@@ -109,7 +109,7 @@
                     <img src="../assets/img/tag-lines.png" alt="no tag lines">
                     <h6>Serif</h6>
                 </div>
-            </div>
+            </article>
         </div>
 
     </main>
