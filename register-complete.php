@@ -18,10 +18,10 @@
 
         <?php
 
-        if(isset($_POST["register"]) && !empty($_POST["register"])) {
+        // 0 - Import helper methods and procedures.
+        include "php-backend/helpers/form-analysis-methods.php";
 
-          // 0 - Import helper methods and procedures.
-          include "php-backend/helpers/form-analysis-methods.php";
+        if(isFormSubmitted($_POST["register"])) {
 
           // 1A - Define and validate form responses for the registered member.
           $member_username = initializeField($_POST["username"]);

@@ -15,7 +15,8 @@
 // Source: https://stackoverflow.com/questions/17333901/php-form-on-submit-stay-on-same-page
 
 // Main procedure
-if(isset($_POST["register"]) && !empty($_POST["register"])) {
+// helpers/form-analysis-methods.php has already been imported.
+if(isFormSubmitted($_POST["register"])) {
 
   // 0 - Import helper methods and procedures.
   include "helpers/db-connection-methods.php";
