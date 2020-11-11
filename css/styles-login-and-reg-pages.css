@@ -37,7 +37,7 @@ a {
 }
 
 .register-complete-page p,
-.login-complete-page h1 {
+.login-complete-page p {
   font-size: 1.25rem;
   margin: 1.5rem 0;
 }

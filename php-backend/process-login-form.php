@@ -29,15 +29,15 @@ if(isFormSubmitted($_POST["login"])) {
   // 2 - Open a connection to the josh_fenandez database.
   $db_connection = openDBConnection();
 
-  // 3A - Define query attributes.
-  $list_of_attributes = "*";
+  // 3A - Define query attributes. (Goal: Retrieve the user's password hash value.)
+  $list_of_attributes = "members.password";
   $list_of_tables = "members";
 
   $list_of_conditions = "";
   $login_username_clause = "members.username = " . wrapInSingleQuotes($login_username, true);
-  appendWithAndTerm($login_username_clause, $list_of_conditions, false);
-  $login_password_clause = "members.password = " . wrapInSingleQuotes($login_password, true);
-  appendWithAndTerm($login_password_clause, $list_of_conditions, false);
+  appendWithAndTerm($list_of_conditions, $login_username_clause, false);
+  // Password check will happen after retrieving the hash value with password_verify().
+  // Look at step 4 in login-complete.php.
 
   // 3B - Write the SELECT SQL query.
   $result = writeSelectQuery($db_connection, $list_of_attributes, $list_of_tables, $list_of_conditions);
