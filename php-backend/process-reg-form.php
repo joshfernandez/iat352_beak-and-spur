@@ -34,9 +34,9 @@ if(isFormSubmitted($_POST["register"])) {
   $list_of_columns = "(username, email, password)";
 
   $list_of_attributes = "";
-  appendWithComma($member_username, $list_of_attributes, true);
-  appendWithComma($member_email, $list_of_attributes, true);
-  appendWithComma($member_pwhash, $list_of_attributes, true);
+  appendWithComma($list_of_attributes, $member_username, true);
+  appendWithComma($list_of_attributes, $member_email, true);
+  appendWithComma($list_of_attributes, $member_pwhash, true);
   $final_list_of_attributes = "(" . $list_of_attributes . ")";
 
   // 3B - Write the INSERT INTO SQL query.

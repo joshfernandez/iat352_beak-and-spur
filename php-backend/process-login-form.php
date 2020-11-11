@@ -35,7 +35,7 @@ if(isFormSubmitted($_POST["login"])) {
 
   $list_of_conditions = "";
   $login_username_clause = "members.username = " . wrapInSingleQuotes($login_username, true);
-  appendWithAndTerm($login_username_clause, $list_of_conditions, false);
+  appendWithAndTerm($list_of_conditions, $login_username_clause, false);
   // Password check will happen after retrieving the hash value with password_verify().
   // Look at step 4 in login-complete.php.
 
