@@ -103,14 +103,14 @@ module.exports = function (grunt) {
                     '*.php',
                 ],
 
-                tasks: ['copy:html']
+                tasks: ['copy']
             },
             other: {
                 files: [
                     'assets/'
                 ],
                 tasks: [
-                    'copy:assets'
+                    'copy'
                 ]
             },
 
