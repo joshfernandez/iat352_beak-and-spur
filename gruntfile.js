@@ -1,4 +1,4 @@
-// 'use strict';
+'use strict';
 module.exports = function (grunt) {
 
     grunt.initConfig({
@@ -14,9 +14,7 @@ module.exports = function (grunt) {
         // },
         clean: {
             dist: [
-                'build/main.css',
-                'build/main.js',
-                'build/*'
+                'build/'
             ]
         },
         uglify: {
@@ -57,16 +55,6 @@ module.exports = function (grunt) {
             }
         },
         copy: {
-            dist: {
-
-                files: [
-                    { src: '*.php', dest: 'build/' },
-                    { src: 'img/**', dest: 'build/imgs/' },
-                    { src: 'fonts/**', dest: 'build/fonts/' }
-                ]
-
-            },
-
             html: {
                 files: [
                     { src: '*.php', dest: 'build/' }
@@ -74,17 +62,23 @@ module.exports = function (grunt) {
 
             }
             ,
-            images: {
+            assets: {
                 files: [
-                    { src: 'img/**', dest: 'build/imgs/' }
+                    { src: 'assets/**', dest: 'build/' }
                 ]
             }
-            ,
-            fonts: {
-                files: [
-                    { src: 'fonts/**', dest: 'build/fonts/' }
-                ]
-            }
+            // ,
+            // images: {
+            //     files: [
+            //         { src: 'img/**', dest: 'build/imgs/' }
+            //     ]
+            // }
+            // ,
+            // fonts: {
+            //     files: [
+            //         { src: 'fonts/**', dest: 'build/fonts/' }
+            //     ]
+            // }
 
 
         },
@@ -113,10 +107,10 @@ module.exports = function (grunt) {
             },
             other: {
                 files: [
-                    'img/**', 'fonts/**'
+                    'assets/'
                 ],
                 tasks: [
-                    'copy:images', 'copy:fonts'
+                    'copy:assets'
                 ]
             },
 

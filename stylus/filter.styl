@@ -1,6 +1,7 @@
 html, body
     margin 0
     padding 0
+    background #FAFAEE
 
 header
     width 100vw
@@ -8,26 +9,76 @@ header
 nav
     width 100%
     display flex
+    margin-top 2em
     justify-content space-between
+    background #FAFAEE
 
 main
-
     margin-left 3vw
+    margin-right 3vw
     display grid
-    grid-template-columns 6fr 2fr
-    gap 1rem
-    h1
-        grid-column 1/2
-        font-size 3rem
-        font-weight 400  
-    font-size-cont
-        grid-column 1/2
-        font-size 3rem
-        font-weight 400
-    .content-cont
+    grid-template-columns repeat(8, 1fr)
+    gap 1rem    
+
+    .filter-searchbar
+        margin-top 1em
+        grid-column-start 1
+        grid-column-end 9
+
+    input[type=text]
+        width 100%
+        padding-top 2em
+        padding-bottom 2em
+        background: #fafaee
+        border-bottom 0.05em solid #8E8E8E
+        outline none
+
+    .filter-primary
+        grid-column-start 1
+        grid-column-end 2
+
+    .filter-secondary
+        grid-column-start 2
+        grid-column-end 4
+
+    .filter-tags   
+        grid-column-start 5
+        grid-column-end 9
+
+        .filter-tags-draggable
+            border: 0.05em dotted #8e8e8e
+
+    
+    .filter-block
+        grid-column-start 1
+        grid-column-end 9
+        margin-top 2em
         display grid
-        grid-template-columns 1fr 1fr
-        grid-column 1/2
+        grid-template-columns repeat(4, 1fr)
+        gap 1rem    
+
+        .filter-font-block
+            padding 3em 0em 
+            border 0.05em solid black 
+        
+            .filter-font-block-text
+                text-align center
+
+            .filter-font-tags
+                text-align left
+                display flex
+                align-items center
+                border 0.05em solid black
+
+                img
+                    width auto
+                    height 0.6em
+                    margin-right 0.5em
+                    
+
+    
+
+
 
 aside
     grid-column 2/3
@@ -164,3 +215,8 @@ aside
         display block
         &:hover
             background-color #f1f1f1
+
+
+css{
+
+}

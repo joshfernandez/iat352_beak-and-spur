@@ -17,7 +17,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/font.css">
-    <link rel="stylesheet" href="css/filter.css">
+    <link rel="stylesheet" href="css/main.css">
 
     <link href="css/shared_elements.css" media="screen" rel="stylesheet" type="text/css" />
 
