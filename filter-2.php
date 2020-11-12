@@ -21,12 +21,15 @@
 </head>
 
 <body>
-    <nav>
-        <p></p>
-        <img class="margin-top-lv4 margin-right-lv8" src="../assets/img/x.png" alt="hi">
+    <nav class="explore-nav">
+        <div class="flex">
+            <h5>Home</h5>
+            <h5 class="margin-left-lv3">Search for Typefaces</h5>
+        </div>
+        <img src="../assets/img/designer-img.png" alt="designer-img">
     </nav>
 
-    <main>
+    <main class="margin-top-lv8">
         <!-- SEARCH BAR -->
         <form class="filter-searchbar" autocomplete="off">
             <input type="text" id="font-name" name="font-name" placeholder="Find fonts by name, type, year">
@@ -34,7 +37,7 @@
 
         <!-- PRIMARY FILTER -->
         <form class="filter-primary">
-            <h5>Primary Filters</h5>
+            <h5 class="margin-bottom-lv1">Primary Filters</h5>
             <input type="checkbox" id="serif" name="serif">
             <label> Serif</label><br>
             <input type="checkbox" id="sans-serif" name="sans-serif">
@@ -42,7 +45,7 @@
         </form>
 
         <form class="filter-secondary">
-            <h5>Secondary Filters</h5>
+            <h5 class="margin-bottom-lv1">Secondary Filters</h5>
             <input type="checkbox" id="glyphic-serif" name="glyphic-serifs">
             <label>Glyphic Serifs</label><br>
             <input type="checkbox" id="slab-serif" name="slab-serif">
@@ -54,62 +57,150 @@
         </form>
 
         <div class="filter-tags">
-            <h5>Filter by Tags</h5>
+            <h5 class="margin-bottom-lv1">Filter by Tags</h5>
             <div class="filter-tags-draggable">
-                <br><br><br><br>
+                <br><br><br><br><br>
             </div>
         </div>
 
 
-        <div class="filter-block">
+        <div class="filter-container">
+
             <article class="filter-font-block">
-                <div class="filter-font-block-text">
-                    <p>4 STYLES</p>
-                    <h3>League Gothic</h3>
-                    <h6>Designed by Tyler Finck</h6>
+
+                <div class="filter-font-bookmark">
+                    <img src="../assets/img/star-filled.png" alt="star">
                 </div>
 
-                <div class="filter-font-tags">
-                    <img src="../assets/img/tag-lines.png" alt="no tag lines">
-                    <h6>Serif</h6>
-                </div>
-            </article>
-            <article class="filter-font-block">
                 <div class="filter-font-block-text">
-                    <p>4 STYLES</p>
-                    <h3>League Gothic</h3>
-                    <h6>Designed by Tyler Finck</h6>
+                    <h6 class="h7">4 STYLES</h6>
+                    <h1 style="font-family: LeagueGothic;">League Gothic</h1>
+                    <h6 class="h7">Designed by <span> Tyler Finck </span></h6>
                 </div>
 
-                <div class="filter-font-tags">
-                    <img src="../assets/img/tag-lines.png" alt="no tag lines">
-                    <h6>Serif</h6>
-                </div>
-            </article>
-            <article class="filter-font-block">
-                <div class="filter-font-block-text">
-                    <p>4 STYLES</p>
-                    <h3>League Gothic</h3>
-                    <h6>Designed by Tyler Finck</h6>
+                <div class="filter-font-tags-container">
+
+                    <div class="filter-font-tags">
+                        <img src="../assets/img/tag-lines.png" alt="no tag lines">
+                        <h6>Serif</h6>
+                    </div>
+
+                    <div class="filter-font-tags">
+                        <img src="../assets/img/tag-lines.png" alt="no tag lines">
+                        <h6>Glyph Serif</h6>
+                    </div>
                 </div>
 
-                <div class="filter-font-tags">
-                    <img src="../assets/img/tag-lines.png" alt="no tag lines">
-                    <h6>Serif</h6>
-                </div>
             </article>
+
             <article class="filter-font-block">
-                <div class="filter-font-block-text">
-                    <p>4 STYLES</p>
-                    <h3>League Gothic</h3>
-                    <h6>Designed by Tyler Finck</h6>
+
+                <div class="filter-font-bookmark">
+                    <img src="../assets/img/star-filled.png" alt="star">
                 </div>
 
-                <div class="filter-font-tags">
-                    <img src="../assets/img/tag-lines.png" alt="no tag lines">
-                    <h6>Serif</h6>
+                <div class="filter-font-block-text">
+                    <h6 class="h7">4 STYLES</h6>
+                    <h1 style="font-family: LeagueGothic;">League Gothic</h1>
+                    <h6 class="h7">Designed by <span> Tyler Finck </span></h6>
                 </div>
+
+                <div class="filter-font-tags-container">
+
+                    <div class="filter-font-tags">
+                        <img src="../assets/img/tag-lines.png" alt="no tag lines">
+                        <h6>Serif</h6>
+                    </div>
+
+                    <div class="filter-font-tags">
+                        <img src="../assets/img/tag-lines.png" alt="no tag lines">
+                        <h6>Glyph Serif</h6>
+                    </div>
+                </div>
+
             </article>
+
+            <article class="filter-font-block">
+
+                <div class="filter-font-bookmark">
+                    <img src="../assets/img/star-filled.png" alt="star">
+                </div>
+
+                <div class="filter-font-block-text">
+                    <h6 class="h7">4 STYLES</h6>
+                    <h1 style="font-family: LeagueGothic;">League Gothic</h1>
+                    <h6 class="h7">Designed by <span> Tyler Finck </span></h6>
+                </div>
+
+                <div class="filter-font-tags-container">
+
+                    <div class="filter-font-tags">
+                        <img src="../assets/img/tag-lines.png" alt="no tag lines">
+                        <h6>Serif</h6>
+                    </div>
+
+                    <div class="filter-font-tags">
+                        <img src="../assets/img/tag-lines.png" alt="no tag lines">
+                        <h6>Glyph Serif</h6>
+                    </div>
+                </div>
+
+            </article>
+
+            <article class="filter-font-block">
+
+                <div class="filter-font-bookmark">
+                    <img src="../assets/img/star-filled.png" alt="star">
+                </div>
+
+                <div class="filter-font-block-text">
+                    <h6 class="h7">4 STYLES</h6>
+                    <h1 style="font-family: LeagueGothic;">League Gothic</h1>
+                    <h6 class="h7">Designed by <span> Tyler Finck </span></h6>
+                </div>
+
+                <div class="filter-font-tags-container">
+
+                    <div class="filter-font-tags">
+                        <img src="../assets/img/tag-lines.png" alt="no tag lines">
+                        <h6>Serif</h6>
+                    </div>
+
+                    <div class="filter-font-tags">
+                        <img src="../assets/img/tag-lines.png" alt="no tag lines">
+                        <h6>Glyph Serif</h6>
+                    </div>
+                </div>
+
+            </article>
+
+            <article class="filter-font-block">
+
+                <div class="filter-font-bookmark">
+                    <img src="../assets/img/star-filled.png" alt="star">
+                </div>
+
+                <div class="filter-font-block-text">
+                    <h6 class="h7">4 STYLES</h6>
+                    <h1 style="font-family: LeagueGothic;">League Gothic</h1>
+                    <h6 class="h7">Designed by <span> Tyler Finck </span></h6>
+                </div>
+
+                <div class="filter-font-tags-container">
+
+                    <div class="filter-font-tags">
+                        <img src="../assets/img/tag-lines.png" alt="no tag lines">
+                        <h6>Serif</h6>
+                    </div>
+
+                    <div class="filter-font-tags">
+                        <img src="../assets/img/tag-lines.png" alt="no tag lines">
+                        <h6>Glyph Serif</h6>
+                    </div>
+                </div>
+
+            </article>
+
         </div>
 
     </main>

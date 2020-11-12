@@ -8,9 +8,10 @@ header
 
 nav
     width 100%
+    padding 1.5em 1em
     display flex
-    margin-top 2em
     justify-content space-between
+    align-items center
     background #FAFAEE
 
 main
@@ -18,20 +19,45 @@ main
     margin-right 3vw
     display grid
     grid-template-columns repeat(8, 1fr)
-    gap 1rem    
+    gap 1rem
 
     .filter-searchbar
         margin-top 1em
         grid-column-start 1
         grid-column-end 9
+        
+        input::-webkit-input-placeholder 
+            font-family Barlow
+            font-weight 400
+            color lightgrey
+            font-size 1.1em
+
 
     input[type=text]
         width 100%
-        padding-top 2em
-        padding-bottom 2em
+        padding-top 1.5em
+        padding-bottom 1.5em
         background: #fafaee
         border-bottom 0.05em solid #8E8E8E
         outline none
+        font-family Barlow
+        font-weight 400
+        color black
+        font-size 1.3em
+        
+
+    form
+        input[type=checkbox]
+            margin-bottom 0.7em 
+            border-radius 1em 
+
+        
+
+        label  
+            font-family Barlow
+            font-weight 300  
+            font-size 0.8em
+            color grey
 
     .filter-primary
         grid-column-start 1
@@ -49,31 +75,58 @@ main
             border: 0.05em dotted #8e8e8e
 
     
-    .filter-block
+    .filter-container
         grid-column-start 1
         grid-column-end 9
         margin-top 2em
         display grid
         grid-template-columns repeat(4, 1fr)
-        gap 1rem    
+        gap 1rem   
+
+        .filter-font-bookmark
+            text-align right 
+            margin-top 1em
+            margin-right 1em
 
         .filter-font-block
-            padding 3em 0em 
-            border 0.05em solid black 
+            // padding 3em 0em 
+            border 0.05em solid grey 
+            border-radius 0.4em
         
             .filter-font-block-text
                 text-align center
+                margin 2.5em 0em
 
-            .filter-font-tags
-                text-align left
+                h1
+                    margin-top 0.3em
+                    margin-bottom 0.3em
+
+            .filter-font-tags-container
                 display flex
-                align-items center
-                border 0.05em solid black
+                justify-content center
+                margin-bottom 2em
 
-                img
-                    width auto
-                    height 0.6em
-                    margin-right 0.5em
+                .filter-font-tags
+                    text-align left
+                    display flex
+                    align-items center
+                    padding 0.8em
+                    border 0.05em solid grey
+                    border-radius 0.2em
+                    margin-right 0.3em
+
+                    img
+                        width auto
+                        height 0.6em
+                        margin-right 0.5em
+
+                    h6 
+                        font-family Fanwood
+                        font-style italic
+                        
+
+        span
+            font-style italic
                     
 // // temp styling for the explore page
 // nav

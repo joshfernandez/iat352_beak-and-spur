@@ -67,7 +67,7 @@
                     </div>
 
                     <button>Italicize</button>
-                    <button>View Font Family</button>
+                    <button>Download Font Family</button>
                 </div>
             </footer>
         </div>
