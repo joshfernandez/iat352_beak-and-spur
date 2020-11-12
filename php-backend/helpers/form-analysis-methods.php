@@ -32,4 +32,34 @@ function initializeField($form_field) {
 
 }
 
+function validateUsername($actual_username) {
+
+  // Source: https://www.jotform.com/blog/php-regular-expressions/
+  $username_pattern = "/^[\w\-\.]+$/i";
+  if (!preg_match($username_pattern, $actual_username)) {
+    echo "Your username is invalid. Please only include letters, numbers, underscores, dashes, or periods.";
+    echo
+    "<p>
+        <a href=\"register.php\">Return to the register page</a>
+    </p>";
+    die();
+  }
+
+}
+
+function validateEmail($actual_email) {
+
+  // Source: https://codingcompiler.com/regular-expressions-web-developers/
+  $email_pattern = "/^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i";
+  if (!preg_match($email_pattern, $actual_email)) {
+    echo "Your email address is invalid. Please provide a valid email address.";
+    echo
+    "<p>
+        <a href=\"register.php\">Return to the register page</a>
+    </p>";
+    die();
+  }
+
+}
+
 ?>

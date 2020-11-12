@@ -26,7 +26,7 @@ if(isFormSubmitted($_POST["login"])) {
   // 1A & 1B - Define and validate form responses for the registered member.
   // Already handled by login-complete.php
 
-  // 2 - Open a connection to the josh_fenandez database.
+  // 2 - Open a connection to the josh_fernandez database.
   $db_connection = openDBConnection();
 
   // 3A - Define query attributes. (Goal: Retrieve the user's password hash value.)

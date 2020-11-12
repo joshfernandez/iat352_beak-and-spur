@@ -26,7 +26,7 @@ if(isFormSubmitted($_POST["register"])) {
   // 1A & 1B - Define and validate form responses for the registered member.
   // Already handled by register-complete.php
 
-  // 2 - Open a connection to the josh_fenandez database.
+  // 2 - Open a connection to the josh_fernandez database.
   $db_connection = openDBConnection();
 
   // 3A - Define query attributes.
