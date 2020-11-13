@@ -31,7 +31,7 @@
           if(!($login_username != "" && $login_password != "")) {
             die("The form has not yet been completed. Please fill it out completely.");
           }
-
+          
 
           // 2 - Analyze form fields and compare with the members table.
           include "php-backend/process-login-form.php";

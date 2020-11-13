@@ -15,6 +15,14 @@
 </head>
 
 <body>
+    <?php
+    // 0 - Import helper methods and procedures
+    include "php-backend/helpers/form-analysis-methods.php ";
+
+    // load font-family page helper
+    include "php-backend/font-family-page-query.php";
+    
+    ?>
     <nav class="explore-nav">
         <div class="flex">
             <h5>Home</h5>
@@ -27,7 +35,13 @@
         <div id="title-container">
             <h6 class="margin-bottom-lv2">December 14th, 2018</h6>
             <div class="font-family-button-container">
-                <h3 class="margin-bottom-lv1">IBM Plex Sans</h3>
+                <h3 class="margin-bottom-lv1">
+                    <?php 
+                    echo "$fontname";
+                ?>
+                    IBM Plex Sans
+
+                </h3>
                 <div>
                     <button class="font-family-fork-button">FORK &rarr;</button>
                     <button class="font-family-download-button">DOWNLOAD &rarr;</button>
