@@ -31,6 +31,17 @@ function writeSelectQuery($db_connection, $list_of_attributes, $list_of_tables, 
 
 }
 
+function writeUpdateQuery($db_connection, $table_name, $list_of_updates, $list_of_conditions) {
+
+  $update_query = "UPDATE " . $table_name .
+                  " SET " . $list_of_updates .
+                  " WHERE " . $list_of_conditions . ";";
+  echo $update_query;  // For debugging purposes
+
+  return performQuery($db_connection, $update_query);
+
+}
+
 function performQuery($db_connection, $query) {
 
   $result = mysqli_query($db_connection, $query);

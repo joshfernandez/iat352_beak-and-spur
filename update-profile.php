@@ -17,17 +17,16 @@
 
         <h1>Update your profile in Beak and Spur</h1>
 
-        <!-- <form action="update-profile-complete.php" method="post"> -->
-        <form>
+        <form action="update-profile-complete.php" method="post">
 
             <p>Display name
                 <input type="text" name="display-name" size="20" maxlength="30" />
             </p>
 
             <!-- Source: https://www.w3schools.com/php/php_file_upload.asp -->
-            <p>Profile image
+            <!-- <p>Profile image
                 <input type="file" name="profile-image" />
-            </p>
+            </p> -->
 
             <p>A short description of you
                 <textarea name="member-description" cols="100" rows="4">How would you describe yourself?</textarea>
