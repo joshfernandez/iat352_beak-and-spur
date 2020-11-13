@@ -21,6 +21,12 @@
 </head>
 
 <body>
+
+    <?php
+    include('php-backend/helpers/set-header.php');
+    ?>
+
+
     <nav>
         <a href="filter.php">
             <img class="logo-size" src="assets/img/logo.png" alt="logo!">

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,8 +8,7 @@
     <!-- details regarding the file -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description"
-        content="Explore fonts on Beak & Spur: a community for exploring, sharing and remixing open source typography">
+    <meta name="description" content="Explore fonts on Beak & Spur: a community for exploring, sharing and remixing open source typography">
     <meta name="keywords" content="HTML,CSS,JavaScript,PHP">
 
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -21,13 +22,10 @@
 </head>
 
 <body>
-    <nav class="explore-nav">
-        <div class="flex">
-            <h5>Home</h5>
-            <h5 class="margin-left-lv3">Search for Typefaces</h5>
-        </div>
-        <img src="../assets/img/designer-img.png" alt="designer-img">
-    </nav>
+
+    <?php
+    include('php-backend/helpers/set-header.php');
+    ?>
 
     <main>
         <div class="explore-slideshow">
