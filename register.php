@@ -1,3 +1,6 @@
+<?php require_once('php-backend/initialize.php'); ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,36 +10,39 @@
 
     <title>Registration page</title>
 
-    <link rel="stylesheet" href="css/styles-login-and-reg-pages.css">
+    <link rel="stylesheet" href="css/main.css">
 
 </head>
 
-<body>
+<body class="register-page">
 
-    <div class="register-page">
+    <?php
+    include "php-backend/set-header.php"
+    ?>
+
+    <main>
 
         <h1>Register for Beak and Spur</h1>
 
         <form action="register-complete.php" method="post">
 
             <p>Username
-                <input type="text" name="username" size="20" maxlength="30" />
             </p>
+                <input type="text" name="username" size="20" maxlength="30" />
 
             <p>Email address
-                <input type="text" name="email-address" size="50" maxlength="30" />
             </p>
+                <input type="text" name="email-address" size="50" maxlength="30" />
 
             <p>Password
-                <input type="password" name="password" size="20" maxlength="20" />
             </p>
+                <input type="password" name="password" size="20" maxlength="20" />
 
             <input type="submit" name="register" value="Register" />
 
         </form>
 
-    </div>
-
+    </main>
 </body>
 
 </html>

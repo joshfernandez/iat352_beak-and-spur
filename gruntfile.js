@@ -66,6 +66,11 @@ module.exports = function (grunt) {
                 files: [
                     { src: 'assets/**', dest: 'build/' }
                 ]
+            },
+            backend: {
+                files: [
+                    { src: 'php-backend/**', dest: 'build/' }
+                ]
             }
             // ,
             // images: {
@@ -101,15 +106,18 @@ module.exports = function (grunt) {
             php: {
                 files: [
                     '*.php',
+                    'php-backend/'
                 ],
 
                 tasks: ['copy']
             },
             other: {
                 files: [
-                    'assets/'
+                    'assets/',
+                    'php-backend/**'
                 ],
                 tasks: [
+                    // 'clean',
                     'copy'
                 ]
             },
