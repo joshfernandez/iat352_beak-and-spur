@@ -18,17 +18,18 @@
   include "helpers/query-append-methods.php";
   include "helpers/query-perform-methods.php";
 
-  // 1A & 1B - Define and validate form responses for the registered member.
-  // Already handled by login-complete.php
-
   // 2 - Open a connection to the josh_fenandez database.
   $db_connection = openDBConnection();
 
-  // 3A - Write Query
-  $fontname = $connection -> query("SELECT family_name FROM font_families");
+  // 3A - Write Query and store in variables
 
-  if(!$fontname){
-  echo "<p> Connection Succeeded! </p>";  
-}
+  // PRINT VALUES DYAMICALLY BASED ON WHAT THE USER CLICKS
+//   $fontBlockid = return id from font block
+
+  $fontname = $db_connection -> query("SELECT family_name FROM font_families WHERE family_id = '1' ");
+
+  //right now i'm echoing the query.
+  // i need to retrieve the results from the query..
+
 
 ?>

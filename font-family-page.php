@@ -17,12 +17,14 @@
 <body class="font-family-page">
 
     <?php
+    // header varies between member and visitor
     include "php-backend/set-header.php";
+    
     // 0 - Import helper methods and procedures
     include "php-backend/helpers/form-analysis-methods.php";
 
     // load font-family page helper
-    // include "php-backend/font-family-page-query.php";
+    include "php-backend/font-family-page-query.php";
     
     ?>
 
@@ -31,8 +33,13 @@
             <h6 class="margin-bottom-lv2">December 14th, 2018</h6>
             <div class="font-family-button-container">
                 <h3 class="margin-bottom-lv1">
-                    IBM Plex Sans
-
+                    <?php
+                    
+                     while($family_name = mysqli_fetch_assoc($fontname)){
+                        $fontName = $family_name['family_name'];
+                        echo $fontName;
+                    }
+                    ?>
                 </h3>
                 <div>
                     <button class="font-family-download-button">DOWNLOAD &rarr;</button>
