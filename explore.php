@@ -6,7 +6,8 @@
     <!-- details regarding the file -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Explore fonts on Beak & Spur: a community for exploring, sharing and remixing open source typography">
+    <meta name="description"
+        content="Explore fonts on Beak & Spur: a community for exploring, sharing and remixing open source typography">
     <meta name="keywords" content="HTML,CSS,JavaScript,PHP">
 
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -72,6 +73,34 @@
             </footer>
 
         </div>
+
+        <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("explore-slide");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+        </script>
     </main>
 
 </body>
