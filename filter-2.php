@@ -115,7 +115,6 @@
             </article>
 
             <article class="filter-font-block">
-
                 <div class="filter-font-bookmark">
                     <img src="../assets/img/star-filled.png" alt="star">
                 </div>
@@ -142,7 +141,6 @@
             </article>
 
             <article class="filter-font-block">
-
                 <div class="filter-font-bookmark">
                     <img src="../assets/img/star-filled.png" alt="star">
                 </div>
