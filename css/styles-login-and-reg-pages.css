@@ -32,12 +32,14 @@ a {
 /* COMPLETION PAGES */
 
 .register-complete-page h1,
-.login-complete-page h1 {
+.login-complete-page h1,
+.update-profile-complete-page h1 {
   margin: 0 0 2rem 0;
 }
 
 .register-complete-page p,
-.login-complete-page p {
+.login-complete-page p,
+.update-profile-complete-page p {
   font-size: 1.25rem;
   margin: 1.5rem 0;
 }
@@ -48,7 +50,9 @@ a {
 .register-page,
 .register-complete-page,
 .login-page,
-.login-complete-page {
+.login-complete-page,
+.update-profile-page,
+.update-profile-complete-page {
   width: 35%;
 
   /* Sources:
