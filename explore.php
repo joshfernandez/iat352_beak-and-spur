@@ -55,18 +55,22 @@
             </div>
 
             <footer>
-                <div class="flex">
+                <div class="explore-nav-container">
                     <div class="explore-slidecontainer">
+                        <label class="explore-slidecontainer-style">Font-Size</label>
                         <input type="range" min="1" max="100" value="50" id="myRange">
                     </div>
                     <div class="explore-slidecontainer">
+                        <label>Font-Weight</label>
                         <input type="range" min="1" max="100" value="50" id="myRange">
                     </div>
 
                     <button>Italicize</button>
-                    <button>Download Font Family</button>
                 </div>
+
+                <button>View Font Family</button>
             </footer>
+
         </div>
     </main>
 
