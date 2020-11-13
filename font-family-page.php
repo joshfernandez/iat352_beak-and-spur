@@ -13,19 +13,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
-<body class="font-family">
+<body class="font-family-page">
 
     <?php
-    include "php-backend/set-header.php"
-    ?>
-
-    
-    <?php
+    include "php-backend/set-header.php";
     // 0 - Import helper methods and procedures
-    include "php-backend/helpers/form-analysis-methods.php ";
+    include "php-backend/helpers/form-analysis-methods.php";
 
     // load font-family page helper
-    include "php-backend/font-family-page-query.php";
+    // include "php-backend/font-family-page-query.php";
     
     ?>
 
@@ -35,14 +31,10 @@
             <h6 class="margin-bottom-lv2">December 14th, 2018</h6>
             <div class="font-family-button-container">
                 <h3 class="margin-bottom-lv1">
-                    <?php 
-                    echo "$fontname";
-                ?>
                     IBM Plex Sans
 
                 </h3>
                 <div>
-                    <button class="font-family-fork-button">FORK &rarr;</button>
                     <button class="font-family-download-button">DOWNLOAD &rarr;</button>
                 </div>
             </div>
@@ -87,6 +79,32 @@
                         and even better together. Use the Sans as a contemporary compadre, the Serif for editorial
                         storytelling, or the Mono to show code snippets. The unexpectedly expressive nature of the
                         italics give you even more options for your designs.</p>
+=========
+    <main>
+        <div class="container">
+            <div id="title-container">
+                <h6 class="margin-bottom-lv2">December 14th, 2018</h6>
+                <h3 class="margin-bottom-lv1">IBM Plex Sans</h3>
+            </div>
+
+            <div id="main-container">
+                <div class="tab">
+                    <div>
+                        <button>
+                            <h5>General</h5>
+                        </button>
+                        <button>
+                            <h5>Version History</h5>
+                        </button>
+                        <button>
+                            <h5>Branches</h5>
+                        </button>
+                        <button>
+                            <h5>Examples of Work</h5>
+                        </button>
+                    </div>
+                    <h6>Version 3.1</h6>
+>>>>>>>>> Temporary merge branch 2
                 </div>
 
                 <div class="font">
@@ -125,14 +143,7 @@
                     </div>
                     <div>
 
-                    </div>
-                </div>
-            </div>
-
-            <div id="attributes-container">
-                <div class="designers-row margin-bottom-lv8">
-                    <h4>Designers</h4>
-
+<<<<<<<<< Temporary merge branch 1
                 <div class="border-top description-row">
                     <div class="margin-top-lv4 flex description-row ">
                         <img class="contributor-img-size" src="assets/img/designer_img.png" alt="no-designer">
@@ -141,6 +152,8 @@
                             <h6>Dynamic Date</h6>
                         </div>
                     </div>
+                </div>
+            </div>
 
                 <div class="flex description-row margin-top-lv4">
                     <img src="assets/img/link.png" alt="no-designer">
@@ -152,23 +165,7 @@
                     <h6 class="margin-left-lv2">Dynamic Licence</h6>
                 </div>
 
-                <div class="tags-row margin-bottom-lv8">
-                    <h4>Tags</h4>
-                    <div class="border-top margin-top-lv1">
-                        <div class="margin-top-lv2">
-                            <button class="tag-styling">
-                                Sans-Serif
-                            </button>
-                            <button class="tag-styling">
-                                IBM
-                            </button>
-                            <button class="tag-styling">
-                                Grotesque
-                            </button>
-                            <button class="tag-styling">
-                                Bold Monday
-                            </button>
-                        </div>
+            </div>
 
             <div class="tags-row margin-bottom-lv8">
                 <h4>Tags</h4>
@@ -186,8 +183,18 @@
                         </div>
 
                     </div>
-                </div>
 
+                <div class="contributors-row">
+                    <h4>Contributors</h4>
+                    <div class="border-top margin-top-lv1">
+                        <div class="margin-top-lv2">
+                            <img class="contributor-img-size" src="assets/img/designer_img.png" alt="no-designer">
+                            <img class="contributor-img-size" src="assets/img/designer_img.png" alt="no-designer">
+                            <img class="contributor-img-size" src="assets/img/designer_img.png" alt="no-designer">
+                        </div>
+                    </div>
+                </div>
+<<<<<<<<< Temporary merge branch 1
             </div>
         </div>
     </div>
