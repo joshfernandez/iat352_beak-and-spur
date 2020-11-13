@@ -55,24 +55,39 @@ module.exports = function (grunt) {
             }
         },
         copy: {
-            html: {
+            php: {
                 files: [
                     { src: '*.php', dest: 'build/' }
                 ]
 
             }
             ,
+            backend: {
+                files: [
+                    { src: 'php-backend/**', dest: 'build/' }
+                ]
+            },
             assets: {
                 files: [
                     { src: 'assets/**', dest: 'build/' }
                 ]
+            },
+            userAssets: {
+                files: [
+                    { src: 'user-assets/**', dest: 'build/' }
+                ]
+            },
+            fonts: {
+                files: [
+                    { src: 'site-fonts/**', dest: 'build/' }
+                ]
             }
-            // ,
-            // images: {
-            //     files: [
-            //         { src: 'img/**', dest: 'build/imgs/' }
-            //     ]
-            // }
+            ,
+            imgs: {
+                files: [
+                    { src: 'imgs/**', dest: 'build/imgs/' }
+                ]
+            }
             // ,
             // fonts: {
             //     files: [
@@ -101,16 +116,27 @@ module.exports = function (grunt) {
             php: {
                 files: [
                     '*.php',
+                    'php-backend/'
                 ],
 
-                tasks: ['copy:html']
+                tasks: [
+                    'copy:php',
+                    'copy:backend'
+                ]
             },
-            other: {
+            assets: {
                 files: [
-                    'assets/'
+                    'assets/',
+                    'user-assets/',
+                    'site-fonts/',
+                    'imgs/',
                 ],
                 tasks: [
-                    'copy:assets'
+                    // 'clean',
+                    'copy:imgs',
+                    'copy:fonts',
+                    "copy:userAssets",
+                    "copy:assets"
                 ]
             },
 
