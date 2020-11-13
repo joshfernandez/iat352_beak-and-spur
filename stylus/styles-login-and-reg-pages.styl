@@ -39,17 +39,33 @@ register
 .register-complete-page p,
 .login-complete-page h1 {
 //   font-size: 1.25rem;
-//   margin: 1.5rem 0;
+//   margin: 1.5rem 0;    
 }
 
 
 /* REGISTER AND LOGIN PAGES */
 
-// .register-page,
-// .register-complete-page,
-// .login-page,
-// .login-complete-page 
+.register-complete-page,
+.login-complete-page 
 
+.login-page, .register-page
+    main 
+        padding-top: 5rem
+        h1
+            grid-column: 2/-2
+            text-align: center
+            grid-row: 1/2
+
+        form 
+            grid-column: 3/-3
+            grid-row: 2/3
+            justify-self: center
+        
+            input[type=submit]
+                display: block
+                margin 1rem auto .5rem auto
+            h4
+                padding: 1em
 
 form {
   border: 1px solid #A2A2A2;
@@ -58,13 +74,16 @@ form {
 }
 
 form p {
-  margin: 0 0 2rem 0;
-  font-weight: bold;  /* Ensure that form input is not bolded. */
+  margin: .5rem 0 0rem 0;
+  font-weight: 300;
+  font-size: 1.2rem
+    /* Ensure that form input is not bolded. */
 }
 
 form input {
   border-radius: 0.25rem;
   font-family: Helvetica, sans-serif;
+  margin-bottom: .5rem
 }
 
 form input[type=text],
@@ -78,21 +97,20 @@ form input[type=password] {
 }
 
 form input[type=submit] {
-  border: 1px solid #6CB881;
-  padding: 1.5rem;
+  border: 1px solid #FF4F42;
+  padding: .75rem 1.5rem;
   margin: 1.5rem 0 0 0;
 
   font-size: 1.5rem;
   font-weight: bold;
   color: #FFFFFF;
-  background-color: #6CB881;
+  background-color: #FF4F42;
   transition: background-color 0.5s ease-out;
 }
 
 form input[type=submit]:active,
 form input[type=submit]:hover,
 form input[type=submit]:focus {
-  background-color: #8EC99E;
-  border-color: #8EC99E;
-  transition: background-color 0.5s ease-out;
+  background-color: #FF4F42;
+  border-color: #FF4F42 0.5s ease-out;
 }

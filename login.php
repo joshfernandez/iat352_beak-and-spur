@@ -1,5 +1,5 @@
 <?php require_once('php-backend/initialize.php'); ?>
- 
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Login page</title>
-   
+
 
     <link rel="stylesheet" href="css/main.css">
 
@@ -19,7 +19,7 @@
 <body class="login-page">
 
     <?php
-    include "php-backend/helpers/set-header.php"
+    include "php-backend/set-header.php"
     ?>
 
 
@@ -30,13 +30,13 @@
 
         <form action="login-complete.php" method="post">
 
-            <p>Username
-                <input type="text" name="username" size="20" maxlength="30" />
+            <p> Username
             </p>
+            <input type="text" name="username" size="20" maxlength="30" />
 
             <p>Password
-                <input type="password" name="password" size="20" maxlength="20" />
             </p>
+                <input type="password" name="password" size="20" maxlength="20" />
 
             <h4>No Account? <a href="register.php">Sign Up!</a></h4>
 

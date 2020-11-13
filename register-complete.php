@@ -12,9 +12,12 @@
 
 <body class="register-complete-page">
 
+
     <?php
-    include "php-backend/helpers/set-header.php"  
+    include "php-backend/set-header.php"
     ?>
+
+
 
 
     <main>
@@ -38,10 +41,10 @@
                 die("The form has not yet been completed. Please fill it out completely.");
             }
 
-          // 1C - Convert the password to a hash value.
-          // This will be the password stored in the members table.
-          // Source: https://www.php.net/manual/en/function.password-hash.php
-          $member_pwhash = password_hash($member_password, PASSWORD_DEFAULT);
+            // 1C - Convert the password to a hash value.
+            // This will be the password stored in the members table.
+            // Source: https://www.php.net/manual/en/function.password-hash.php
+            $member_pwhash = password_hash($member_password, PASSWORD_DEFAULT);
 
             // 2 - Write to the registered members file.
             $file = "registered-members.txt";

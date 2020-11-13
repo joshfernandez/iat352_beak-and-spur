@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
     <title>Login completed page</title>
 
     <link rel="stylesheet" href="css/main.css">
@@ -12,9 +13,10 @@
 
 <body class="login-complete-page">
 
-    <?php
-    include PRIVATE_PATH . "/helpers/set-header.php"
-    ?>
+    <!-- <?php
+    include "php-backend/set-header.php"
+    ?> -->
+
 
 
     <main>
@@ -46,40 +48,41 @@
 
             if ($num_result > 0) {
 
-            // Compare the hash value and password.
-            // Source: Helmine's basicAuth2db-2.php
-            $result_row = mysqli_fetch_row($result);
-            $actual_hash = $result_row[0];
+                // Compare the hash value and password.
+                // Source: Helmine's basicAuth2db-2.php
+                $result_row = mysqli_fetch_row($result);
+                $actual_hash = $result_row[0];
 
-            // Source: https://www.php.net/manual/en/function.password-verify.php
-            if (password_verify($login_password, $actual_hash)) {
+                // Source: https://www.php.net/manual/en/function.password-verify.php
+                if (password_verify($login_password, $actual_hash)) {
 
-              // 4A - Prompt the new member.
-              echo "<p>Welcome back, " . $login_username . "!</p>";
-              echo "<p>Hope you enjoy exploring Beak and Spur!</p>";
-              echo
-              "<p>
+                    // 4A - Prompt the new member.
+                    echo "<p>Welcome back, " . $login_username . "!</p>";
+                    echo "<p>Hope you enjoy exploring Beak and Spur!</p>";
+                    echo
+                        "<p>
                   <a href=\"filter.php\">Return to the home page</a>
               </p>";
 
-            } else {
+                    $_SESSION['logged_in'] = $login_username;
+                    // $testinglog = $_SESSION["logged_in"];
+                    // echo "<br> <h1> $testinglog</h1>";
 
-              // 4B - Redirect a user who entered the wrong password.
-              echo "<p>You have entered your password incorrectly. Please try again.</p>";
-              echo
-              "<p>
+                } else {
+
+                    // 4B - Redirect a user who entered the wrong password.
+                    echo "<p>You have entered your password incorrectly. Please try again.</p>";
+                    echo
+                        "<p>
                   <a href=\"login.php\">Return to the login page</a>
               </p>";
+                }
+            } else {
 
-            }
-
-          }
-          else {
-
-            // 4C - Redirect an invalid visitor.
-            echo "<p>You have entered either the incorrect username or password. Please try again.</p>";
-            echo
-            "<p>
+                // 4C - Redirect an invalid visitor.
+                echo "<p>You have entered either the incorrect username or password. Please try again.</p>";
+                echo
+                    "<p>
                 <a href=\"login.php\">Return to the login page</a>
             </p>";
             }

@@ -18,8 +18,9 @@
 
 
     <?php
-    include "php-backend/helpers/set-header.php"
+    include "php-backend/set-header.php"
     ?>
+
 
     <main>
         <div class="container">

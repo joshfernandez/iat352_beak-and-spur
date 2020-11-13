@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,13 +20,11 @@
 </head>
 
 <body class="explore">
-    <?php
-    include "php-backend/helpers/set-header.php"
-    ?>
 
     <?php
-    include('php-backend/helpers/set-header.php');
+    include "php-backend/set-header.php"
     ?>
+
 
     <main>
         <div class="explore-slideshow">
