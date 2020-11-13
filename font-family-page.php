@@ -92,11 +92,18 @@
 
         <div id="attributes-container">
             <div class="designers-row margin-bottom-lv8">
-                <h4>Designers</h4>
+                <h4 class="margin-bottom-lv1">Font Attributes</h4>
 
                 <div class="border-top description-row">
                     <div class="margin-top-lv4 flex description-row ">
-                        <img class="contributor-img-size" src="assets/img/designer_img.png" alt="no-designer">
+                        <!-- <img class="contributor-img-size" src="php-backend/helpers/showimage.php" alt="no"> -->
+                        <!-- <img class="contributor-img-size" src="assets/img/designer_img.png" alt="no-designer"> -->
+                        <?php
+                            while($imagerow = mysqli_fetch_assoc($designerimg)){
+                                $imageData = $imagerow["profile_img"];
+                                echo '<img src="data:image/jpeg;base64,'.base64_encode($imagerow['profile_img']).'" alt="no/>';
+                            }
+                        ?>
                         <div class="margin-left-lv2">
                             <h4>
                                 <?php
@@ -157,11 +164,11 @@
                                 for($x = 0 ; $x < $typeArraySize; $x++){
                                     $typePrint = $typeArray[$x];
                                     echo "<div class='font-family-font-tags'>
-                                    <img src='../assets/img/tag-lines.png' alt='no tag lines'>
-                                    <h6>$typePrint</h6>
+                                        <img src='../assets/img/tag-lines.png' alt='no tag lines'>
+                                        <h6>$typePrint</h6>
                                     </div>";
                                 }
-                           
+                                
                                }                     
                         ?>
                         <!-- <div class="font-family-font-tags">

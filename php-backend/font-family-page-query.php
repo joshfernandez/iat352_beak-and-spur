@@ -24,19 +24,18 @@
   // 3A - Write Query and store in variables
 
   // PRINT VALUES DYAMICALLY BASED ON WHAT THE USER CLICKS
-//   $fontBlockid = return id from font block
+  // $fontBlockid = return id from font block
 
-    
+  // queries to access rows in the database    
   $fontname = $db_connection -> query("SELECT family_name FROM font_families WHERE family_id = '1'");
   $fontdesigner = $db_connection -> query("SELECT designer FROM font_families WHERE family_id = '1'");
   $fontlicence = $db_connection -> query("SELECT licence FROM font_families WHERE family_id = '1'");
   $fontlanguages = $db_connection -> query("SELECT languages FROM font_families WHERE family_id = '1'");
   $fonttype = $db_connection -> query("SELECT font_type FROM font_families WHERE family_id = '1'");
-  
-//   $author = $db_connection 
 
-  //right now i'm echoing the query.
-  // i need to retrieve the results from the query..
+  // queries to retrieve blobs 
+  $designerimg = $db_connection -> query("SELECT profile_img FROM members WHERE username = 'eathnma'");
+ 
 
 
 ?>
