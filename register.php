@@ -1,3 +1,6 @@
+<?php require_once('php-backend/initialize.php'); ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,13 +10,25 @@
 
     <title>Registration page</title>
 
-    <link rel="stylesheet" href="css/styles-login-and-reg-pages.css">
+    <link rel="stylesheet" href="css/main.css">
 
 </head>
 
-<body>
+<body class="register-page">
 
-    <div class="register-page">
+    <?php
+    // include PRIVATE_PATH."/helpers/set-header.php";
+    // echo PRIVATE_PATH. "<p> provate</p><br>";
+    // echo PROJECT_PATH."<p> project</p><br>";
+    // echo PUBLIC_PATH. "<p> public</p><br>";   
+    
+    ?>
+
+
+
+    <main>
+
+
 
         <h1>Register for Beak and Spur</h1>
 
@@ -35,8 +50,7 @@
 
         </form>
 
-    </div>
-
+    </main>
 </body>
 
 </html>

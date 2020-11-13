@@ -7,12 +7,17 @@
 
     <title>Login completed page</title>
 
-    <link rel="stylesheet" href="css/styles-login-and-reg-pages.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body>
+<body class="login-complete-page">
 
-    <div class="login-complete-page">
+    <?php
+    include PRIVATE_PATH . "/helpers/set-header.php"
+    ?>
+
+
+    <main>
 
         <h1>Completing login for Beak and Spur...</h1>
 
@@ -21,25 +26,25 @@
         // 0 - Import helper methods and procedures.
         include "php-backend/helpers/form-analysis-methods.php";
 
-        if(isFormSubmitted($_POST["login"])) {
+        if (isFormSubmitted($_POST["login"])) {
 
-          // 1A - Define and validate form responses for the login user.
-          $login_username = initializeField($_POST["username"]);
-          $login_password = initializeField($_POST["password"]);
+            // 1A - Define and validate form responses for the login user.
+            $login_username = initializeField($_POST["username"]);
+            $login_password = initializeField($_POST["password"]);
 
-          // 1B - If any of the fields are empty, don't continue.
-          if(!($login_username != "" && $login_password != "")) {
-            die("The form has not yet been completed. Please fill it out completely.");
-          }
+            // 1B - If any of the fields are empty, don't continue.
+            if (!($login_username != "" && $login_password != "")) {
+                die("The form has not yet been completed. Please fill it out completely.");
+            }
 
 
-          // 2 - Analyze form fields and compare with the members table.
-          include "php-backend/process-login-form.php";
+            // 2 - Analyze form fields and compare with the members table.
+            include "php-backend/process-login-form.php";
 
-          // 4 - Analyze the returned data.
-          $num_result = mysqli_num_rows($result);
+            // 4 - Analyze the returned data.
+            $num_result = mysqli_num_rows($result);
 
-          if($num_result > 0) {
+            if ($num_result > 0) {
 
             // Compare the hash value and password.
             // Source: Helmine's basicAuth2db-2.php
@@ -77,23 +82,21 @@
             "<p>
                 <a href=\"login.php\">Return to the login page</a>
             </p>";
+            }
 
-          }
+            // 5 - Release returned data.
+            mysqli_free_result($result);
 
-          // 5 - Release returned data.
-          mysqli_free_result($result);
-
-          // 6 - Close the database connection.
-          closeDBConnection($db_connection);
-
+            // 6 - Close the database connection.
+            closeDBConnection($db_connection);
         }
 
         ?>
 
 
 
-    </div>
 
+    </main>
 </body>
 
 </html>

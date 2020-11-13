@@ -1,3 +1,6 @@
+<?php require_once('php-backend/initialize.php'); ?>
+ 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,34 +9,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Login page</title>
+   
 
-    <link rel="stylesheet" href="css/styles-login-and-reg-pages.css">
-    <link rel="stylesheet" href="css/filter.css">
-    <link href="css/shared_elements.css" media="screen" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/main.css">
 
 
 </head>
 
-<body>
-    <nav>
-        <a href="filter.php">
-            <img class="logo-size" src="assets/img/logo.png" alt="logo!">
-        </a>
-        <input type="text" placeholder="Search..">
+<body class="login-page">
 
-        <div class="dropdown">
-            <img class="person-icon" src="https://img.icons8.com/material-sharp/64/000000/person-male.png" />
-            <button class="dropbtn">˅</button>
-            <h4></h4>
-            <div class="dropdown-content">
-                <a href="#">Login</a>
-                <a href="#">Preferences</a>
-                <a href="#">Your Fonts</a>
-            </div>
-        </div>
-    </nav>
+    <?php
+    include "php-backend/helpers/set-header.php"
+    ?>
 
-    <div class="login-page">
+
+
+    <main>
 
         <h1>Login to Beak and Spur</h1>
 
@@ -55,7 +46,8 @@
             </a> -->
 
         </form>
-    </div>
+
+    </main>
 
 </body>
 

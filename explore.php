@@ -21,7 +21,10 @@
 
 </head>
 
-<body>
+<body class="explore">
+    <?php
+    include "php-backend/helpers/set-header.php"
+    ?>
 
     <?php
     include('php-backend/helpers/set-header.php');

@@ -19,10 +19,13 @@
 
 </head>
 
-<body>
+<body class="filter">
+
     <?php
-    include('php-backend/helpers/set-header.php');
+    include "php-backend/helpers/set-header.php"    
     ?>
+
+
     <main class="margin-top-lv8">
         <!-- SEARCH BAR -->
         <form class="filter-searchbar" autocomplete="off">
