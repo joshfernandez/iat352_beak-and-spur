@@ -81,15 +81,24 @@ main
         grid-template-columns repeat(4, 1fr)
         gap 1rem   
 
-        .filter-font-bookmark
-            text-align right 
-            margin-top 1em
-            margin-right 1em
-
         .filter-font-block
-            // padding 3em 0em 
             border 0.05em solid grey 
             border-radius 0.4em
+
+            .filter-font-bookmark
+                display flex
+                justify-content space-between
+                align-items center
+                margin-top 1em
+                margin-right 1em
+
+                .filter-font-bookmark-row
+                    display flex
+
+                    input[type=checkbox]
+                        margin-bottom 0em
+                        margin-right 0.5em
+            
         
             .filter-font-block-text
                 text-align center

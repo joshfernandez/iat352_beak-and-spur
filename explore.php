@@ -72,8 +72,8 @@
                 </div>
 
                 <button>View Font Family</button>
-
             </footer>
+
         </div>
     </main>
 
