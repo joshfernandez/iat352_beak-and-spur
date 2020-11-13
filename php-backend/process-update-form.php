@@ -22,6 +22,7 @@ if(isFormSubmitted($_POST["update-profile"])) {
   include "helpers/db-connection-methods.php";
   include "helpers/query-append-methods.php";
   include "helpers/query-perform-methods.php";
+  include "helpers/file-upload-methods.php";
 
   // 1A & 1B - Define and validate form responses for the registered member.
   // Already handled by update-profile-complete.php
@@ -43,8 +44,8 @@ if(isFormSubmitted($_POST["update-profile"])) {
     "members.mem_description = " . wrapInSingleQuotes($updated_mem_desc, true), false);
   appendWithComma($list_of_updates,
     "members.display_name = " . wrapInSingleQuotes($updated_display_name, true), false);
-  // appendWithComma($list_of_updates,
-  //   "members.profile_img = " . wrapInSingleQuotes($updated_profile_image, true), false);
+  appendWithComma($list_of_updates,
+    "members.profile_img = " . wrapInSingleQuotes($updated_profile_image_name, true), false);
 
   $list_of_conditions = "";
   appendWithComma($list_of_conditions,
@@ -57,6 +58,9 @@ if(isFormSubmitted($_POST["update-profile"])) {
 
   // 4 - Close the database connection.
   closeDBConnection($db_connection);
+
+  // 5 - Upload the user's profile image.
+  uploadImage($updated_profile_image);
 
 
 } // End of main procedure. Return to register-complete.php.
