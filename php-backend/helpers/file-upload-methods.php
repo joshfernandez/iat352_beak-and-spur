@@ -72,6 +72,8 @@ function uploadImage($image_file) {
     }
   }
 
+  return $uploadOk;
+
 }
 
 ?>

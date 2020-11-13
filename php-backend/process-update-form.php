@@ -27,10 +27,18 @@ if(isFormSubmitted($_POST["update-profile"])) {
   // 1A & 1B - Define and validate form responses for the registered member.
   // Already handled by update-profile-complete.php
 
-  // 2 - Open a connection to the josh_fernandez database.
+  // 2 - Upload the user's profile image and only continue if the upload is successful.
+  $is_image_upload_successful = uploadImage($updated_profile_image);
+
+  if($is_image_upload_successful == 0) {
+    die();
+  }
+
+
+  // 3 - Open a connection to the josh_fernandez database.
   $db_connection = openDBConnection();
 
-  // 3A - Define query attributes.
+  // 4A - Define query attributes.
   $table_name = "members";
 
   $list_of_updates = "";
@@ -53,14 +61,11 @@ if(isFormSubmitted($_POST["update-profile"])) {
   // appendWithComma($list_of_conditions,
   //   "members.username = " . wrapInSingleQuotes($original_username, true), false);
 
-  // 3B - Write the UPDATE SQL query.
+  // 4B - Write the UPDATE SQL query.
   $result = writeUpdateQuery($db_connection, $table_name, $list_of_updates, $list_of_conditions);
 
-  // 4 - Close the database connection.
+  // 5 - Close the database connection.
   closeDBConnection($db_connection);
-
-  // 5 - Upload the user's profile image.
-  uploadImage($updated_profile_image);
 
 
 } // End of main procedure. Return to register-complete.php.
