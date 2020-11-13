@@ -18,7 +18,7 @@ function wrapInSingleQuotes($item, $is_wrapped) {
   }
 }
 
-function appendWithComma($item, &$list_items, $is_wrapped) {
+function appendWithComma(&$list_items, $item, $is_wrapped) {
   if(empty($list_items)) {
     $list_items .= wrapInSingleQuotes($item, $is_wrapped);
   }
@@ -27,7 +27,7 @@ function appendWithComma($item, &$list_items, $is_wrapped) {
   }
 }
 
-function appendWithAndTerm($clause, &$list_clauses, $is_wrapped) {
+function appendWithAndTerm(&$list_clauses, $clause, $is_wrapped) {
   if(empty($list_clauses)) {
     $list_clauses .= wrapInSingleQuotes($clause, $is_wrapped);
   }

@@ -41,18 +41,37 @@
 
           if($num_result > 0) {
 
-            // 4A - Prompt the new member.
-            echo "<p>Welcome back, " . $login_username . "!</p>";
-            echo "<p>Hope you enjoy exploring Beak and Spur!</p>";
-            echo
-            "<p>
-                <a href=\"filter.php\">Return to the home page</a>
-            </p>";
+            // Compare the hash value and password.
+            // Source: Helmine's basicAuth2db-2.php
+            $result_row = mysqli_fetch_row($result);
+            $actual_hash = $result_row[0];
+
+            // Source: https://www.php.net/manual/en/function.password-verify.php
+            if (password_verify($login_password, $actual_hash)) {
+
+              // 4A - Prompt the new member.
+              echo "<p>Welcome back, " . $login_username . "!</p>";
+              echo "<p>Hope you enjoy exploring Beak and Spur!</p>";
+              echo
+              "<p>
+                  <a href=\"filter.php\">Return to the home page</a>
+              </p>";
+
+            } else {
+
+              // 4B - Redirect a user who entered the wrong password.
+              echo "<p>You have entered your password incorrectly. Please try again.</p>";
+              echo
+              "<p>
+                  <a href=\"login.php\">Return to the login page</a>
+              </p>";
+
+            }
 
           }
           else {
 
-            // 4B - Redirect an invalid visitor.
+            // 4C - Redirect an invalid visitor.
             echo "<p>You have entered either the incorrect username or password. Please try again.</p>";
             echo
             "<p>
