@@ -7,13 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- shared elements css sheet -->
-    <link href="css/shared_elements.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href="css/normalize.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href="css/font.css" media="screen" rel="stylesheet" type="text/css" />
-
-    <!-- page specific sheet -->
-    <link href="css/font-family-page.css" media="screen" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="css/filter.css">
+    <link rel="stylesheet" href="css/main.css">
 
     <!-- jquery from google -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -21,22 +15,12 @@
 </head>
 
 <body>
-    <nav>
-        <a href="filter.php">
-            <img class="logo-size" src="assets/img/logo.png" alt="logo!">
-        </a>
-        <input type="text" placeholder="Search..">
-
-        <div class="dropdown">
-            <img class="person-icon" src="https://img.icons8.com/material-sharp/64/000000/person-male.png" />
-            <button class="dropbtn">˅</button>
-            <h4></h4>
-            <div class="dropdown-content">
-                <a href="#">Login</a>
-                <a href="#">Preferences</a>
-                <a href="#">Your Fonts</a>
-            </div>
+    <nav class="explore-nav">
+        <div class="flex">
+            <h5>Home</h5>
+            <h5 class="margin-left-lv3">Search for Typefaces</h5>
         </div>
+        <img src="../assets/img/designer-img.png" alt="designer-img">
     </nav>
 
     <div class="container">
@@ -88,16 +72,7 @@
                         storytelling, or the Mono to show code snippets. The unexpectedly expressive nature of the
                         italics give you even more options for your designs.</p>
                 </div>
-                <div>
-                    <h4 class="margin-bottom-lv2">Usage</h4>
-                    <p>The IBM Plex typeface is an open-source project and available for download and use following the
-                        Open Font License (OFL). The IBM Plex family comes in Sans, Serif, Mono and Sans Condensed, all
-                        with roman and true italics. The fonts have been designed to work well in user interface (UI)
-                        environments, as well as other mediums. This project provides all source files and file formats
-                        to support most typographical situations. Currently, IBM Plex Sans supports Extended Latin,
-                        Arabic, Cyrillic, Devanagari, Greek, Hebrew, Korean and Thai. Japanese and Chinese will follow
-                        in 2021 and 2022.</p>
-                </div>
+
                 <div>
 
                 </div>
@@ -151,20 +126,10 @@
                 </div>
             </div>
 
-            <div class="contributors-row">
-                <h4>Contributors</h4>
-                <div class="border-top margin-top-lv1">
-                    <div class="margin-top-lv2">
-                        <img class="contributor-img-size" src="assets/img/designer_img.png" alt="no-designer">
-                        <img class="contributor-img-size" src="assets/img/designer_img.png" alt="no-designer">
-                        <img class="contributor-img-size" src="assets/img/designer_img.png" alt="no-designer">
-                    </div>
-                </div>
-            </div>
-
             <div>
                 <button>Download</button>
             </div>
+
         </div>
 
     </div>
