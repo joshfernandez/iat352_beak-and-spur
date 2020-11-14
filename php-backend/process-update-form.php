@@ -60,8 +60,8 @@ if(isFormSubmitted($_POST["update-profile"])) {
     "members.mem_description = " . wrapInSingleQuotes($updated_mem_desc, true), false);
   appendWithComma($list_of_updates,
     "members.display_name = " . wrapInSingleQuotes($updated_display_name, true), false);
-  appendWithComma($list_of_updates,
-    "members.profile_img = " . wrapInSingleQuotes($updated_profile_image_name, true), false);
+//   appendWithComma($list_of_updates,
+//     "members.profile_img = " . wrapInSingleQuotes($updated_profile_image_name, true), false);
 
   $list_of_conditions = "";
   appendWithComma($list_of_conditions,

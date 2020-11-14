@@ -9,35 +9,45 @@
     <title>Login completed page</title>
 
     <link rel="stylesheet" href="css/main.css">
-
 </head>
 
 <body class="login-complete-page">
 
+
+    <?php
+
+    // 0 - Import helper methods and procedures.
+    include "php-backend/helpers/form-analysis-methods.php";
+
+    if (isFormSubmitted($_POST["login"])) {
+
+        // 1A - Define and validate form responses for the login user.
+        $login_username = initializeField($_POST["username"]);
+        $login_password = initializeField($_POST["password"]);
+
+        // 1B - If any of the fields are empty, don't continue.
+        if (!($login_username != "" && $login_password != "")) {
+            die("The form has not yet been completed. Please fill it out completely.");
+        }
+
+
+        // 2 - Analyze form fields and compare with the members table.
+        include "php-backend/process-login-form.php";
+
+    include "php-backend/set-header.php"
+    ?>
+
+
+
     <main>
+
+        <h1>Completing login for Beak and Spur...</h1>
+
         <?php
-
-        // 0 - Import helper methods and procedures.
-        include "php-backend/helpers/form-analysis-methods.php";
-
-        if (isFormSubmitted($_POST["login"])) {
-
-            // 1A - Define and validate form responses for the login user.
-            $login_username = initializeField($_POST["username"]);
-            $login_password = initializeField($_POST["password"]);
-
-            // 1B - If any of the fields are empty, don't continue.
-            if (!($login_username != "" && $login_password != "")) {
-                die("The form has not yet been completed. Please fill it out completely.");
-            }
-
-
-            // 2 - Analyze form fields and compare with the members table.
-            include "php-backend/process-login-form.php";
 
             // 4 - Analyze the returned data.
             $num_result = mysqli_num_rows($result);
-        
+
             if ($num_result > 0) {
 
                 // Compare the hash value and password.
@@ -49,11 +59,12 @@
                 if (password_verify($login_password, $actual_hash)) {
 
                     // 4A - Prompt the new member.
-                    echo "<div class='login-complete-container'>";
                     echo "<p>Welcome back, " . $login_username . "!</p>";
                     echo "<p>Hope you enjoy exploring Beak and Spur!</p>";
-                    echo "<p> <a href=\"filter.php\">Return to the home page</a></p>";
-                    echo "</div>";
+                    echo
+                        "<p>
+                  <a href=\"filter.php\">Return to the home page</a>
+              </p>";
 
                     $_SESSION['logged_user'] = $login_username;
                     // $testinglog = $_SESSION["logged_in"];

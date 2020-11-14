@@ -35,8 +35,8 @@
           $updated_password = initializeField($_POST["password"]);
           $updated_mem_desc = initializeField($_POST["member-description"]);
           $updated_display_name = initializeField($_POST["display-name"]);
-          $updated_profile_image = $_FILES["profile-image"];
-          $updated_profile_image_name = $updated_profile_image["name"];
+        //   $updated_profile_image = $_FILES["profile-image"];
+        //   $updated_profile_image_name = $updated_profile_image["name"];
 
           // 1B - If any of the fields are empty, continue without updating.
           // if(!($member_username != "" && $member_email != "" && $member_password != "")) {

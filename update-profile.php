@@ -28,9 +28,10 @@
             </p>
 
             <!-- Source: https://www.w3schools.com/php/php_file_upload.asp -->
-            <p>Profile image
+            <!-- <p>Profile image
                 <input type="file" name="profile-image" />
-            </p>
+            </p> -->
+            <!-- for PA3 -->
 
             <p>A short description of you
                 <textarea name="member-description" cols="100" rows="4"><?php echo (!empty($logged_user_mem_desc) ? $logged_user_mem_desc : "How would you describe yourself?"); ?></textarea>
