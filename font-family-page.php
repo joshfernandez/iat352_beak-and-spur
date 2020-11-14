@@ -14,7 +14,7 @@
     include "php-backend/set-header.php";
 
     // 0 - Import helper methods and procedures
-    include "php-backend/helpers/fm-analysis-methods.php";
+    include "php-backend/helpers/form-analysis-methods.php";
 
     // load font-family page helper
     include "php-backend/font-family-page-query.php";
@@ -24,14 +24,14 @@
     while($font_data=mysqli_fetch_assoc($fontfile)) {
         $font_styling=$font_data['font_file'];
         
-            echo "<style> 
-                @font-face{
-                    font-family: 'loadedFont'; 
-                    src: url(data:application/x-font-otf;charset=utf-8;base64,$font_styling) format('otf');
-                    font-weight: normal;
-                    font-style: normal;
-                }
-            </style>";
+            // echo "<style> 
+            //     @font-face{
+            //         font-family: 'loadedFont'; 
+            //         src: url(data:application/x-font-otf;charset=utf-8;base64,$font_styling) format('otf');
+            //         font-weight: normal;
+            //         font-style: normal;
+            //     }
+            // </style>";
 } ?>
 
     <!-- jquery from google -->
@@ -50,7 +50,7 @@
                     //retrieve font family name from database
                      while($family_name = mysqli_fetch_assoc($fontname)){
                         $fontName = $family_name['family_name'];
-                        // echo $fontName;
+                        echo $fontName;
                     }
                     ?>
                 </h3>
