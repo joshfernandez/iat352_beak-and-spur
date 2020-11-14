@@ -12,12 +12,12 @@
 
 
 // 0 - Import helper methods and procedures.
-include "helpers/db-connection-methods.php";
-include "helpers/query-append-methods.php";
-include "helpers/query-perform-methods.php";
+// include "helpers/db-connection-methods.php";
+// include "helpers/query-append-methods.php";
+// include "helpers/query-perform-methods.php";
 
 // 2 - Open a connection to the josh_fenandez database.
-$db_connection = openDBConnection();
+// $db_connection = openDBConnection();
 
 
 

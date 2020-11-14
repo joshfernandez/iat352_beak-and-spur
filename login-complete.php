@@ -9,13 +9,10 @@
     <title>Login completed page</title>
 
     <link rel="stylesheet" href="css/main.css">
+
 </head>
 
 <body class="login-complete-page">
-
-    <!-- <?php
-    include "php-backend/set-header.php"
-    ?> -->
 
     <main>
         <?php
@@ -40,7 +37,7 @@
 
             // 4 - Analyze the returned data.
             $num_result = mysqli_num_rows($result);
-
+        
             if ($num_result > 0) {
 
                 // Compare the hash value and password.

@@ -16,10 +16,10 @@
 // 2 - Open a connection to the josh_fenandez database.
 if(!isset($db_connection)){
 
-include "helpers/db-connection-methods.php";
-include "helpers/query-append-methods.php";
-include "helpers/query-perform-methods.php";
-$db_connection = openDBConnection();
+ include "helpers/db-connection-methods.php";
+ include "helpers/query-append-methods.php";
+ include "helpers/query-perform-methods.php";
+ $db_connection = openDBConnection();
 } 
 
 

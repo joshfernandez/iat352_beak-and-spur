@@ -10,14 +10,15 @@
     <link rel="stylesheet" href="css/main.css">
 
     <?php
+
+    // load font-family page helper
+    include "php-backend/font-family-page-query.php";
+
     // header varies between member and visitor
     include "php-backend/set-header.php";
 
     // 0 - Import helper methods and procedures
     include "php-backend/helpers/form-analysis-methods.php";
-
-    // load font-family page helper
-    include "php-backend/font-family-page-query.php";
     ?>
 
     <?php 
