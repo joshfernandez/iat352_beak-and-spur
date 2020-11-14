@@ -23,51 +23,150 @@
 
 
     <?php
-    include "php-backend/set-header.php"
+    include "php-backend/set-header.php";
+
+    include "php-backend/filter-options.php";
+    include "php-backend/filter-populator.php"
+
     ?>
 
 
 
 
     <main class="margin-top-lv8">
-        <!-- SEARCH BAR -->
-        <form class="filter-searchbar" autocomplete="off">
-            <input type="text" id="font-name" name="font-name" placeholder="Find fonts by name, type, year">
-        </form>
 
-        <!-- PRIMARY FILTER -->
-        <form class="filter-primary">
-            <h5 class="margin-bottom-lv1">Primary Filters</h5>
+
+        <form class="filter-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <!-- SEARCH BAR -->
+            <div class="filter-searchbar" autocomplete="off">
+                <input type="text" id="font-name" name="searchbar_f" placeholder="Find fonts by name, type, year">
+                <input type="submit" name="submit" value="SearchOrders">
+            </div>
+
+            <!-- PRIMARY FILTER -->
             
-            <input type="checkbox" id="serif" name="serif">
-            <label> Serif</label><br>
-            <input type="checkbox" id="sans-serif" name="sans-serif">
-            <label>Sans Serif</label><br>
-        </form>
+            <div class="filter-primary">
+                <h5 class="margin-bottom-lv1">Primary Filters</h5>
+                <?php
+                while ($font_types_arr = mysqli_fetch_assoc($font_types_result)) {
+                    $string = "";
+                    $string .= serialize($font_types_arr);
+                    $string = substr($string, 35);
+                    $string = rtrim($string, ')";}');
+                    $ind = 0;
+                    $font_types = explode(",", $string);
+                    foreach ($font_types as $font_type) {
+                        $ind += 1;
+                        $font_type = trim($font_type, "'");
 
-        <form class="filter-secondary">
-            <h5 class="margin-bottom-lv1">Secondary Filters</h5>
-            <input type="checkbox" id="glyphic-serif" name="glyphic-serifs">
-            <label>Glyphic Serifs</label><br>
-            <input type="checkbox" id="slab-serif" name="slab-serif">
-            <label>Slab Serif</label><br>
-            <input type="checkbox" id="geometric-sans-serif" name="geometric-sans-serif">
-            <label>Geometric Sans-Serif</label><br>
-            <input type="checkbox" id="humanist-typeface" name="humanist-typeface">
-            <label>Humanist Typefacess</label><br>
-        </form>
+                        $check = "";
+                        if (isset($_POST["x_height_filter"][$ind])) {
+                            $check = 'checked="checked"';
+                        }
 
-        <div class="filter-tags">
+                        echo '
+            <span class="checkbox-holder">
+            <input 
+            type="checkbox" 
+            ' . $check . '
+            id="' . $font_type . '" 
+            name="font_type_filter[' . $font_type . ']"             
+            value="' . $font_type . '"
+            >
+            <label 
+            for="' . $font_type . '"
+            >
+             ' . $font_type . '
+             </label>
+            </span>
+             
+             ';
+                    }
+                };
+
+                ?>
+
+            </div>
+
+            <div class="filter-secondary">
+
+                <h5 class="margin-bottom-lv1">Secondary Filters</h5>
+                <?php
+
+                while ($font_xheights_arr = mysqli_fetch_assoc($font_xheights_result)) {
+
+                    $string = "";
+                    $string .= serialize($font_xheights_arr);
+                    $string = substr($string, 35);
+                    $string = rtrim($string, ')";}');
+
+                    $ind = 0;
+
+                    $font_xheights = explode(",", $string);
+
+                    foreach ($font_xheights as $font_xheight) {
+                        $ind += 1;
+
+                        // echo $ind;
+
+                        $font_xheight = trim($font_xheight, "'");
+                        $check = "";
+                        if (isset($_POST["x_height_filter"][$ind])) {
+                            $check = 'checked="checked"';
+                        }
+
+                        echo '
+            <span class="checkbox-holder">
+            <input 
+            type="checkbox" 
+           ' . $check . '
+            id="' . $font_xheight . '" 
+            name="x_height_filter[' . $font_xheight . ']"             
+            value="' . $font_xheight . '"
+            >
+            <label 
+            for="' . $font_xheight . '"
+            >
+             ' . $font_xheight .  ' 
+             </label>
+            </span> 
+             
+             ';
+                    }
+                };
+
+                ?>
+        </form>
+        <!-- <div class="filter-tags">
             <h5 class="margin-bottom-lv1">Filter by Tags</h5>
             <div class="filter-tags-draggable">
                 <br><br><br><br><br>
-            </div>
-        </div>
+            </div> 
+        </div> -->
 
 
         <div class="filter-container">
 
-            <article class="filter-font-block">
+            <?php
+
+
+
+            // var_dump($f_query); 
+            if (!empty($font_list)) {
+
+
+
+                while ($row = mysqli_fetch_assoc($font_list)) {
+                    echo "<tr>";
+
+
+                    echo '
+            
+            
+        
+            <a href='."#".' class="filter-font-block">
+            ';
+                    echo '
 
                 <div class="filter-font-bookmark">
                     <p></p>
@@ -80,27 +179,52 @@
 
 
                 </div>
+';
+
+                    echo '
 
                 <div class="filter-font-block-text">
                     <h6 class="h7">4 STYLES</h6>
-                    <h1 style="font-family: LeagueGothic;">League Gothic</h1>
-                    <h6 class="h7">Designed by <span> Tyler Finck </span></h6>
+                    <h1 style="font-family: ;">
+                    ' . $row['family_name'] . '
+                    </h1>
+                    <h6 class="h7">Designed by <span> 
+                    
+                    ' . $row['display_name'] . '
+                     </span></h6>
                 </div>
 
-                <div class="filter-font-tags-container">
+                <div class="filter-font-tags-container">';
+                    $tags_string = $row['font_type'];
 
-                    <div class="filter-font-tags">
-                        <img src="../assets/img/tag-lines.png" alt="no tag lines">
-                        <h6>Serif</h6>
-                    </div>
+                    // Assign Associative Array into a variable
+                    $tags_arr = (explode(",", $tags_string));
 
-                    <div class="filter-font-tags">
+                    // Get Associate Array Size for For Loop
+                    $tag_array_size = sizeof($tags_arr);
+
+                    // check how large the array is.
+                    // echo "$typeArraySize";
+
+                    // display font-tags dynamically with FOR LOOP
+                    for ($x = 0; $x < $tag_array_size; $x++) {
+                        $tag_txt = $tags_arr[$x];
+                        echo '<div class="filter-font-tags">
                         <img src="../assets/img/tag-lines.png" alt="no tag lines">
-                        <h6>Glyph Serif</h6>
-                    </div>
+                        <h6> '. $tag_txt.' </h6>
+                    </div>';
+                    }
+
+                    echo '
+
                 </div>
 
-            </article>
+            </a>
+            ';
+                }
+            }
+
+            ?>
 
         </div>
 
