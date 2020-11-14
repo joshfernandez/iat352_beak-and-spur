@@ -21,7 +21,7 @@
         // 0 - Import helper methods and procedures and start a session.
         include "php-backend/helpers/form-analysis-methods.php";
         session_start();
-        $logged_user = $_SESSION["logged_user"];
+        $logged_user = (!empty($_SESSION["logged_user"]) ? initializeField($_SESSION["logged_user"]) : "");
 
         if(!(isset($logged_user) &&
           isFormSubmitted($_POST["update-profile"]))) {

@@ -17,6 +17,22 @@
 
         <h1>Update your profile in Beak and Spur</h1>
 
+        <?php
+        include "php-backend/prepare-update-form.php";
+        if(!empty($result)) {
+
+          while($row = mysqli_fetch_assoc($result)) {
+            foreach($row as $value) {
+              echo stripslashes($value) . "<br />";
+            }
+          }
+
+        }
+        else {
+          echo "";
+        }
+        ?>
+
         <form action="update-profile-complete.php" method="post" enctype="multipart/form-data">
 
             <p>Display name
@@ -49,6 +65,18 @@
         </form>
 
     </div>
+
+    <?php
+    // To close prepare-update-form.php
+
+    if(isset($logged_user)) {
+      // 5 - Release returned data.
+      mysqli_free_result($result);
+
+      // 6 - Close the database connection.
+      mysqli_close($db_connection);
+    }
+    ?>
 
 </body>
 
