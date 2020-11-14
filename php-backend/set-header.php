@@ -14,8 +14,6 @@ if (isset($_SESSION['logged_user'])) {
 if (isset($logged_user)) {
 
     // $logged_user = $_SESSION['logged_user'];
-
-
     include "helpers/db-connection-methods.php";
     include "helpers/query-append-methods.php";
     include "helpers/query-perform-methods.php";
@@ -26,9 +24,6 @@ if (isset($logged_user)) {
     // 3A - Write Query and store in variables
 
     // PRINT VALUES DYAMICALLY BASED ON WHAT THE USER CLICKS
-    //   $fontBlockid = return id from font block
-    // $p_query="SELECT profile_img FROM members WHERE username==".$logged_user;
-
     $profile_img_result = $db_connection->query("SELECT profile_img FROM members WHERE username='$logged_user'");
 
     // $profile_img_result = mysqli_query($db_connection, $p_query);

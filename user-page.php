@@ -21,13 +21,9 @@
 </head>
 
 <body>
-    <nav class="explore-nav">
-        <div class="flex">
-            <h5>Home</h5>
-            <h5 class="margin-left-lv3">Search for Typefaces</h5>
-        </div>
-        <img src="../assets/img/designer-img.png" alt="designer-img">
-    </nav>
+    <?php
+    include "php-backend/set-header.php"
+    ?>
 
     <main class="margin-top-lv8">
 
@@ -50,8 +46,8 @@
         </div>
 
         <div class="userpage-button-container">
-            <button>Edit Account</button>
-            <button class="margin-top-lv4">+Upload New Font</button>
+            <!-- <button>Edit Account</button>
+            <button class="margin-top-lv4">+Upload New Font</button> -->
         </div>
 
         <div class="userpage-font-block-container">
