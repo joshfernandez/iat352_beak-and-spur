@@ -19,20 +19,22 @@
 
   // ---------------FOR FUTURE REFERENCE (After the explore page is finished)-------------------
   //PRINT VALUES DYAMICALLY BASED ON WHAT THE USER CLICKS
-  // $fontBlockid = return id from font block
-  // $fontBlockid is used to dynamically generate content of the page you clicked
+  
+  //values are retrieved from explore page
+  $familyId = $_GET['varname'];
+
 
   // 3 - queries to access rows in the database    
-  $fontname = $db_connection -> query("SELECT family_name FROM font_families WHERE family_id = '1'");
-  $fontdesigner = $db_connection -> query("SELECT designer FROM font_families WHERE family_id = '1'");
-  $fontlicence = $db_connection -> query("SELECT licence FROM font_families WHERE family_id = '1'");
-  $fontlanguages = $db_connection -> query("SELECT languages FROM font_families WHERE family_id = '1'");
-  $fonttype = $db_connection -> query("SELECT font_type FROM font_families WHERE family_id = '1'");
+  $fontname = $db_connection -> query("SELECT family_name FROM font_families WHERE family_id = '$familyId'");
+  $fontdesigner = $db_connection -> query("SELECT designer FROM font_families WHERE family_id = '$familyId'");
+  $fontlicence = $db_connection -> query("SELECT licence FROM font_families WHERE family_id = '$familyId'");
+  $fontlanguages = $db_connection -> query("SELECT languages FROM font_families WHERE family_id = '$familyId'");
+  $fonttype = $db_connection -> query("SELECT font_type FROM font_families WHERE family_id = '$familyId'");
 
   // 4 - query to retrieve JPEG blobs 
   $designerimg = $db_connection -> query("SELECT profile_img FROM members WHERE username = 'eathnma'");
 
   // 5 - query to retrieve TTF blobs
-  $fontfile = $db_connection -> query("SELECT font_file FROM individual_fonts WHERE family_id = '1'");
+  $fontfile = $db_connection -> query("SELECT font_file FROM individual_fonts WHERE family_id = '$familyId'");
  
 ?>
