@@ -12,9 +12,9 @@
     <?php
     // header varies between member and visitor
     include "php-backend/set-header.php";
-    
+
     // 0 - Import helper methods and procedures
-    include "php-backend/helpers/form-analysis-methods.php";
+    include "php-backend/helpers/fm-analysis-methods.php";
 
     // load font-family page helper
     include "php-backend/font-family-page-query.php";
@@ -50,7 +50,7 @@
                     //retrieve font family name from database
                      while($family_name = mysqli_fetch_assoc($fontname)){
                         $fontName = $family_name['family_name'];
-                        echo $fontName;
+                        // echo $fontName;
                     }
                     ?>
                 </h3>
@@ -105,19 +105,19 @@
                 <div class="border-top description-row">
                     <div class="margin-top-lv4 flex description-row ">
                         <?php
-                            //retrieve image from the database & display as the designer image
-                            while($imagerow = mysqli_fetch_assoc($designerimg)){
-                                $designerShowImage = $imagerow["profile_img"];
-                                echo '<img src="data:image/jpeg;base64,'.base64_encode($designerShowImage).'" alt="no" class="contributor-img-size"/>';
-                            }
+                        //retrieve image from the database & display as the designer image
+                        while ($imagerow = mysqli_fetch_assoc($designerimg)) {
+                            $designerShowImage = $imagerow["profile_img"];
+                            echo '<img src="data:image/jpeg;base64,' . base64_encode($designerShowImage) . '" alt="no" class="contributor-img-size"/>';
+                        }
                         ?>
                         <div class="margin-left-lv2">
                             <h4>
                                 <?php
                                 //retrieve designer name from database
-                                 while($designer_name = mysqli_fetch_assoc($fontdesigner)){
-                                 $designerName = $designer_name['designer'];
-                                 echo $designerName;
+                                while ($designer_name = mysqli_fetch_assoc($fontdesigner)) {
+                                    $designerName = $designer_name['designer'];
+                                    echo $designerName;
                                 }
                                 ?>
                             </h4>
@@ -129,9 +129,9 @@
                     <img style="width: 1.7em" src="assets/img/lang-icon.png" alt="link">
                     <h6 class="margin-left-lv2">
                         <?php
-                            // retrieve language support from database
-                            while($font_lang = mysqli_fetch_assoc($fontlanguages)){
-                            $languages= $font_lang['languages'];
+                        // retrieve language support from database
+                        while ($font_lang = mysqli_fetch_assoc($fontlanguages)) {
+                            $languages = $font_lang['languages'];
                             echo $languages;
                         }
                         ?>
@@ -142,9 +142,9 @@
                     <img src="assets/img/scale.png" alt="no-designer">
                     <h6 class="margin-left-lv2">
                         <?php
-                            // retrieve license type from database
-                            while($licence_name = mysqli_fetch_assoc($fontlicence)){
-                            $licence= $licence_name['licence'];
+                        // retrieve license type from database
+                        while ($licence_name = mysqli_fetch_assoc($fontlicence)) {
+                            $licence = $licence_name['licence'];
                             echo $licence;
                         }
                         ?>
@@ -164,16 +164,19 @@
                                 // Assign Associative Array into a variable
                                 $typeArray = (explode(",",$type));
 
-                                // Get Associate Array Size for For Loop
-                                $typeArraySize = sizeof($typeArray);
-                            
-                                // check how large the array is.
-                                // echo "$typeArraySize";
-                            
-                                // display font-tags dynamically with FOR LOOP
-                                for($x = 0 ; $x < $typeArraySize; $x++){
-                                    $typePrint = $typeArray[$x];
-                                    echo "<div class='font-family-font-tags'>
+                            // Assign Associative Array into a variable
+                            $typeArray = (explode(",", $type));
+
+                            // Get Associate Array Size for For Loop
+                            $typeArraySize = sizeof($typeArray);
+
+                            // check how large the array is.
+                            // echo "$typeArraySize";
+
+                            // display font-tags dynamically with FOR LOOP
+                            for ($x = 0; $x < $typeArraySize; $x++) {
+                                $typePrint = $typeArray[$x];
+                                echo "<div class='font-family-font-tags'>
                                         <img src='../assets/img/tag-lines.png' alt='no tag lines'>
                                         <h6>$typePrint</h6>
                                     </div>";

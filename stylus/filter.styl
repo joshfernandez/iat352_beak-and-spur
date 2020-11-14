@@ -17,12 +17,17 @@ main
     margin-right 3vw
     display grid
     grid-template-columns repeat(8, 1fr)
+    max-width 100%
     gap 1rem
 
     .filter-searchbar
         margin-top 1em
         grid-column-start 1
         grid-column-end 9
+        
+        display: grid
+        grid-template-columns: 5fr 1fr
+
         
         input::-webkit-input-placeholder 
             font-family Barlow
@@ -45,23 +50,44 @@ main
         
 
     form
+        &.filter-form
+            grid-column: 1/9
+            max-width 100%
         input[type=checkbox]
-            margin-bottom 0.7em 
-            border-radius 1em 
+            // margin-bottom 0.7em 
+            // display none
 
         label  
+            display inline-block
+            margin .15em
+            padding .3em
+            border-radius .5em 
+             
             font-family Barlow
             font-weight 300  
             font-size 0.8em
             color grey
+        
+        .filter-secondary,.filter-primary
+            input[type=checkbox]
+                display: none
+            input[type=checkbox] ~ label
+                background: #fafaee
+                border solid .5px #808080
+            input[type=checkbox]:checked ~ label
+                background: darken(#fafaee,15%);
+
+                // display: none
+            
+
 
     .filter-primary
         grid-column-start 1
-        grid-column-end 2
+        grid-column-end 5
 
     .filter-secondary
-        grid-column-start 2
-        grid-column-end 4
+        grid-column-start 5
+        grid-column-end -1
 
     .filter-tags   
         grid-column-start 5
@@ -76,19 +102,23 @@ main
         grid-column-end 9
         margin-top 2em
         display grid
-        grid-template-columns repeat(4, 1fr)
+        grid-template-columns repeat(4, 25%)
         gap 1rem   
 
         .filter-font-block
             border 0.05em solid grey 
             border-radius 0.4em
-
+            
+            color: black; /* blue colors for links too */
+            text-decoration: none; /* no underline */
+            
             .filter-font-bookmark
                 display flex
                 justify-content space-between
                 align-items center
                 margin-top 1em
                 margin-right 1em
+                text-decoration: none; /* no underline */
 
                 .filter-font-bookmark-row
                     display flex
@@ -96,37 +126,50 @@ main
                     input[type=checkbox]
                         margin-bottom 0em
                         margin-right 0.5em
-            
+                        text-decoration: none; /* no underline */
+
         
             .filter-font-block-text
                 text-align center
                 margin 2.5em 0em
-
+                text-decoration: none
                 h1
                     margin-top 0.3em
                     margin-bottom 0.3em
+                    text-decoration: none
                 
 
             .filter-font-tags-container
-                display flex
-                justify-content center
+                overflow: auto
+                white-space nowrap
+                display grid
+                grid-template-columns: repeat(auto, auto) 
+                grid-template-rows: 1fr
+                // justify-content center
                 margin-bottom 2em
+                max-width 100%
+                text-decoration: none
 
                 .filter-font-tags
                     text-align left
-                    display flex
+                    grid-row 1/2   
+                    grid-column-start: span 1
+                    // display inline
                     align-items center
                     padding 0.8em
-                    border 0.05em solid grey
+                    border 0.05em solid 
                     border-radius 0.2em
                     margin-right 0.3em
+                    display: flex
+                    flex-wrap: nowrap
 
                     img
                         width auto
                         height 0.6em
                         margin-right 0.5em
 
-                    h6 
+                    h6    
+                        word-wrap none
                         font-family Fanwood
                         font-style italic
                         
