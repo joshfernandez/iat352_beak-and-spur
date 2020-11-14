@@ -69,7 +69,7 @@
         ?>
 
         <p>
-            <a href="filter.php">Return to the home page</a>
+            <a href="index.php">Return to the home page</a>
         </p>
 
     </div>
