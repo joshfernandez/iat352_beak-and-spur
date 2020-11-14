@@ -2,11 +2,12 @@
 <html lang="en">
 
 <head>
-    <title>Filter</title>
+    <title>User Page</title>
     <!-- details regarding the file -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Explore fonts on Beak & Spur: a community for exploring, sharing and remixing open source typography">
+    <meta name="description"
+        content="Explore fonts on Beak & Spur: a community for exploring, sharing and remixing open source typography">
     <meta name="keywords" content="HTML,CSS,JavaScript,PHP">
 
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -19,56 +20,49 @@
 
 </head>
 
-<body class="filter">
-
-
-    <?php
-    include "php-backend/set-header.php"
-    ?>
-
-
-
+<body>
+    <nav class="explore-nav">
+        <div class="flex">
+            <h5>Home</h5>
+            <h5 class="margin-left-lv3">Search for Typefaces</h5>
+        </div>
+        <img src="../assets/img/designer-img.png" alt="designer-img">
+    </nav>
 
     <main class="margin-top-lv8">
-        <!-- SEARCH BAR -->
-        <form class="filter-searchbar" autocomplete="off">
-            <input type="text" id="font-name" name="font-name" placeholder="Find fonts by name, type, year">
-        </form>
 
-        <!-- PRIMARY FILTER -->
-        <form class="filter-primary">
-            <h5 class="margin-bottom-lv1">Primary Filters</h5>
-            
-            <input type="checkbox" id="serif" name="serif">
-            <label> Serif</label><br>
-            <input type="checkbox" id="sans-serif" name="sans-serif">
-            <label>Sans Serif</label><br>
-        </form>
-
-        <form class="filter-secondary">
-            <h5 class="margin-bottom-lv1">Secondary Filters</h5>
-            <input type="checkbox" id="glyphic-serif" name="glyphic-serifs">
-            <label>Glyphic Serifs</label><br>
-            <input type="checkbox" id="slab-serif" name="slab-serif">
-            <label>Slab Serif</label><br>
-            <input type="checkbox" id="geometric-sans-serif" name="geometric-sans-serif">
-            <label>Geometric Sans-Serif</label><br>
-            <input type="checkbox" id="humanist-typeface" name="humanist-typeface">
-            <label>Humanist Typefacess</label><br>
-        </form>
-
-        <div class="filter-tags">
-            <h5 class="margin-bottom-lv1">Filter by Tags</h5>
-            <div class="filter-tags-draggable">
-                <br><br><br><br><br>
+        <div class="userpage-profile-container">
+            <div>
+                <img src="../assets/img/designer-img.png" alt="designer-img">
+            </div>
+            <div class="userpage-profile-image-contents">
+                <h3>Dynamically Generated Username</h3>
+                <h6 class="margin-top-lv1">Dynamically generated date</h6>
             </div>
         </div>
 
+        <div class="userpage-profile-description">
+            <p> Dynamically generated content sapien arcu, ac tellus id sed sit dolor purus ac dui magnis nunc purus
+                enim quam et viverra lobortis eget nam aliquam vulputate et feugiat arcu bibendum at mauris massa
+                pellentesque volutpat netus
+                metus proin malesuada viverra quis eu pulvinar bibendum non est integer proin feugiat euismod cras
+                nisl, arcu, fa.</p>
+        </div>
+
+        <div class="userpage-button-container">
+            <button>Edit Account</button>
+            <button class="margin-top-lv4">+Upload New Font</button>
+        </div>
+
+        <div class="userpage-font-block-container">
+            <button>Liked</button>
+            <button>Uploaded Fonts</button>
+            <button>Forked Fonts</button>
+        </div>
 
         <div class="filter-container">
 
             <article class="filter-font-block">
-
                 <div class="filter-font-bookmark">
                     <p></p>
                     <div class="filter-font-bookmark-row">
@@ -77,8 +71,6 @@
                         </form>
                         <img src="../assets/img/star-filled.png" alt="star">
                     </div>
-
-
                 </div>
 
                 <div class="filter-font-block-text">
@@ -101,6 +93,7 @@
                 </div>
 
             </article>
+
 
         </div>
 

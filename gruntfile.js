@@ -116,7 +116,7 @@ module.exports = function (grunt) {
             php: {
                 files: [
                     '*.php',
-                    'php-backend/'
+                    'php-backend/** '
                 ],
 
                 tasks: [

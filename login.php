@@ -1,3 +1,6 @@
+<?php require_once('php-backend/initialize.php'); ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,45 +10,33 @@
 
     <title>Login page</title>
 
-    <link rel="stylesheet" href="css/styles-login-and-reg-pages.css">
-    <link rel="stylesheet" href="css/filter.css">
-    <link href="css/shared_elements.css" media="screen" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="css/main.css">
 
 
 </head>
 
-<body>
-    <nav>
-        <a href="filter.php">
-            <img class="logo-size" src="assets/img/logo.png" alt="logo!">
-        </a>
-        <input type="text" placeholder="Search..">
+<body class="login-page">
 
-        <div class="dropdown">
-            <img class="person-icon" src="https://img.icons8.com/material-sharp/64/000000/person-male.png" />
-            <button class="dropbtn">˅</button>
-            <h4></h4>
-            <div class="dropdown-content">
-                <a href="#">Login</a>
-                <a href="#">Preferences</a>
-                <a href="#">Your Fonts</a>
-            </div>
-        </div>
-    </nav>
+    <?php
+    include "php-backend/set-header.php"
+    ?>
 
-    <div class="login-page">
+
+
+    <main>
 
         <h1>Login to Beak and Spur</h1>
 
         <form action="login-complete.php" method="post">
 
-            <p>Username
-                <input type="text" name="username" size="20" maxlength="30" />
+            <p> Username
             </p>
+            <input type="text" name="username" size="20" maxlength="30" />
 
             <p>Password
-                <input type="password" name="password" size="20" maxlength="20" />
             </p>
+                <input type="password" name="password" size="20" maxlength="20" />
 
             <h4>No Account? <a href="register.php">Sign Up!</a></h4>
 
@@ -55,7 +46,8 @@
             </a> -->
 
         </form>
-    </div>
+
+    </main>
 
 </body>
 

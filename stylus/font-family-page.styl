@@ -1,0 +1,187 @@
+// new styling
+.font-family-fork-button
+    padding 1em 3em
+    margin-left 1em
+    color white
+    background-color #FF4F42
+    border-radius: 0.4em
+
+    font-family Barlow
+    font-weight 400
+
+.font-family-download-button
+    padding 1em 3em
+    margin-left 1em
+    color white
+    background-color #1820EF
+    border-radius: 0.4em
+
+
+    font-family Barlow
+    font-weight 400
+
+.font-family-font-tags-container
+    display flex
+
+    .font-family-font-tags
+        margin 1em
+        padding 0.7em 1em
+        display flex
+        align-items center
+        border-radius: 0.4em;
+        border 0.05em solid lightgrey
+
+        h6
+            font-family Fanwood
+            font-style italic
+
+        img
+            width auto
+            height 0.6em
+            margin-right 0.5em
+
+.font-family-slider-container
+    display flex
+    margin-bottom 1em
+
+    .font-family-slidecontainer
+        margin-top 1em
+        padding 1em
+        border 0.09em solid lightgrey
+        border-radius 0.4em
+        margin-right 1em
+        display flex
+        justify-content center
+
+        label
+            font-size 0.8em
+            font-family Barlow
+            font-weight 100
+            font-style italic
+            margin-right 2em
+
+    button
+        margin-top 1em
+        padding 1em 4em
+        border-radius 0.4em
+        border 0.1em solid lightgrey
+        background-color #FAFAEE
+        color black
+
+        font-size 0.8em
+        font-family Barlow
+        font-weight 100
+        font-style italic
+        margin-right 2em
+
+        
+
+
+// RE-using old styling
+body {
+  /* background-color: lightblue; */
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  background-color: #FAFAEE;
+  margin: 0em 7em;
+}
+
+#title-container {
+  margin-top: 4em;
+  grid-column-start: 1;
+  grid-column-end: 7;
+  grid-row-start: 0;
+  grid-row-end: 1;
+
+  margin-right: 4em;
+}
+
+.font-family-button-container{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  }
+
+#main-container {
+  margin-right: 4em;
+  grid-column-start: 1;
+  grid-column-end: 7;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.tab {
+  display: flex;
+  flex-grow: 10;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  border-bottom: solid black 1px;
+}
+
+button > h5 {
+  margin-top: 1em;
+  margin-right: 3em;
+}
+
+#attributes-container {
+  grid-column-start: 7;
+  grid-column-end: 9;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.font {
+  display: block;
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.font > input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: Epilogue;
+  font-size: 4em;
+  background-color:#FAFAEE;
+  padding: 1em 0px;
+}
+
+/* attribute rows styling */
+.border-top {
+  border-top: solid black 1px;
+}
+
+.designers-row {
+  margin-top: ;
+}
+
+.sizing-attributes {
+  grid-column-start: 1;
+  grid-column-end: 7;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  border-top: solid black 1px;
+  border-bottom: solid black 1px;
+}
+
+.description {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+}
+
+.description-row {
+  align-items: center;
+}
+
+.contributor-img-size {
+  width: 2.2em;
+}
+
+.tag-styling {
+  padding: 0.5em;
+  border-radius: 0.2em;
+  border: solid black 1px;
+}
