@@ -29,7 +29,7 @@
     // 0 - Import helper methods and procedures
     include "php-backend/helpers/form-analysis-methods.php";
 
-    // load font-family page helper
+    // load font-family page helper 
     include "php-backend/index-query.php";
     ?>
 
@@ -65,7 +65,7 @@
                     } 
                     ?>
                     <div class='explore-font-tags-container'>
-                        <?
+                        <?php
                     // run a for loop to dynamically generate all tags
                     for($x = 0; $x < $tagsArraySize; $x++){
                         // grab assoc array values and put in variables
@@ -104,7 +104,7 @@
                     } 
                     ?>
                     <div class='explore-font-tags-container'>
-                        <?
+                        <?php
                     // run a for loop to dynamically generate all tags
                     for($x = 0; $x < $tagsArraySize; $x++){
                         // grab assoc array values and put in variables
@@ -143,7 +143,7 @@
                     } 
                     ?>
                     <div class='explore-font-tags-container'>
-                        <?
+                        <?php
                     // run a for loop to dynamically generate all tags
                     for($x = 0; $x < $tagsArraySize; $x++){
                         // grab assoc array values and put in variables
@@ -182,7 +182,7 @@
                     } 
                     ?>
                     <div class='explore-font-tags-container'>
-                        <?
+                        <?php
                     // run a for loop to dynamically generate all tags
                     for($x = 0; $x < $tagsArraySize; $x++){
                         // grab assoc array values and put in variables
@@ -221,7 +221,7 @@
                     } 
                     ?>
                     <div class='explore-font-tags-container'>
-                        <?
+                        <?php
                     // run a for loop to dynamically generate all tags
                     for($x = 0; $x < $tagsArraySize; $x++){
                         // grab assoc array values and put in variables
