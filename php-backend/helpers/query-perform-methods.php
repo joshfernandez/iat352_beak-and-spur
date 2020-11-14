@@ -36,7 +36,7 @@ function writeUpdateQuery($db_connection, $table_name, $list_of_updates, $list_o
   $update_query = "UPDATE " . $table_name .
                   " SET " . $list_of_updates .
                   " WHERE " . $list_of_conditions . ";";
-  echo $update_query;  // For debugging purposes
+  // echo $update_query;  // For debugging purposes
 
   return performQuery($db_connection, $update_query);
 

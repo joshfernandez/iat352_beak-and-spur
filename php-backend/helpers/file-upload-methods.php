@@ -24,13 +24,13 @@ function uploadImage($image_file) {
   $uploadOk = 1;
   $file_ext = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
-  // echo "<p>" . $file_name . " " . $file_size . " " . $file_tmp . " " . $file_type . " " . $file_ext . "</p>";
+  // echo "<p>" . $file_name . " " . $file_size . " " . $file_tmp . " " . $file_type . " " . $file_ext . "</p>";  // For debugging purposes
 
   // Check if image file is a actual image or fake image
   if(isFormSubmitted($_POST["update-profile"])) {
     $check = getimagesize($file_tmp);
     if($check !== false) {
-      // echo "File is an image - " . $check["mime"] . ".";
+      // echo "File is an image - " . $check["mime"] . "."; // For debugging purposes
       $uploadOk = 1;
     } else {
       echo "<p>File is not an image.</p>";
@@ -63,7 +63,7 @@ function uploadImage($image_file) {
   // if everything is ok, try to upload file
   } else {
 
-    // echo "<p>" . $file_tmp . " " . $target_file . "</p>";
+    // echo "<p>" . $file_tmp . " " . $target_file . "</p>";  // For debugging purposes
 
     if (move_uploaded_file($file_tmp, $target_file)) {
       echo "<p>The image file ". htmlspecialchars( basename( $image_file["name"])). " has been uploaded.</p>";

@@ -31,6 +31,10 @@ if(isFormSubmitted($_POST["update-profile"])) {
   $is_image_upload_successful = uploadImage($updated_profile_image);
 
   if($is_image_upload_successful == 0) {
+    echo
+    "<p>
+        <a href=\"update-profile.php\">Return to the update profile page</a>
+    </p>";
     die();
   }
 
