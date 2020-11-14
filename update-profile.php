@@ -19,24 +19,37 @@
 
         <?php
         include "php-backend/prepare-update-form.php";
-        if(!empty($result)) {
 
-          while($row = mysqli_fetch_assoc($result)) {
-            foreach($row as $value) {
-              echo stripslashes($value) . "<br />";
-            }
-          }
+        $logged_user_username = "";
+        $logged_user_email = "";
+        $logged_user_mem_desc = "";
+        $logged_user_display_name = "";
 
-        }
-        else {
-          echo "";
+        $num_result = mysqli_num_rows($result);
+
+        if ($num_result > 0) {
+
+            $result_row = mysqli_fetch_row($result);
+            $logged_user_username = stripslashes($result_row[0]);
+            $logged_user_email = stripslashes($result_row[1]);
+            // No need for password
+            $logged_user_mem_desc = stripslashes($result_row[3]);
+            $logged_user_display_name = stripslashes($result_row[4]);
+            // No need for profile image
+
+            // For debugging purposes
+            // echo $logged_user_username;
+            // echo $logged_user_email;
+            // echo $logged_user_mem_desc;
+            // echo $logged_user_display_name;
+
         }
         ?>
 
         <form action="update-profile-complete.php" method="post" enctype="multipart/form-data">
 
             <p>Display name
-                <input type="text" name="display-name" size="20" maxlength="30" />
+                <input type="text" name="display-name" size="30" maxlength="30" value=<?php echo $logged_user_display_name; ?> />
             </p>
 
             <!-- Source: https://www.w3schools.com/php/php_file_upload.asp -->
@@ -45,15 +58,15 @@
             </p>
 
             <p>A short description of you
-                <textarea name="member-description" cols="100" rows="4">How would you describe yourself?</textarea>
+                <textarea name="member-description" cols="100" rows="4"><?php echo (!empty($logged_user_mem_desc) ? $logged_user_mem_desc : "How would you describe yourself?"); ?></textarea>
             </p>
 
             <p>Username
-                <input type="text" name="username" size="20" maxlength="30" />
+                <input type="text" name="username" size="20" maxlength="30" value=<?php echo $logged_user_username; ?> />
             </p>
 
             <p>Email address
-                <input type="text" name="email-address" size="50" maxlength="30" />
+                <input type="text" name="email-address" size="50" maxlength="30" value=<?php echo $logged_user_email; ?> />
             </p>
 
             <p>Password
