@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Redirects page to visitor view -->
-    <meta http-equiv="refresh" content="3;url=explore.php" />
-
+    <?php
+    //  $upOne=dirname(__DIR__, 1); 
+    $upOne = '../'; 
+    echo '<meta http-equiv="refresh" content="3;url=' . $upOne . '\explore.php" />'
+    ?>
 
     <title>Logging Out</title>
 
@@ -17,18 +20,21 @@
 <body class="logging-out-page">
 
 
-<?php
-if (isset($_SESSION["logged_in"])) {
-    unset($_SESSION["logged_in"]);
-}
-session_destroy();
+    <?php
+        session_start();
+    if (isset($_SESSION["logged_user"])) {
+        unset($_SESSION["logged_user"]);
+    }
+    session_destroy();
 
-?>
+    ?> 
     <main>
-
-        <h1> Logging Out</h1>
+        <?php
+        $upOne = __DIR__;
+        echo "<h1> Logging Out $upOne </h1>"
+        ?>
 
     </main>
 </body>
 
-</html>
+</html> 

@@ -38,6 +38,7 @@
         <!-- PRIMARY FILTER -->
         <form class="filter-primary">
             <h5 class="margin-bottom-lv1">Primary Filters</h5>
+            
             <input type="checkbox" id="serif" name="serif">
             <label> Serif</label><br>
             <input type="checkbox" id="sans-serif" name="sans-serif">

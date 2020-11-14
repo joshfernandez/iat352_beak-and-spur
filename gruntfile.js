@@ -55,29 +55,39 @@ module.exports = function (grunt) {
             }
         },
         copy: {
-            html: {
+            php: {
                 files: [
                     { src: '*.php', dest: 'build/' }
                 ]
 
             }
             ,
+            backend: {
+                files: [
+                    { src: 'php-backend/**', dest: 'build/' }
+                ]
+            },
             assets: {
                 files: [
                     { src: 'assets/**', dest: 'build/' }
                 ]
             },
-            backend: {
+            userAssets: {
                 files: [
-                    { src: 'php-backend/**', dest: 'build/' }
+                    { src: 'user-assets/**', dest: 'build/' }
+                ]
+            },
+            fonts: {
+                files: [
+                    { src: 'site-fonts/**', dest: 'build/' }
                 ]
             }
-            // ,
-            // images: {
-            //     files: [
-            //         { src: 'img/**', dest: 'build/imgs/' }
-            //     ]
-            // }
+            ,
+            imgs: {
+                files: [
+                    { src: 'imgs/**', dest: 'build/imgs/' }
+                ]
+            }
             // ,
             // fonts: {
             //     files: [
@@ -106,19 +116,27 @@ module.exports = function (grunt) {
             php: {
                 files: [
                     '*.php',
-                    'php-backend/'
+                    'php-backend/** '
                 ],
 
-                tasks: ['copy']
+                tasks: [
+                    'copy:php',
+                    'copy:backend'
+                ]
             },
-            other: {
+            assets: {
                 files: [
                     'assets/',
-                    'php-backend/**'
+                    'user-assets/',
+                    'site-fonts/',
+                    'imgs/',
                 ],
                 tasks: [
                     // 'clean',
-                    'copy'
+                    'copy:imgs',
+                    'copy:fonts',
+                    "copy:userAssets",
+                    "copy:assets"
                 ]
             },
 

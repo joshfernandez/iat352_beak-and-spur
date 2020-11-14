@@ -23,10 +23,10 @@
 
     // load font-family page helper
     // include "php-backend/font-family-page-query.php";
-    
+     
     ?>
 
-    <div class="container">
+    <div class="container"> 
         <div id="title-container">
             <h6 class="margin-bottom-lv2">December 14th, 2018</h6>
             <div class="font-family-button-container">

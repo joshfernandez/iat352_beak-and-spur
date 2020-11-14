@@ -64,7 +64,7 @@
                   <a href=\"filter.php\">Return to the home page</a>
               </p>";
 
-                    $_SESSION['logged_in'] = $login_username;
+                    $_SESSION['logged_user'] = $login_username;
                     // $testinglog = $_SESSION["logged_in"];
                     // echo "<br> <h1> $testinglog</h1>";
 

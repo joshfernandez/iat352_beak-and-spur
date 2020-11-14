@@ -18,7 +18,7 @@
             <a href="filter.php" id="nav-search-button">Search for Typefaces</a>
         </div>
         <!-- <input type="text" placeholder="Search.."> -->
-        <div class="right-link">
+        <div class="right-links">
             <a href="login.php" id="nav-login-button">Login</a>
             <a href="register.php" id="nav-login-button">Register</a>
 
