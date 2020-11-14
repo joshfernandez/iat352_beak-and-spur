@@ -17,12 +17,7 @@
     include "php-backend/set-header.php"
     ?> -->
 
-
-
     <main>
-
-        <h1>Completing login for Beak and Spur...</h1>
-
         <?php
 
         // 0 - Import helper methods and procedures.
@@ -57,12 +52,11 @@
                 if (password_verify($login_password, $actual_hash)) {
 
                     // 4A - Prompt the new member.
+                    echo "<div class='login-complete-container'>";
                     echo "<p>Welcome back, " . $login_username . "!</p>";
                     echo "<p>Hope you enjoy exploring Beak and Spur!</p>";
-                    echo
-                        "<p>
-                  <a href=\"filter.php\">Return to the home page</a>
-              </p>";
+                    echo "<p> <a href=\"filter.php\">Return to the home page</a></p>";
+                    echo "</div>";
 
                     $_SESSION['logged_user'] = $login_username;
                     // $testinglog = $_SESSION["logged_in"];

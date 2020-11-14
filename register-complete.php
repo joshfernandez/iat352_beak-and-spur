@@ -12,16 +12,14 @@
 
 <body class="register-complete-page">
 
-
     <?php
     include "php-backend/set-header.php"
     ?>
 
     <main>
 
-        <h1>Thank you for registering for Beak and Spur!</h1>
-
-        <?php
+        <div class="register-complete-container">
+            <?php
 
         // 0 - Import helper methods and procedures.
         include "php-backend/helpers/form-analysis-methods.php";
@@ -66,6 +64,7 @@
 
 
             // 4 - Prompt the new member.
+            echo "<h1>Thank you for registering for Beak and Spur!</h1>";
             echo "<p>Welcome to the new world of fonts, " . $member_username . "!</p>";
             echo "<p>Find news and updates in our monthly newsletter sent to your email " . $member_email . ".</p>";
             echo "<p>Hope you enjoy exploring Beak and Spur!</p>";
@@ -73,9 +72,11 @@
 
         ?>
 
-        <p>
-            <a href="filter.php">Return to the home page</a>
-        </p>
+            <p>
+                <a href="index.php">Return to the home page</a>
+            </p>
+
+        </div>
 
     </main>
 
