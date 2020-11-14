@@ -9,12 +9,6 @@
     <!-- css sheet -->
     <link rel="stylesheet" href="css/main.css">
 
-    <!-- jquery from google -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-</head>
-
-<body class="font-family-page">
     <?php
     // header varies between member and visitor
     include "php-backend/set-header.php";
@@ -26,6 +20,28 @@
     include "php-backend/font-family-page-query.php";
     ?>
 
+    <?php 
+    while($font_data=mysqli_fetch_assoc($fontfile)) {
+        $font_styling=$font_data['font_file'];
+        
+            echo "<style> 
+                @font-face{
+                    font-family: 'loadedFont'; 
+                    src: url(data:application/x-font-otf;charset=utf-8;base64,$font_styling) format('otf');
+                    font-weight: normal;
+                    font-style: normal;
+                }
+            </style>";
+
+            print_r ($font_styling, true);
+} ?>
+
+    <!-- jquery from google -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body class="font-family-page">
     <div class="container">
 
         <div id="title-container">
@@ -56,6 +72,11 @@
                 <form class="font">
                     <!-- change placeholder text to display the font-name -->
                     <input class='ibm-font' type='text' name='text' placeholder='IBM PLEX SANS'>
+
+                    <!-- --- where the font styling should go --- -->
+                    <p style="font-family:loadedFont" ;>change this to violet sans before doing anything else</p>
+
+
                 </form>
             </div>
 

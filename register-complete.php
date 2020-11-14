@@ -17,9 +17,6 @@
     include "php-backend/set-header.php"
     ?>
 
-
-
-
     <main>
 
         <h1>Thank you for registering for Beak and Spur!</h1>

@@ -29,9 +29,10 @@
   $fontlanguages = $db_connection -> query("SELECT languages FROM font_families WHERE family_id = '1'");
   $fonttype = $db_connection -> query("SELECT font_type FROM font_families WHERE family_id = '1'");
 
-  // 4 - queries to retrieve JPEG blobs 
+  // 4 - query to retrieve JPEG blobs 
   $designerimg = $db_connection -> query("SELECT profile_img FROM members WHERE username = 'eathnma'");
+
+  // 5 - query to retrieve TTF blobs
+  $fontfile = $db_connection -> query("SELECT font_file FROM individual_fonts WHERE family_id = '1'");
  
-
-
 ?>

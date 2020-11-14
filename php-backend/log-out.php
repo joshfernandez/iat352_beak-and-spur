@@ -9,7 +9,7 @@
     <?php
     //  $upOne=dirname(__DIR__, 1); 
     $upOne = '../'; 
-    echo '<meta http-equiv="refresh" content="3;url=' . $upOne . '\explore.php" />'
+    echo '<meta http-equiv="refresh" content="3;url=' . $upOne . '\index.php" />'
     ?>
 
     <title>Logging Out</title>
@@ -27,7 +27,7 @@
     }
     session_destroy();
 
-    ?> 
+    ?>
     <main>
         <?php
         $upOne = __DIR__;
@@ -37,4 +37,4 @@
     </main>
 </body>
 
-</html> 
+</html>

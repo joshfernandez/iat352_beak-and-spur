@@ -42,7 +42,6 @@ if(isFormSubmitted($_POST["login"])) {
   // 3B - Write the SELECT SQL query.
   $result = writeSelectQuery($db_connection, $list_of_attributes, $list_of_tables, $list_of_conditions);
 
-
 } // End of main procedure. Return to login-complete.php.
 
 ?>
