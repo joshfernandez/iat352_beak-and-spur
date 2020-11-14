@@ -17,10 +17,14 @@
 
         <h1>Update your profile in Beak and Spur</h1>
 
+        <?php
+        include "php-backend/prepare-update-form.php";
+        ?>
+
         <form action="update-profile-complete.php" method="post" enctype="multipart/form-data">
 
             <p>Display name
-                <input type="text" name="display-name" size="20" maxlength="30" />
+                <input type="text" name="display-name" size="30" maxlength="30" value=<?php echo $logged_user_display_name; ?> />
             </p>
 
             <!-- Source: https://www.w3schools.com/php/php_file_upload.asp -->
@@ -29,15 +33,15 @@
             </p>
 
             <p>A short description of you
-                <textarea name="member-description" cols="100" rows="4">How would you describe yourself?</textarea>
+                <textarea name="member-description" cols="100" rows="4"><?php echo (!empty($logged_user_mem_desc) ? $logged_user_mem_desc : "How would you describe yourself?"); ?></textarea>
             </p>
 
             <p>Username
-                <input type="text" name="username" size="20" maxlength="30" />
+                <input type="text" name="username" size="20" maxlength="30" value=<?php echo $logged_user_username; ?> />
             </p>
 
             <p>Email address
-                <input type="text" name="email-address" size="50" maxlength="30" />
+                <input type="text" name="email-address" size="50" maxlength="30" value=<?php echo $logged_user_email; ?> />
             </p>
 
             <p>Password
