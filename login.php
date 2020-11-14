@@ -36,7 +36,7 @@
 
             <p>Password
             </p>
-                <input type="password" name="password" size="20" maxlength="20" />
+            <input type="password" name="password" size="20" maxlength="20" />
 
             <h4>No Account? <a href="register.php">Sign Up!</a></h4>
 
@@ -49,6 +49,11 @@
 
     </main>
 
+    <?php
+
+    include "php-backend/std-footer.php"
+
+    ?>
 </body>
 
 </html>

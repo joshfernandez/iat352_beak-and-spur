@@ -72,7 +72,10 @@ if(isset($logged_user)) {
   mysqli_free_result($result);
 
   // 6 - Close the database connection.
+
   mysqli_close($db_connection);
+  $update_key = "1";
+  
 }
 }
 

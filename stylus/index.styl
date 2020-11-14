@@ -2,10 +2,17 @@ main
     .explore-slideshow 
         grid-column-start 1
         grid-column-end 10
-
+        height: 90vh
+        flex-direction: column
+        display: flex  
         .explore-container 
-            padding-top 20%
-            padding-bottom 20%
+            flex-grow 1
+            // position fixed
+            bottom 0
+            // flex-grow: 3
+            padding-top 15%
+            padding-bottom 15%
+            height 100%
             display flex
             text-align center
             align-items center
@@ -47,7 +54,9 @@ main
                 color white
 
 
-footer
+.explore footer
+    min-height: initial 
+    height: initial
     display flex
     justify-content space-between
     margin-bottom 1em
@@ -102,7 +111,7 @@ footer
     display none
 
 
-footer
+body.explore footer
     border-top 1px solid black
            
 .test

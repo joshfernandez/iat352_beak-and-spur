@@ -7,7 +7,7 @@
 
     <title>Update profile completed page</title>
 
-    <link rel="stylesheet" href="css/styles-login-and-reg-pages.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>

@@ -83,6 +83,11 @@
 
         </main>
 
+<?php
+
+include "php-backend/std-footer.php"
+
+?>
 </body>
 
 </html>

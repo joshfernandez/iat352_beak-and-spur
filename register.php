@@ -28,21 +28,28 @@
 
             <p>Username
             </p>
-                <input type="text" name="username" size="20" maxlength="30" />
+            <input type="text" name="username" size="20" maxlength="30" />
 
             <p>Email address
             </p>
-                <input type="text" name="email-address" size="50" maxlength="30" />
+            <input type="text" name="email-address" size="50" maxlength="30" />
 
             <p>Password
             </p>
-                <input type="password" name="password" size="20" maxlength="20" />
+            <input type="password" name="password" size="20" maxlength="20" />
 
             <input type="submit" name="register" value="Register" />
 
         </form>
 
     </main>
+
+    <?php
+
+    include "php-backend/std-footer.php"
+
+    ?>
+    
 </body>
 
 </html>

@@ -33,76 +33,82 @@
 
         // 2 - Analyze form fields and compare with the members table.
         include "php-backend/process-login-form.php";
-// SETS THE SESSION ID
-    $_SESSION['logged_user'] = $login_username;
-// SETS 
-    include "php-backend/set-header.php"
+        // SETS THE SESSION ID
+        $_SESSION['logged_user'] = $login_username;
+        // SETS 
+        include "php-backend/set-header.php"
     ?>
 
 
 
-    <main>
+        <main>
 
-        <h1>Completing login for Beak and Spur...</h1>
+            <h1>Completing login for Beak and Spur...</h1>
 
         <?php
 
-            // 4 - Analyze the returned data.
-            $num_result = mysqli_num_rows($result);
+        // 4 - Analyze the returned data.
+        $num_result = mysqli_num_rows($result);
 
-            if ($num_result > 0) {
+        if ($num_result > 0) {
 
-                // Compare the hash value and password.
-                // Source: Helmine's basicAuth2db-2.php
-                $result_row = mysqli_fetch_row($result);
-                $actual_hash = $result_row[0];
+            // Compare the hash value and password.
+            // Source: Helmine's basicAuth2db-2.php
+            $result_row = mysqli_fetch_row($result);
+            $actual_hash = $result_row[0];
 
-                // Source: https://www.php.net/manual/en/function.password-verify.php
-                if (password_verify($login_password, $actual_hash)) {
+            // Source: https://www.php.net/manual/en/function.password-verify.php
+            if (password_verify($login_password, $actual_hash)) {
 
-                    // 4A - Prompt the new member.
-                    echo "<p>Welcome back, " . $login_username . "!</p>";
-                    echo "<p>Hope you enjoy exploring Beak and Spur!</p>";
-                    echo
-                        "<p>
+                // 4A - Prompt the new member.
+                echo "<p>Welcome back, " . $login_username . "!</p>";
+                echo "<p>Hope you enjoy exploring Beak and Spur!</p>";
+                echo
+                    "<p>
                   <a href=\"filter.php\">Return to the home page</a>
               </p>";
 
-                    // $testinglog = $_SESSION["logged_in"];
-                    // echo "<br> <h1> $testinglog</h1>";
+                // $testinglog = $_SESSION["logged_in"];
+                // echo "<br> <h1> $testinglog</h1>";
 
-                } else {
-
-                    // 4B - Redirect a user who entered the wrong password.
-                    echo "<p>You have entered your password incorrectly. Please try again.</p>";
-                    echo
-                        "<p>
-                  <a href=\"login.php\">Return to the login page</a>
-              </p>";
-                }
             } else {
 
-                // 4C - Redirect an invalid visitor.
-                echo "<p>You have entered either the incorrect username or password. Please try again.</p>";
+                // 4B - Redirect a user who entered the wrong password.
+                echo "<p>You have entered your password incorrectly. Please try again.</p>";
                 echo
                     "<p>
+                  <a href=\"login.php\">Return to the login page</a>
+              </p>";
+            }
+        } else {
+
+            // 4C - Redirect an invalid visitor.
+            echo "<p>You have entered either the incorrect username or password. Please try again.</p>";
+            echo
+                "<p>
                 <a href=\"login.php\">Return to the login page</a>
             </p>";
-            }
-
-            // 5 - Release returned data.
-            mysqli_free_result($result);
-
-            // 6 - Close the database connection.
-            closeDBConnection($db_connection);
         }
+
+        // 5 - Release returned data.
+        mysqli_free_result($result);
+
+        // 6 - Close the database connection.
+        closeDBConnection($db_connection);
+    }
 
         ?>
 
 
 
 
-    </main>
+        </main>
+
+        <?php
+
+        include "php-backend/std-footer.php"
+
+        ?>
 </body>
 
 </html>

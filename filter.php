@@ -40,11 +40,11 @@
             <!-- SEARCH BAR -->
             <div class="filter-searchbar" autocomplete="off">
                 <input type="text" id="font-name" name="searchbar_f" placeholder="Find fonts by name, type, year">
-                <input type="submit" name="submit" value="SearchOrders">
+                <input type="submit" name="submit" value="Search For Type">
             </div>
 
             <!-- PRIMARY FILTER -->
-            
+
             <div class="filter-primary">
                 <h5 class="margin-bottom-lv1">Primary Filters</h5>
                 <?php
@@ -164,7 +164,7 @@
             
             
         
-            <a href='."#".' class="filter-font-block">
+            <a href=' . "#" . ' class="filter-font-block">
             ';
                     echo '
 
@@ -211,7 +211,7 @@
                         $tag_txt = $tags_arr[$x];
                         echo '<div class="filter-font-tags">
                         <img src="../assets/img/tag-lines.png" alt="no tag lines">
-                        <h6> '. $tag_txt.' </h6>
+                        <h6> ' . $tag_txt . ' </h6>
                     </div>';
                     }
 
@@ -230,8 +230,11 @@
 
     </main>
 
-    <!-- <img src="assets/assets/img/x.png" alt="no"> -->
+    <?php
 
+    include "php-backend/std-footer.php"
+
+    ?>
 </body>
 
 </html>

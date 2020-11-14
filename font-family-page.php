@@ -21,19 +21,19 @@
     include "php-backend/helpers/form-analysis-methods.php";
     ?>
 
-    <?php 
-    while($font_data=mysqli_fetch_assoc($fontfile)) {
-        $font_styling=$font_data['font_file'];
-        
-            // echo "<style> 
-            //     @font-face{
-            //         font-family: 'loadedFont'; 
-            //         src: url(data:application/x-font-otf;charset=utf-8;base64,$font_styling) format('otf');
-            //         font-weight: normal;
-            //         font-style: normal;
-            //     }
-            // </style>";
-} ?>
+    <?php
+    while ($font_data = mysqli_fetch_assoc($fontfile)) {
+        $font_styling = $font_data['font_file'];
+
+        // echo "<style> 
+        //     @font-face{
+        //         font-family: 'loadedFont'; 
+        //         src: url(data:application/x-font-otf;charset=utf-8;base64,$font_styling) format('otf');
+        //         font-weight: normal;
+        //         font-style: normal;
+        //     }
+        // </style>";
+    } ?>
 
     <!-- jquery from google -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -49,7 +49,7 @@
                 <h3 class="margin-bottom-lv1">
                     <?php
                     //retrieve font family name from database
-                     while($family_name = mysqli_fetch_assoc($fontname)){
+                    while ($family_name = mysqli_fetch_assoc($fontname)) {
                         $fontName = $family_name['family_name'];
                         echo $fontName;
                     }
@@ -71,8 +71,8 @@
                 <form class="font">
                     <!-- change placeholder text to display the font-name -->
                     <input class='ibm-font' type='text' name='text' placeholder='<?php
-                        echo $fontName;
-                    ?>'>
+                                                                                    echo $fontName;
+                                                                                    ?>'>
 
 
                     <!-- --- where the font styling should go --- -->
@@ -158,12 +158,12 @@
                 <div class="border-top margin-top-lv1">
                     <div class="font-family-font-tags-container">
                         <?php
-                            // Retrieve Font Type
-                            while($font_type = mysqli_fetch_assoc($fonttype)){
-                                $type= $font_type['font_type'];
-                                
-                                // Assign Associative Array into a variable
-                                $typeArray = (explode(",",$type));
+                        // Retrieve Font Type
+                        while ($font_type = mysqli_fetch_assoc($fonttype)) {
+                            $type = $font_type['font_type'];
+
+                            // Assign Associative Array into a variable
+                            $typeArray = (explode(",", $type));
 
                             // Assign Associative Array into a variable
                             $typeArray = (explode(",", $type));
@@ -181,8 +181,8 @@
                                         <img src='../assets/img/tag-lines.png' alt='no tag lines'>
                                         <h6>$typePrint</h6>
                                     </div>";
-                                }
-                               }                     
+                            }
+                        }
                         ?>
                     </div>
                 </div>
@@ -190,6 +190,11 @@
         </div>
     </div>
 
+    <?php
+
+    include "php-backend/std-footer.php"
+
+    ?>
 </body>
 
 </html>
