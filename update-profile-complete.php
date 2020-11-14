@@ -18,10 +18,16 @@
 
         <?php
 
-        // 0 - Import helper methods and procedures.
+        // 0 - Import helper methods and procedures and start a session.
         include "php-backend/helpers/form-analysis-methods.php";
+        session_start();
+        $logged_user = $_SESSION["logged_user"];
 
-        if(isFormSubmitted($_POST["update-profile"])) {
+        if(!(isset($logged_user) &&
+          isFormSubmitted($_POST["update-profile"]))) {
+          echo "Your profile cannot be updated. Either you did not submit the form or you are not logged in. Please try again.";
+        }
+        else {
 
           // 1A - Define and validate form responses for the registered member.
           $updated_username = initializeField($_POST["username"]);
