@@ -18,7 +18,7 @@
 
         <?php
 
-        // 0 - Import helper methods and procedures and start a session.
+        // 0A - Import helper methods and procedures and start a session.
         include "php-backend/helpers/form-analysis-methods.php";
         session_start();
         $logged_user = (!empty($_SESSION["logged_user"]) ? initializeField($_SESSION["logged_user"]) : "");

@@ -42,6 +42,38 @@ if(isset($logged_user)) {
   // 2B - Write the SELECT SQL query.
   $result = writeSelectQuery($db_connection, $list_of_attributes, $list_of_tables, $list_of_conditions);
 
+  $logged_user_username = "";
+  $logged_user_email = "";
+  $logged_user_mem_desc = "";
+  $logged_user_display_name = "";
+
+  $num_result = mysqli_num_rows($result);
+
+  if ($num_result > 0) {
+
+      $result_row = mysqli_fetch_row($result);
+      $logged_user_username = stripslashes($result_row[0]);
+      $logged_user_email = stripslashes($result_row[1]);
+      // No need for password
+      $logged_user_mem_desc = stripslashes($result_row[3]);
+      $logged_user_display_name = stripslashes($result_row[4]);
+      // No need for profile image
+
+      // For debugging purposes
+      // echo $logged_user_username;
+      // echo $logged_user_email;
+      // echo $logged_user_mem_desc;
+      // echo $logged_user_display_name;
+
+  }
+
+  if(isset($logged_user)) {
+  // 5 - Release returned data.
+  mysqli_free_result($result);
+
+  // 6 - Close the database connection.
+  mysqli_close($db_connection);
+}
 }
 
 

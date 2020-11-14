@@ -28,14 +28,18 @@ if(isFormSubmitted($_POST["update-profile"])) {
   // Already handled by update-profile-complete.php
 
   // 2 - Upload the user's profile image and only continue if the upload is successful.
-  $is_image_upload_successful = uploadImage($updated_profile_image);
+  if(!empty($updated_profile_image)) {
 
-  if($is_image_upload_successful == 0) {
-    echo
-    "<p>
-        <a href=\"update-profile.php\">Return to the update profile page</a>
-    </p>";
-    die();
+    $is_image_upload_successful = uploadImage($updated_profile_image);
+
+    if($is_image_upload_successful == 0) {
+      echo
+      "<p>
+          <a href=\"update-profile.php\">Return to the update profile page</a>
+      </p>";
+      die();
+    }
+
   }
 
 
@@ -61,9 +65,7 @@ if(isFormSubmitted($_POST["update-profile"])) {
 
   $list_of_conditions = "";
   appendWithComma($list_of_conditions,
-    "members.username = " . wrapInSingleQuotes("josh.fernandez", true), false);
-  // appendWithComma($list_of_conditions,
-  //   "members.username = " . wrapInSingleQuotes($original_username, true), false);
+    "members.username = " . wrapInSingleQuotes($logged_user, true), false);
 
   // 4B - Write the UPDATE SQL query.
   $result = writeUpdateQuery($db_connection, $table_name, $list_of_updates, $list_of_conditions);
