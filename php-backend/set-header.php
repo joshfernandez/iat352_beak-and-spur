@@ -18,18 +18,18 @@ if (session_id() == '') {
 
 // create session variable if form has been submitted
 if (isset($_SESSION['logged_user'])) {
-
+    // echo $_SESSION['logged_user'];
+    
     $logged_user = $_SESSION['logged_user'];
 }
 // echo "<h1> $logged_user</h1>";
 
 
-if(isset($update_key)){
-
+// if (!isset($update_key)) {
 
 
 if (isset($logged_user)) {
-echo "$db_connection"; 
+    // echo "$db_connection"; /
     // 3A - Write Query and store in variables
     $profile_img_result = $db_connection->query("SELECT profile_img FROM members WHERE username='$logged_user'");
 
@@ -39,18 +39,21 @@ echo "$db_connection";
 
         $profile_img = $profile_img_arr["profile_img"];
         // echo '<img src="data:image/jpeg;base64,' . base64_encode($designerShowImage) . '" alt="no" class="contributor-img-size"/>';
+        // }
     }
-}
-
 }
 ?>
 
 
 <?php
 if (isset($logged_user)) {
+    // echo"member";
+
     include 'member-header.php';
 } else {
     include "visitor-header.php";
+    // echo "visitor";
+    
 }
 
 

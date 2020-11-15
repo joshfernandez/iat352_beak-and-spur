@@ -17,7 +17,8 @@
     <?php
     include "php-backend/prepare-update-form.php";
 
-    include "php-backend/set-header.php";
+
+    // include "php-backend/set-header.php";  
     ?>
 
     <main class="">
@@ -28,7 +29,10 @@
         <form action="update-profile-complete.php" method="post" enctype="multipart/form-data">
 
             <p>Display name
-                <input type="text" name="display-name" size="30" maxlength="30" value="<?php echo $logged_user_display_name; ?>" />
+                <input type="text" name="display-name" size="30" maxlength="30" value="
+                <?php
+                echo $logged_user_display_name;
+                ?>" />
             </p>
 
             <!-- Source: https://www.w3schools.com/php/php_file_upload.asp -->
@@ -58,11 +62,11 @@
         </form>
 
     </main>
-<?php
+    <?php
 
-include "php-backend/std-footer.php"
+    include "php-backend/std-footer.php"
 
-?>
+    ?>
 
 </body>
 

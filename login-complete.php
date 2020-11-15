@@ -34,8 +34,13 @@
         // 2 - Analyze form fields and compare with the members table.
         include "php-backend/process-login-form.php";
         // SETS THE SESSION ID
-        $_SESSION['logged_user'] = $login_username;
-        // SETS 
+        session_start();
+        
+        $_SESSION['logged_user'] = htmlentities($_POST['username']);
+        // echo $_SESSION['logged_user'];
+
+
+            // $_SESSION['logged_user'] = $logged_user;
         include "php-backend/set-header.php"
     ?>
 

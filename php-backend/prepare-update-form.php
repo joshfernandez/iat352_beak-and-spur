@@ -26,57 +26,67 @@ session_start();
 $logged_user = (!empty($_SESSION["logged_user"]) ? initializeField($_SESSION["logged_user"]) : "");
 $result = "";
 
-if(isset($logged_user)) {
 
-  // 1 - Open a connection to the josh_fernandez database.
-  $db_connection = openDBConnection();
 
-  // 2A - Define query attributes. (Goal: Retrieve the user's password hash value.)
-  $list_of_attributes = "*";
-  $list_of_tables = "members";
+if (isset($logged_user)) {
 
-  $list_of_conditions = "";
-  $login_username_clause = "members.username = " . wrapInSingleQuotes($logged_user, true);
-  appendWithAndTerm($list_of_conditions, $login_username_clause, false);
+    // 1 - Open a connection to the josh_fernandez database.
+    $db_connection = openDBConnection();
 
-  // 2B - Write the SELECT SQL query.
-  $result = writeSelectQuery($db_connection, $list_of_attributes, $list_of_tables, $list_of_conditions);
+    // 2A - Define query attributes. (Goal: Retrieve the user's password hash value.)
+    $list_of_attributes = "*";
+    $list_of_tables = "members";
 
-  $logged_user_username = "";
-  $logged_user_email = "";
-  $logged_user_mem_desc = "";
-  $logged_user_display_name = "";
+    $list_of_conditions = "";
+    $login_username_clause = "members.username = " . wrapInSingleQuotes($logged_user, true);
+    appendWithAndTerm($list_of_conditions, $login_username_clause, false);
 
-  $num_result = mysqli_num_rows($result);
+    // 2B - Write the SELECT SQL query.
+    $result = writeSelectQuery($db_connection, $list_of_attributes, $list_of_tables, $list_of_conditions);
 
-  if ($num_result > 0) {
+    $logged_user_username = "";
+    $logged_user_email = "";
+    $logged_user_mem_desc = "";
+    $logged_user_display_name = "";
 
-      $result_row = mysqli_fetch_row($result);
-      $logged_user_username = stripslashes($result_row[0]);
-      $logged_user_email = stripslashes($result_row[1]);
-      // No need for password
-      $logged_user_mem_desc = stripslashes($result_row[3]);
-      $logged_user_display_name = stripslashes($result_row[4]);
-      // No need for profile image
+    $num_result = mysqli_num_rows($result);
 
-      // For debugging purposes
-      // echo $logged_user_username;
-      // echo $logged_user_email;
-      // echo $logged_user_mem_desc;
-      // echo $logged_user_display_name;
+    if ($num_result > 0) {
 
-  }
+        $result_row = mysqli_fetch_row($result);
+        $logged_user_username = stripslashes($result_row[0]);
+        $logged_user_email = stripslashes($result_row[1]);
+        // No need for password
+        $logged_user_mem_desc = stripslashes($result_row[3]);
+        $logged_user_display_name = stripslashes($result_row[4]);
+        // No need for profile image
 
-  if(isset($logged_user)) {
-  // 5 - Release returned data.
-  mysqli_free_result($result);
+        // For debugging purposes
+        // echo $logged_user_username;
+        // echo $logged_user_email;
+        // echo $logged_user_mem_desc;
+        // echo $logged_user_display_name;
 
-  // 6 - Close the database connection.
+    }
 
-  mysqli_close($db_connection);
-  $update_key = "1";
-  
-}
+    if (isset($logged_user)) {
+        // 5 - Release returned data.
+        mysqli_free_result($result);
+
+        // 6 - Close the database connection.
+
+        mysqli_close($db_connection);
+        $update_key = "1";
+    }
+    
+    if (isset($logged_user)) {
+        include 'php-backend/member-header.php';
+    } else {
+        include "php-backend/visitor-header.php";
+    }   
+
+
+    
 }
 
 

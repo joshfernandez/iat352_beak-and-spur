@@ -9,7 +9,7 @@
     <?php
     //  $upOne=dirname(__DIR__, 1); 
     $upOne = '../'; 
-    echo '<meta http-equiv="refresh" content="3;url=' . $upOne . '\index.php" />'
+    echo '<meta http-equiv="refresh" content="1;url=' . $upOne . '\index.php" />'
     ?>
 
     <title>Logging Out</title>
