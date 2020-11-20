@@ -41,15 +41,15 @@
         // 2 - Write to the registered members file.
         $file = "registered-members.txt";
 
-        // Source for using "a+" instead of 'w': https://stackoverflow.com/questions/103593/using-php-how-to-insert-text-without-overwriting-to-the-beginning-of-a-text-fil
-        $file_write_handle = fopen($file, "a+");
+        // // Source for using "a+" instead of 'w': https://stackoverflow.com/questions/103593/using-php-how-to-insert-text-without-overwriting-to-the-beginning-of-a-text-fil
+        // $file_write_handle = fopen($file, "a+");
 
-        if ($file_write_handle) {
-            fwrite($file_write_handle, $member_username . ", " . $member_email . ", " . $member_password . "\n");
-            fclose($file_write_handle);
-        } else {
-            echo "Could not open file for writing.";
-        }
+        // if ($file_write_handle) {
+        //     fwrite($file_write_handle, $member_username . ", " . $member_email . ", " . $member_password . "\n");
+        //     fclose($file_write_handle);
+        // } else {
+        //     echo "Could not open file for writing.";
+        // }
 
 
         // 3 - Analyze form fields and add to the members table.
@@ -61,9 +61,9 @@
         include "php-backend/set-header.php"
     ?>
 
-        <main>
+    <main>
 
-            <div class="register-complete-container">
+        <div class="register-complete-container">
             <?php
 
             // 4 - Prompt the new member.
@@ -79,11 +79,11 @@
                 <a href="login.php">Login Now</a>
             </p>
 
-            </div>
+        </div>
 
-        </main>
+    </main>
 
-<?php
+    <?php
 
 include "php-backend/std-footer.php"
 
