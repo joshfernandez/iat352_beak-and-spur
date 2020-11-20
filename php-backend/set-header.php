@@ -8,7 +8,7 @@ if (!isset($db_connection)) {
     // 2 - Open a connection to the josh_fenandez database.
     $db_connection = openDBConnection();
 }
-    
+
 
 // initialize session
 if (session_id() == '') {
@@ -31,12 +31,6 @@ if (isset($_SESSION['logged_user'])) {
 if (isset($logged_user)) {
     // echo "$db_connection"; /
     // 3A - Write Query and store in variables
-    // include "helpers/db-connection-methods.php";
-    // include "helpers/query-append-methods.php";
-    // include "helpers/query-perform-methods.php";
-
-    $db_connection = openDBConnection();
-
     $profile_img_result = $db_connection->query("SELECT profile_img FROM members WHERE username='$logged_user'");
 
 
