@@ -4,29 +4,27 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Logging Out</title>
+    <link rel="stylesheet" href="css/main.css">
 
     <!-- Redirects page to visitor view -->
     <?php
-    //  $upOne=dirname(__DIR__, 1); 
     $upOne = '../'; 
     echo '<meta http-equiv="refresh" content="1;url=' . $upOne . '\index.php" />'
     ?>
-
-    <title>Logging Out</title>
-
-    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body class="logging-out-page">
-
-
     <?php
-        session_start();
+    // Start a session for the current user
+    session_start();
+
+    // if the logged_user 
     if (isset($_SESSION["logged_user"])) {
         unset($_SESSION["logged_user"]);
     }
+    // Destroy current session that user is on
     session_destroy();
-
     ?>
     <main>
         <?php

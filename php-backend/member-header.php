@@ -11,7 +11,6 @@
 
     <nav>
         <div class="left-links">
-
             <a href="index.php" id="nav-home-button">
                 beak & spur
             </a>
