@@ -8,15 +8,15 @@
 -->
 
 <?php
-
 function isFormSubmitted($submit_field) {
+
   return isset($submit_field) && !empty($submit_field);
+
 }
 
 function initializeField($form_field) {
-
+  
   if (!empty($form_field)) {
-
     // Source: Helmine's world_db_samplecode
     $final_value = trim($form_field);
     if(!get_magic_quotes_gpc()){

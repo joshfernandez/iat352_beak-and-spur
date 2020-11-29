@@ -61,12 +61,6 @@ if (isset($logged_user)) {
         $logged_user_display_name = stripslashes($result_row[4]);
         // No need for profile image
 
-        // For debugging purposes
-        // echo $logged_user_username;
-        // echo $logged_user_email;
-        // echo $logged_user_mem_desc;
-        // echo $logged_user_display_name;
-
     }
 
     if (isset($logged_user)) {

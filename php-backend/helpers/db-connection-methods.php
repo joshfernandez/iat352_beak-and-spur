@@ -10,9 +10,7 @@
 <?php
 
 function openDBConnection() {
-
   // 2 - Create a database connection.
-
   $dbhost = "localhost";
   $dbuser = "root";
   $dbpass = "";
@@ -23,16 +21,11 @@ function openDBConnection() {
   if(mysqli_connect_errno()) {
     die("Database connection failed: " . mysqli_connect_error . " (" . mysqli_connect_errno . ")");
   }
-
   return $db_connection;
-
 }
 
 function closeDBConnection($db_connection) {
-
   // 6 - Close the database connection.
   mysqli_close($db_connection);
-
 }
-
 ?>
