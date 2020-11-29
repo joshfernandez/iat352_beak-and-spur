@@ -18,10 +18,10 @@
     <!-- loading fonts into the page -->
     <link rel="stylesheet" href="css/main.css">
 
+
 </head>
 
 <body class="filter">
-
 
     <?php
     include "php-backend/set-header.php";
@@ -33,14 +33,16 @@
 
     <main class="margin-top-lv8">
         <form class="filter-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+
             <!-- SEARCH BAR -->
             <div class="filter-searchbar" autocomplete="off">
-                <input type="text" id="font-name" name="searchbar_f" placeholder="Find fonts by name, type, year">
+                <input type="text" id="searchbar_f" name="searchbar_f" placeholder="Find fonts by name, type, year"
+                    onKeyUp="filter_suggestion()">
+                <div id="suggestion"></div>
                 <input type="submit" name="submit" value="Search For Type">
             </div>
 
             <!-- PRIMARY FILTER -->
-
             <div class="filter-primary">
                 <h5 class="margin-bottom-lv1">Primary Filters</h5>
                 <?php
@@ -62,9 +64,7 @@
 
                         echo '
             <span class="checkbox-holder">
-            <input 
-            type="checkbox" 
-            ' . $check . '
+            <input type="checkbox" ' . $check . '
             id="' . $font_type . '" 
             name="font_type_filter[' . $font_type . ']"             
             value="' . $font_type . '"
@@ -85,10 +85,8 @@
             </div>
 
             <div class="filter-secondary">
-
                 <h5 class="margin-bottom-lv1">Secondary Filters</h5>
                 <?php
-
                 while ($font_xheights_arr = mysqli_fetch_assoc($font_xheights_result)) {
 
                     $string = "";
@@ -133,37 +131,18 @@
 
                 ?>
         </form>
-        <!-- <div class="filter-tags">
-            <h5 class="margin-bottom-lv1">Filter by Tags</h5>
-            <div class="filter-tags-draggable">
-                <br><br><br><br><br>
-            </div> 
-        </div> -->
-
 
         <div class="filter-container">
 
             <?php
-
-
-
-            // var_dump($f_query); 
             if (!empty($font_list)) {
-
-
-
                 while ($row = mysqli_fetch_assoc($font_list)) {
-                    echo "<tr>";
+                
+                // link filter-font-block to the respective font-family page here
+                echo '<a href=' . "#" . ' class="filter-font-block">';
 
-
-                    echo '
-            
-            
-        
-            <a href=' . "#" . ' class="filter-font-block">
-            ';
-                    echo '
-
+                // code for personalization
+                echo '
                 <div class="filter-font-bookmark">
                     <p></p>
                     <div class="filter-font-bookmark-row">
@@ -172,25 +151,21 @@
                         </form>
                         <img src="../assets/img/star-filled.png" alt="star">
                     </div>
-
-
-                </div>
-';
-
-                    echo '
-
+                </div>';
+                
+                // display contents of code here
+                echo '
                 <div class="filter-font-block-text">
                     <h6 class="h7">4 STYLES</h6>
                     <h1 style="font-family: ;">
                     ' . $row['family_name'] . '
                     </h1>
                     <h6 class="h7">Designed by <span> 
-                    
                     ' . $row['display_name'] . '
                      </span></h6>
                 </div>
-
                 <div class="filter-font-tags-container">';
+
                     $tags_string = $row['font_type'];
 
                     // Assign Associative Array into a variable
@@ -202,7 +177,7 @@
                     // check how large the array is.
                     // echo "$typeArraySize";
 
-                    // display font-tags dynamically with FOR LOOP
+                    // display font-tags dynamically with for loop
                     for ($x = 0; $x < $tag_array_size; $x++) {
                         $tag_txt = $tags_arr[$x];
                         echo '<div class="filter-font-tags">
@@ -210,27 +185,24 @@
                         <h6> ' . $tag_txt . ' </h6>
                     </div>';
                     }
-
-                    echo '
-
-                </div>
-
-            </a>
-            ';
+                    echo'</div>';
+                    // reroute each of the font-family pages to a font-family page
                 }
-            }
 
+            }
             ?>
 
         </div>
-
     </main>
 
     <?php
-
+    // footer for website
     include "php-backend/std-footer.php"
-
     ?>
+
+    <!-- loading ajax into filter page  -->
+    <script src="js/main.js"></script>
+
 </body>
 
 </html>
