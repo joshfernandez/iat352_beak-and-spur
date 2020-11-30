@@ -1,12 +1,3 @@
-<!--
-  IAT 352 with Prof. Helmine Serban
-  D101 with Fatemeh Salehian-Kia
-  Beak & Spur
-  Bread-wy Woo
-
-  file-upload-methods.php
--->
-
 <?php
 
 function uploadImage($image_file) {

@@ -1,12 +1,3 @@
-<!--
-  IAT 352 with Prof. Helmine Serban
-  D101 with Fatemeh Salehian-Kia
-  Beak & Spur
-  Bread-wy Woo
-
-  query-perform-methods.php
--->
-
 <?php
 
 function writeInsertQuery($db_connection, $table_name, $list_of_columns, $list_of_attributes) {

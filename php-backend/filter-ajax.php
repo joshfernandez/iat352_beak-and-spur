@@ -1,12 +1,10 @@
 <?php
 
-if(!isset($db_connection)){
-    //open connection to the database
-    include "helpers/db-connection-methods.php";
-    $db_connection = openDBConnection();
-} 
+// includes opening a connection with the database
+// grabs the variable $font_list
+include "filter-populator.php";
 
-echo "<p> print this </p> ";
+
 if (!empty($font_list)) {
     while ($row = mysqli_fetch_assoc($font_list)) {
     

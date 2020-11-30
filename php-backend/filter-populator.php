@@ -1,13 +1,3 @@
-<!--
-  IAT 352 with Prof. Helmine Serban
-  D101 with Fatemeh Salehian-Kia
-  Beak & Spur
-  Bread-wy Woo
-
-  font-family-page-query.php
-
--->
-
 <?php
 // Open a connection to the josh_fenandez database.
 if(!isset($db_connection)){
