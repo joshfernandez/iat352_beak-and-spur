@@ -17,18 +17,18 @@ function filter_suggestion()
     
     var data = "family-name=" + fontNameValue; 
     console.log(data);
-        xhr.open("POST", "filter.php", true);     
+        // processes the echo from the PHP file 
+        xhr.open("POST", "php-backend/filter-ajax.php", true);     
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");                           
         xhr.send(data);
         xhr.onreadystatechange = display_data;
-        
+                
         function display_data() {
             if (xhr.readyState == 4) {
             if(xhr.status == 200){
             //sends back result
             console.log(xhr.responseText);
-            // document.getElementById("suggestion").innerHTML = xhr.responseText;
-            // OHHH IT GRABS THE WHOLE DOCUMENT FUCK
+            // document.getElementsByClassName("filter-container").innerHTML = xhr.responseText;
              } else {
                console.log('There was a problem with the request.');
              }
