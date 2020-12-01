@@ -50,7 +50,7 @@ if (isset($_POST['submit']) && $_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 }
-echo "$f_query";
+// echo "$f_query";
     // returns correct query based on user input
     $font_list = $db_connection->query($f_query);
     

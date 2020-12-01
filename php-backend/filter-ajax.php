@@ -1,14 +1,8 @@
 <?php
-
-// includes opening a connection with the database
-// grabs the variable $font_list
+// re-run the query
 include "filter-populator.php";
 
-// $family_name = $_POST['family_name'];
-// if(!empty($font_list){ }
-// if (strlen($family_name) > 0) {
-    while ($row = mysqli_fetch_assoc($font_list)) {
-    
+while ($row = mysqli_fetch_assoc($font_list)) {
     // link filter-font-block to the respective font-family page here
     echo '<a href=' . "#" . ' class="filter-font-block">';
 

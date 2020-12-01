@@ -1,3 +1,27 @@
+
+//check whether checkbox is filled out
+function getCheckboxes(){
+    var checked = document.querySelectorAll('.checkbox-item');
+
+    // print querySelectorAll into console
+    console.log(checked);
+
+    // put all checked items into a list
+    var checkedList=[];
+
+    for(var i = 0; i < checked.length; i++){
+        checkedList += checked[i].value+"\n";
+            if(checked[i].checked=true){
+                //update something
+                // print it
+            }
+    }
+
+    console.log(checkedList);
+}
+
+// This function runs when the key is pressed within the input box
+// AJAX for the main filtering 
 function filter_suggestion()
 {
     // retrieve value from textbox & display suggestion
@@ -22,16 +46,16 @@ function filter_suggestion()
 
         function display_data() {
             if (xhr.readyState == 4) {
-                if (xhr.status == 200) {
-
+            if (xhr.status == 200) {
             //sends back result through filter-text
             console.log(xhr.responseText);
 
             // displays content based on 
             document.getElementById("filter-container").innerHTML = xhr.responseText;
-             } else {
+            } 
+            else {
                console.log('There was a problem with the request.');
-             }
             }
-           }
         }
+    }
+}

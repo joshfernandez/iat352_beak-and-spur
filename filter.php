@@ -17,17 +17,18 @@
 
     <!-- loading fonts into the page -->
     <link rel="stylesheet" href="css/main.css">
-
-
 </head>
 
-<body class="filter" onload=filter_suggestion()>
+<!-- The onload functions serve two purposes
+1. filter_suggestion() intitally loads all the font content blocks
+2. getCheckboxes() retrieves the state of all checkboxes with the class (checkbox-item) -->
+
+<body class="filter" onload="filter_suggestion(); getCheckboxes();">
 
     <?php
     include "php-backend/set-header.php";
     include "php-backend/filter-options.php";
-    // include "php-backend/filter-populator.php"
-
+    include "php-backend/filter-populator.php";
     ?>
 
     <main class="margin-top-lv8">
@@ -38,103 +39,98 @@
             <div class="filter-searchbar" autocomplete="off">
                 <input type="text" id="searchbar_f" name="searchbar_f" placeholder="Find fonts by name, type, year"
                     onKeyUp="filter_suggestion()">
-                <div id="suggestion"></div>
                 <input type="submit" name="submit" value="Search For Type">
             </div>
 
-            <!-- PRIMARY FILTER -->
+            <!-- PRIMARY FILTER TAG CONTENT -->
             <div class="filter-primary">
                 <h5 class="margin-bottom-lv1">Primary Filters</h5>
+
                 <?php
-                while ($font_types_arr = mysqli_fetch_assoc($font_types_result)) {
-                    $string = "";
-                    $string .= serialize($font_types_arr);
-                    $string = substr($string, 35);
-                    $string = rtrim($string, ')";}');
-                    $ind = 0;
-                    $font_types = explode(",", $string);
-                    foreach ($font_types as $font_type) {
-                        $ind += 1;
-                        $font_type = trim($font_type, "'");
+        while ($font_types_arr = mysqli_fetch_assoc($font_types_result)) {
+            $string = "";
+            $string .= serialize($font_types_arr);
+            $string = substr($string, 35);
+            $string = rtrim($string, ')";}');
+            $ind = 0;
+            $font_types = explode(",", $string);
+            foreach ($font_types as $font_type) {
+                $ind += 1;
+                $font_type = trim($font_type, "'");
 
-                        $check = "";
-                        if (isset($_POST["x_height_filter"][$ind])) {
-                            $check = 'checked="checked"';
-                        }
+                $check = "";
+                if (isset($_POST["x_height_filter"][$ind])) {
+                    $check = 'checked="checked"';
+                }
 
-                        echo '
-            <span class="checkbox-holder">
-            <input type="checkbox" ' . $check . '
-            id="' . $font_type . '" 
-            name="font_type_filter[' . $font_type . ']"             
-            value="' . $font_type . '"
-            >
-            <label 
-            for="' . $font_type . '"
-            >
-             ' . $font_type . '
-             </label>
-            </span>
-             
-             ';
-                    }
-                };
-
-                ?>
+    echo '
+    <span class="checkbox-holder">
+    <input class="checkbox-item" 
+    type="checkbox" ' . $check . '
+    id="' . $font_type . '" 
+    name="font_type_filter[' . $font_type . ']"             
+    value="' . $font_type . '"
+    >
+    <label 
+    for="' . $font_type . '"
+    >
+        ' . $font_type . '
+        </label>
+    </span>';}
+    };
+?>
 
             </div>
 
             <div class="filter-secondary">
                 <h5 class="margin-bottom-lv1">Secondary Filters</h5>
                 <?php
-                while ($font_xheights_arr = mysqli_fetch_assoc($font_xheights_result)) {
+                    while ($font_xheights_arr = mysqli_fetch_assoc($font_xheights_result)) {
 
-                    $string = "";
-                    $string .= serialize($font_xheights_arr);
-                    $string = substr($string, 35);
-                    $string = rtrim($string, ')";}');
+                        $string = "";
+                        $string .= serialize($font_xheights_arr);
+                        $string = substr($string, 35);
+                        $string = rtrim($string, ')";}');
 
-                    $ind = 0;
+                        $ind = 0;
 
-                    $font_xheights = explode(",", $string);
+                        $font_xheights = explode(",", $string);
 
-                    foreach ($font_xheights as $font_xheight) {
-                        $ind += 1;
+                        foreach ($font_xheights as $font_xheight) {
+                            $ind += 1;
 
-                        // echo $ind;
+                            // echo $ind;
 
-                        $font_xheight = trim($font_xheight, "'");
-                        $check = "";
-                        if (isset($_POST["x_height_filter"][$ind])) {
-                            $check = 'checked="checked"';
-                        }
+                            $font_xheight = trim($font_xheight, "'");
+                            $check = "";
+                            if (isset($_POST["x_height_filter"][$ind])) {
+                                $check = 'checked="checked"';
+                            }
 
-                        echo '
-            <span class="checkbox-holder">
-            <input 
-            type="checkbox" 
-           ' . $check . '
-            id="' . $font_xheight . '" 
-            name="x_height_filter[' . $font_xheight . ']"             
-            value="' . $font_xheight . '"
-            >
-            <label 
-            for="' . $font_xheight . '"
-            >
-             ' . $font_xheight .  ' 
-             </label>
-            </span> 
-             
-             ';
-                    }
-                };
-
-                ?>
+    echo '
+    <span class="checkbox-holder">
+    <input class="checkbox-item" 
+    type="checkbox" 
+    ' . $check . '
+    id="' . $font_xheight . '" 
+    name="x_height_filter[' . $font_xheight . ']"             
+    value="' . $font_xheight . '"
+    >
+    <label 
+    for="' . $font_xheight . '"
+    >
+        ' . $font_xheight .  ' 
+        </label>
+    </span> 
+        
+        ';
+    }
+};
+?>
         </form>
 
         <div id="filter-container">
-
-
+            <!-- display the filter font-content blocks in here -->
         </div>
     </main>
 
