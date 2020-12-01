@@ -4,8 +4,9 @@
 // grabs the variable $font_list
 include "filter-populator.php";
 
-
-if (!empty($font_list)) {
+// $family_name = $_POST['family_name'];
+// if(!empty($font_list){ }
+// if (strlen($family_name) > 0) {
     while ($row = mysqli_fetch_assoc($font_list)) {
     
     // link filter-font-block to the respective font-family page here
@@ -59,5 +60,5 @@ if (!empty($font_list)) {
         // reroute each of the font-family blocks to a font-family page
     }
 
-}
+// }
 ?>

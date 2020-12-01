@@ -25,9 +25,8 @@
 
     <?php
     include "php-backend/set-header.php";
-
     include "php-backend/filter-options.php";
-    include "php-backend/filter-populator.php"
+    // include "php-backend/filter-populator.php"
 
     ?>
 
@@ -35,11 +34,12 @@
         <form class="filter-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 
             <!-- SEARCH BAR -->
+            <!-- When a key input is clicked, run AJAX -->
             <div class="filter-searchbar" autocomplete="off">
                 <input type="text" id="searchbar_f" name="searchbar_f" placeholder="Find fonts by name, type, year"
                     onKeyUp="filter_suggestion()">
                 <div id="suggestion"></div>
-                <input type="submit" name="submit" value="Search For Type">
+                <!-- <input type="submit" name="submit" value="Search For Type"> -->
             </div>
 
             <!-- PRIMARY FILTER -->
@@ -132,7 +132,7 @@
                 ?>
         </form>
 
-        <div class="filter-container">
+        <div id="filter-container">
 
 
         </div>
