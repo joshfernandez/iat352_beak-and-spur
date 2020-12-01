@@ -21,7 +21,7 @@
 
 </head>
 
-<body class="filter">
+<body class="filter" onload=filter_suggestion()>
 
     <?php
     include "php-backend/set-header.php";
@@ -39,7 +39,7 @@
                 <input type="text" id="searchbar_f" name="searchbar_f" placeholder="Find fonts by name, type, year"
                     onKeyUp="filter_suggestion()">
                 <div id="suggestion"></div>
-                <!-- <input type="submit" name="submit" value="Search For Type"> -->
+                <input type="submit" name="submit" value="Search For Type">
             </div>
 
             <!-- PRIMARY FILTER -->
