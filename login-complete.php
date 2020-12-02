@@ -40,15 +40,15 @@
         // echo $_SESSION['logged_user'];
 
 
-            // $_SESSION['logged_user'] = $logged_user;
+        // $_SESSION['logged_user'] = $logged_user;
         include "php-backend/set-header.php"
     ?>
 
 
 
-        <main>
+    <main>
 
-            <h1>Completing login for Beak and Spur...</h1>
+        <h1>Completing login for Beak and Spur...</h1>
 
         <?php
 
@@ -107,9 +107,9 @@
 
 
 
-        </main>
+    </main>
 
-        <?php
+    <?php
 
         include "php-backend/std-footer.php"
 

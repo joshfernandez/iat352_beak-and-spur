@@ -110,7 +110,8 @@
 
     echo '
     <span class="checkbox-holder">
-    <input class="checkbox-item" 
+    <input
+    class="checkbox-item" 
     type="checkbox" 
     ' . $check . '
     id="' . $font_xheight . '" 

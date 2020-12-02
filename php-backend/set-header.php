@@ -31,9 +31,7 @@ if (isset($logged_user)) {
 }
 ?>
 
-
 <?php
-
 if (isset($logged_user)) {
     include 'member-header.php';
 } else {
