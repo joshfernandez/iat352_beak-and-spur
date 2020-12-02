@@ -65,7 +65,8 @@
 
     echo '
     <span class="checkbox-holder">
-    <input class="checkbox-item" 
+    <input onClick="getCheckboxes();"
+    class="checkbox-item" 
     type="checkbox" ' . $check . '
     id="' . $font_type . '" 
     name="font_type_filter[' . $font_type . ']"             

@@ -19,7 +19,7 @@ if(isset($_POST['searchbar_f'])){
     $f_query .= " WHERE family_name LIKE '%" . $searchbar_s . "%'";
 }
 
-if (isset($_POST['submit']) && $_SERVER["REQUEST_METHOD"] == "POST") {
+// if (isset($_POST['submit']) && $_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_POST['font_type_filter']) && $_POST['searchbar_f'] != "") {
         $f_query.= "AND ";
         // echo "it works $f_query 2";
@@ -49,7 +49,7 @@ if (isset($_POST['submit']) && $_SERVER["REQUEST_METHOD"] == "POST") {
         $f_query = rtrim($f_query, ' OR ');
     }
 
-}
+// }
 // echo "$f_query";
     // returns correct query based on user input
     $font_list = $db_connection->query($f_query);

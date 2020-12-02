@@ -1,4 +1,3 @@
-
 //check whether checkbox is filled out
 function getCheckboxes(){
     var checked = document.querySelectorAll('.checkbox-item');
@@ -10,14 +9,12 @@ function getCheckboxes(){
     var checkedList=[];
 
     for(var i = 0; i < checked.length; i++){
-        checkedList += checked[i].value+"\n";
-            if(checked[i].checked=true){
-                //update something
-                // print it
+        // checks for the value of the filter (Checked/Unchecked)
+            if(checked[i].checked == true){
+                // print whether value checked or not
+                console.log(checked[i].value);
             }
     }
-
-    console.log(checkedList);
 }
 
 // This function runs when the key is pressed within the input box
@@ -26,16 +23,17 @@ function filter_suggestion()
 {
     // retrieve value from textbox & display suggestion
     var fontNameValue = document.getElementById("searchbar_f").value;
+    
 
-    // XMLHttpRequest is created and configured
+    //XMLHttpRequest is created and configured
     var xhr;
-    // code for IE7+, Firefox, Chrome, Opera, Safari
-    if (window.XMLHttpRequest) { 
+      // code for IE7+, Firefox, Chrome, Opera, Safari
+      if (window.XMLHttpRequest) { 
 		xhr = new XMLHttpRequest();
     }  else if (window.ActiveXObject) {  // IE 8 and older
 		xhr = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    
+
     var data = "searchbar_f=" + fontNameValue; 
     console.log(data);
         // processes the echo from the PHP file 
