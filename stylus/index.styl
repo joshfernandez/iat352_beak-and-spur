@@ -42,7 +42,7 @@ main
                         height 0.6em
                         margin-right 0.5em
             
-            .button
+            .button, label 
                 margin-top 1em
                 margin-right 1em
                 padding 1em 3em
@@ -52,6 +52,9 @@ main
                 font-weight 300
                 background-color #3F45EF
                 color white
+
+
+
 
 
 .explore footer
@@ -64,6 +67,14 @@ main
     .explore-nav-container
         display flex
 
+        input[type="checkbox"]
+            appearance: none
+        
+            &:checked + label 
+                background: white
+                font-weight: bold
+        
+        // input[type="checkbox"]:checked + label 
         .explore-slidecontainer
             margin-top 1em
             padding 1em
@@ -72,13 +83,17 @@ main
             margin-right 1em
             display flex
             justify-content center
-
+            font-size 0.8em
+            font-family Barlow
+            font-weight 100
+            font-style italic
             label
-                font-size 0.8em
-                font-family Barlow
-                font-weight 100
-                font-style italic
                 margin-right 2em
+
+            // label
+            &[for*="italicize"]
+                user-select: none; 
+                margin-right: 0  
 
         button
             margin-top 1em
