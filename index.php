@@ -61,7 +61,7 @@
                         // display designer name & font-family name
                         echo "<h6 class='margin-bottom-lv1'></h6>
                     <h5>Designed by <span class='italic'>$designer_name_display</span></h5>
-                    <h1 style='font-size: 7em; font-family:LeagueGothic'>$family_name_display</h1>";
+                    <h1 class='family-name' style='font-family:LeagueGothic'>$family_name_display</h1>";
                     }
                     ?>
                     <div class='explore-font-tags-container'>
@@ -100,7 +100,7 @@
                         // display designer name & font-family name
                         echo "<h6 class='margin-bottom-lv1'></h6>
                     <h5>Designed by <span class='italic'>$designer_name_display</span></h5>
-                    <h1 style='font-size: 7em; font-family:LeagueGothic'>$family_name_display</h1>";
+                    <h1 class='family-name' style='font-family:LeagueGothic'>$family_name_display</h1>";
                     }
                     ?>
                     <div class='explore-font-tags-container'>
@@ -139,7 +139,7 @@
                         // display designer name & font-family name
                         echo "<h6 class='margin-bottom-lv1'></h6>
                     <h5>Designed by <span class='italic'>$designer_name_display</span></h5>
-                    <h1 style='font-size: 7em; font-family:LeagueGothic'>$family_name_display</h1>";
+                    <h1 class='family-name' style='font-family:LeagueGothic'>$family_name_display</h1>";
                     }
                     ?>
                     <div class='explore-font-tags-container'>
@@ -178,7 +178,7 @@
                         // display designer name & font-family name
                         echo "<h6 class='margin-bottom-lv1'></h6>
                     <h5>Designed by <span class='italic'>$designer_name_display</span></h5>
-                    <h1 style='font-size: 7em; font-family:LeagueGothic'>$family_name_display</h1>";
+                    <h1 class='family-name' style='font-family:LeagueGothic'>$family_name_display</h1>";
                     }
                     ?>
                     <div class='explore-font-tags-container'>
@@ -217,7 +217,7 @@
                         // display designer name & font-family name
                         echo "<h6 class='margin-bottom-lv1'></h6>
                     <h5>Designed by <span class='italic'>$designer_name_display</span></h5>
-                    <h1 style='font-size: 7em; font-family:LeagueGothic'>$family_name_display</h1>";
+                    <h1 class='family-name' style='font-family:LeagueGothic'>$family_name_display</h1>";
                     }
                     ?>
                     <div class='explore-font-tags-container'>
@@ -244,20 +244,26 @@
                 <div class=" explore-nav-container">
                     <div class="explore-slidecontainer">
                         <label class="explore-slidecontainer-style">Font-Size</label>
-                        <input type="range" min="1" max="100" value="50" id="myRange">
+                        <input type="range" min="8" max="300" value="90" id="sizeRange">
                     </div>
                     <div class="explore-slidecontainer">
                         <label>Font-Weight</label>
-                        <input type="range" min="1" max="100" value="50" id="myRange">
+                        <input type="range" min="100" step="100" max="900" value="400" id="weightRange">
                     </div>
 
-                    <button>Italicize</button>
+                    <!-- <div class=""> -->
+
+                    <input type="checkbox" id="italicize">
+
+                    <label class="explore-slidecontainer" for="italicize">
+
+
+                        Italicize</label>
+
+                    <!-- </div> -->
                 </div>
-
-
-
                 <!-- <a href="font-family-page.php?varname=" 
-                >View Font Family</a>
+                >View Font Family</a>  
               
                     // echo $family_id_display;
                 ?> -->
@@ -302,6 +308,11 @@
 
 
     </main>
+
+    <!-- <script>
+        
+    </script> -->
+    <script src="js/main.js"> </script>
 </body>
 
 </html>
