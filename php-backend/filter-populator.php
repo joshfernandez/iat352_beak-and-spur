@@ -1,5 +1,6 @@
 <?php
 // Open a connection to the josh_fenandez database.
+
 if(!isset($db_connection)){
  include "helpers/db-connection-methods.php";
  include "helpers/query-append-methods.php";
@@ -10,82 +11,148 @@ if(!isset($db_connection)){
 // <-------- QUERY CODE -------->
 $f_query = "SELECT * FROM font_families INNER JOIN members ON font_families.username = members.username";
 
-
-
-//searchbar + primary filter
-// if(isset($_POST['searchbar_f']) != "" && ){
-//     $n = "three";
-//     // $_SESSION['searchbar_session'] = htmlentities($_POST['searchbar_f']);
-// } 
-
-//primary filter + searchbar
-
+// variable for swtich statement
 $n = "zero";
 
-// searchbar + filter 
-if(isset($_POST['searchbar_f']) && isset($_POST['font_type_filter']) != ""){
-
-    $_SESSION['searchbar_session'] = htmlentities($_POST['searchbar_f']);
-    
-    $searchbar_s = $_POST['searchbar_f'];
-    $primary = $_POST['font_type_filter'];
-    $n = "one";
-}
-
-// filter + searchbar
+$message = "";
 
 // searchbar
-if(isset($_POST['searchbar_f']) != ""){
-    $searchbar_s = $_POST['searchbar_f'];
-    $n = "three";
-} 
+if(isset($_POST['searchbar_f']) && !empty($_POST['searchbar_f'])){
+
+    // save to session variable
+    $_SESSION['searchbar_session'] = htmlentities($_POST['searchbar_f']); 
+    
+    $searchbar_s = $_SESSION['searchbar_session'];
+    echo "$message = searchbar only";
+
+    if (isset($_POST['font_type_filter']) && !empty($_POST['font_type_filter']) ) {
+        $primary = $_POST['font_type_filter'];
+        echo "$primary";
+        $f_query .= " WHERE family_name LIKE '%" . $searchbar_s . "%'";
+        $f_query .= "AND ";
+
+         // turns the string into an array
+        $primaryValues = explode(",", $primary);
+        $numPrimaryValues = count($primaryValues);
+        // print
+        echo "$numPrimaryValues;";
+        $count = 0;
+
+    foreach ($primaryValues as $item){
+        // echo "This:$item <br>";
+        // check for first use case
+        $count++;
+        // check for first use case
+        if($count != 1){
+            $f_query .= "AND ";
+            $f_query .= " FIND_IN_SET('$item',font_type)";
+        } else {
+            $f_query .= " FIND_IN_SET('$item',font_type)";
+        }
+
+        // echo "$primary";
+    }
+}
+    echo "$searchbar_s";
+    
+} else if (isset($_POST['font_type_filter']) && !empty($_POST['font_type_filter'])){
+
+    $primary = $_POST['font_type_filter'];
+    
+    // turns the string into an array
+    $primaryValues = explode(",", $primary);
+    $numPrimaryValues = count($primaryValues);
+    // print
+    echo "$numPrimaryValues;";
+    $count = 0;
+
+    foreach ($primaryValues as $item){
+        // echo "This:$item <br>";
+        // check for first use case
+        $count++;
+        // check for first use case
+        if($count != 1){
+            $f_query .= "AND ";
+            $f_query .= " FIND_IN_SET('$item',font_type)";
+        } else {
+            $f_query .= " WHERE FIND_IN_SET('$item',font_type)";
+        }
+    }
+    
+    $n = "two";
+}
 
 // primary filter
-if (isset($_POST['font_type_filter']) != "") {
-    $primary = $_POST['font_type_filter'];
-    $n = "four";
-    // $primary = $_POST['font_type_filter'];
-} 
+// if (!empty($_POST['font_type_filter'])) {
+//     $primary = $_POST['font_type_filter'];
+//     echo "$primary";
+//     $n = "two";
+// } 
 
-// ADD and statement
-// if (!empty($_SESSION['searchbar_session'])) {
-//     $f_query.= "AND ";
-//     echo "$f_query";
-//     // echo "it works query 2";
+// everytime you type, save what you typed to a session variable
+// if(isset($_POST['searchbar_f']) && !empty($_POST['font_type_filter'])){
+
+//     // save to session variable
+//     $_SESSION['searchbar_session'] = htmlentities($_POST['searchbar_f']); 
+
+//     // map session to variable
+//     $searchbar_s = $_SESSION['searchbar_session']; 
+//     $n = "four";
+//     // // checks session variable & not empty
+//     // if($_SESSION['searchbar_session'] == $_POST['searchbar_f'] && $_SESSION['searchbar_session'] != ""){
+
+//     // } 
+    
+//     // if (!empty($_POST['font_type_filter'])) {
+//     //     $primary = $_POST['font_type_filter'];
+//     //     $n = "four";
+//     // } 
+    
+// } 
+
+// if()
+
+
+// searchbar + filter 
+// if(isset($_POST['searchbar_f']) && !empty($_POST['font_type_filter'])){
+    
+//     $searchbar_s = $_POST['searchbar_f'];
+//     $primary = $_POST['font_type_filter'];
+//     $n = "one";
 // }
 
+
 // variable for the switch statement
-switch ($n){
-    case "one":
-        // Searchbar + Primary Filter
-        $f_query .= " WHERE family_name LIKE '%" . $searchbar_s . "%'";
-        $f_query.= "AND ";
-        $f_query .= " WHERE FIND_IN_SET('$primary',font_type)>0 ";
-        echo "ONE!";
-    break;
-
-    case "two":
-        // Primary Filter + Searchbar
-
-        $f_query.= "AND ";
+// switch ($n){
+//     case "one": // Searchbar
+//         // write to query
+//         $f_query .= " WHERE family_name LIKE '%" . $searchbar_s . "%'";
+//         echo "ONE!";
         
-    echo "TWO!";
+//     break;
 
-    break;
+//     case "two": // Primary Filter
+//         // write to query
+//         echo "TWO!";
 
-    case "three": // Searchbar
-        // write to query
-         $f_query .= " WHERE family_name LIKE '%" . $searchbar_s . "%'";
-    echo "THREE!";
-    break;
+//     break;
 
-    case "four": // Primary Filter
-        // write to query
-        $f_query .= " WHERE FIND_IN_SET('$primary',font_type)>0 ";
-    echo "FOUR!";
-    break;
+//     case "three": // Searchbar + Primary Filter
+//         $f_query .= " WHERE family_name LIKE '%" . $searchbar_s . "%'";
+//         $f_query .= "AND ";
+//         $f_query .= " WHERE FIND_IN_SET('$primary',font_type)>0 ";
+//         echo "THREE!";
+
+//     break;
+
+//     case "four": // Primary Filter
+//         // write to query
+//         $f_query .= " WHERE FIND_IN_SET('$primary',font_type)>0 ";
+//         echo "FOUR!";
+        
+//     break;
     
-}
+// }
 
     // // checks that font_type_filter is assigned & not empty
     // if (isset($_POST['font_type_filter']) && !empty($_POST['font_type_filter'])) {
@@ -117,5 +184,5 @@ switch ($n){
     echo "$f_query";
     // returns correct query based on user input
     $font_list = $db_connection->query($f_query);
-    
+
 ?>

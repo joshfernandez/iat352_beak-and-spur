@@ -23,8 +23,9 @@
 1. filter_suggestion() intitally loads all the font content blocks
 2. getCheckboxes() retrieves the state of all checkboxes with the class (checkbox-item) -->
 
-<body class="filter" onload="filter_suggestion(); getCheckboxes();">
+<!-- <body class="filter" onload="filter_suggestion(); getCheckboxes();"> -->
 
+<body class="filter" onload="main()">
     <?php
     include "php-backend/set-header.php";
     include "php-backend/filter-options.php";
@@ -38,7 +39,7 @@
             <!-- When a key input is clicked, run AJAX -->
             <div class="filter-searchbar" autocomplete="off">
                 <input type="text" id="searchbar_f" name="searchbar_f" placeholder="Find fonts by name, type, year"
-                    onKeyUp="filter_suggestion()">
+                    onKeyUp="main()">
                 <input type="submit" name="submit" value="Search For Type">
             </div>
 
@@ -65,7 +66,7 @@
 
     echo '
     <span class="checkbox-holder">
-    <input onClick="getCheckboxes();"
+    <input onClick="main();"
     class="checkbox-item" 
     type="checkbox" ' . $check . '
     id="' . $font_type . '" 
