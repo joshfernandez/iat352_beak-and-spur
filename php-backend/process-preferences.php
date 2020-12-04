@@ -12,6 +12,16 @@
 
 <?php
 
+// Solves an unusual problem: elements in $fav_font_types end with a forward slash
+function removeEndingForwardSlash(&$item) {
+  if($item[strlen($item) - 1] == '/') {
+    return rtrim($item, '/');
+  }
+  else {
+    return $item;
+  }
+}
+
 function appendWithCommaNoSpaces(&$list_items, $item, $is_wrapped) {
   if(empty($list_items)) {
     $list_items .= wrapInSingleQuotes($item, $is_wrapped);
@@ -42,7 +52,7 @@ if(isFormSubmitted($_POST["update-preferences"])) {
 
   $list_of_fav_font_types = "";
   foreach ($fav_font_types as $font_type) {
-    appendWithCommaNoSpaces($list_of_fav_font_types, initializeField($font_type), false);
+    appendWithCommaNoSpaces($list_of_fav_font_types, removeEndingForwardSlash($font_type), false);
   }
 
   $list_of_updates = "";
