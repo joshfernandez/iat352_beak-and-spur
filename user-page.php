@@ -54,31 +54,26 @@
             <button>Uploaded Fonts</button>
         </div>
 
-        <div class="filter-container">
 
-            <div class="filter-font-block">
-                <div class="filter-font-block-text">
-                    <h6 class="h7">4 STYLES</h6>
-                    <h1 style="font-family: LeagueGothic;">League Gothic</h1>
-                    <h6 class="h7">Designed by <span> Tyler Finck </span></h6>
-                </div>
+        <!-- Josh's personalization / preferences form -->
 
-                <div class="filter-font-tags-container">
+        <h1>Personalize your fonts and font searches</h1>
 
-                    <div class="filter-font-tags">
-                        <img src="../assets/img/tag-lines.png" alt="no tag lines">
-                        <h6>Serif</h6>
-                    </div>
 
-                    <div class="filter-font-tags">
-                        <img src="../assets/img/tag-lines.png" alt="no tag lines">
-                        <h6>Glyph Serif</h6>
-                    </div>
-                </div>
+        <h2>Favourite font types</h2>
 
-            </div>
+        <p>Choose your favourite font types from the list below.</p>
 
-        </div>
+        <form action="preferences-complete.php" method="post">
+
+          <p>
+            <?php include "php-backend/populate-font-type-checkboxes.php"; ?>
+          </p>
+
+          <input type="submit" name="update-preferences" value="Update your preferences" />
+
+        </form>
+
 
     </main>
 
