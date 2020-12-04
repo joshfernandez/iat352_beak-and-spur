@@ -20,17 +20,17 @@
       return true;
     }
 
-    // If the user does, only show font families with his/her
+    // If the user does, only show font families with any of his/her
     // preferred font types.
     else {
 
       foreach($fav_types_list as $fav_type) {
-        if(!in_array($fav_type, $family_types_list)) {
-          return false;
+        if(in_array($fav_type, $family_types_list)) {
+          return true;
         }
       }
 
-      return true;
+      return false;
 
     }
 
