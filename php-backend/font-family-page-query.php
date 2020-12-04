@@ -38,7 +38,7 @@ $individual_fonts = $db_connection->query("SELECT * FROM individual_fonts WHERE 
 
 
 // 4 - query to retrieve JPEG blobs 
-$designerimg = $db_connection->query("SELECT members.profile_img FROM members INNER JOIN font_families ON members.username=font_families.designer WHERE family_id = '$familyId'");
+$designerimg = $db_connection->query("SELECT members.profile_img FROM members INNER JOIN font_families ON members.username=font_families.designer WHERE font_families.family_id = '$familyId'");
 
 
 function assoc_fetcher_echoer($arr, $field)
@@ -47,7 +47,7 @@ function assoc_fetcher_echoer($arr, $field)
         $var = $clean_arr[$field];
         echo $var;
     }
-}
+}     
 function assoc_fetcher($arr, $field)
 {
     while ($clean_arr = mysqli_fetch_assoc($arr)) {

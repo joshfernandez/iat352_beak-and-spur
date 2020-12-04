@@ -24,10 +24,9 @@ if (isset($logged_user)) {
     // echo "$db_connection"; /
     // 3A - Write Query and store in variables
     $profile_img_result = $db_connection->query("SELECT profile_img FROM members WHERE username='$logged_user'");
-$designerimg ="";
     while ($profile_img_arr = mysqli_fetch_assoc($profile_img_result)) {
         $profile_img = $profile_img_arr["profile_img"];
-        $designerimg = $profile_img_arr["profile_img"];
+        // $designerimg = $profile_img_arr["profile_img"];
     }
 }
 ?>
@@ -35,7 +34,7 @@ $designerimg ="";
 
 <?php
 
-if (isset($logged_user)) {
+if (isset($logged_user)) { 
     include 'member-header.php';
 } else {
     include "visitor-header.php";    
