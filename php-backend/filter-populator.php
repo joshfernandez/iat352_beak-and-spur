@@ -45,7 +45,7 @@ if(isset($_POST['searchbar_f']) && !empty($_POST['searchbar_f'])){
     
     $searchbar_s = $_SESSION['searchbar_session'];
     // echo "$message = searchbar only";
-    echo "<br>$searchbar_s";
+    // echo "<br>$searchbar_s";
 
     if (isset($_POST['font_type_filter']) && !empty($_POST['font_type_filter']) ) {
         $primary = $_POST['font_type_filter'];
@@ -74,6 +74,8 @@ if(isset($_POST['searchbar_f']) && !empty($_POST['searchbar_f'])){
 
         // echo "$primary";
     }
+} else {
+    $f_query .= " WHERE family_name LIKE '%" . $searchbar_s . "%'";
 }
     // echo "$searchbar_s";
     
