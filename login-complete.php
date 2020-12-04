@@ -70,7 +70,7 @@
                 echo "<p>Hope you enjoy exploring Beak and Spur!</p>";
                 echo
                     "<p>
-                  <a href=\"filter.php\">Return to the home page</a>
+                  <a href=\"index.php\">Return to the home page</a>
               </p>";
 
                 // $testinglog = $_SESSION["logged_in"];
