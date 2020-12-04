@@ -29,9 +29,9 @@
   /***********
     Helper methods
   ***********/
-  
-  // Case A: For the visitor
-  function populateSlidesForVisitor($logged_user) {
+
+  // Case A: For the member
+  function populateSlidesForMember($logged_user) {
 
     // 2 - Open a connection to the josh_fenandez database.
     $db_connection = openDBConnection();
@@ -115,7 +115,7 @@
   }
 
 
-  // Case B: For the member
+  // Case B: For the visitor
   function populateSlidesDefault() {
 
     // 2 - Open a connection to the josh_fenandez database.
@@ -200,7 +200,7 @@
 
   // Back to the main procedure: Go to the corresponding code for either visitor or member.
   if(isset($logged_user) && !empty($logged_user)) {
-    populateSlidesForVisitor($logged_user);
+    populateSlidesForMember($logged_user);
   }
   else {
     populateSlidesDefault();
