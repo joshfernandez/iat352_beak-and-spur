@@ -52,8 +52,8 @@ if (isset($logged_user)) {
     }
 
     // 4A - Extract the list of favourite types.
-    $checkbox_list_str = mysqli_fetch_row($fav_types_result)[0];
-    $checkbox_list = explode(",", $checkbox_list_str);
+    $fav_types_list_str = mysqli_fetch_row($fav_types_result)[0];
+    $fav_types_list = explode(",", $fav_types_list_str);
 
     // 4B - Populate the form with checkboxes.
     // Copied from filter.php
@@ -68,7 +68,7 @@ if (isset($logged_user)) {
             $font_type = trim($font_type, "'");
 
             // Source: https://www.w3schools.com/php/func_string_ucfirst.asp
-            echo "<input type=\"checkbox\" name=\"fav-font-types[]\" value=" . $font_type . " " . updateCheckbox($font_type, $checkbox_list) . "/> " . ucfirst($font_type) . "<br />";
+            echo "<input type=\"checkbox\" name=\"fav-font-types[]\" value=" . $font_type . " " . updateCheckbox($font_type, $fav_types_list) . "/> " . ucfirst($font_type) . "<br />";
         }
     };
 
