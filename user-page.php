@@ -27,7 +27,7 @@
 
     <main class="margin-top-lv8">
 
-        <div class="userpage-profile-container">
+        <!-- <div class="userpage-profile-container">
             <div>
                 <img src="../assets/img/designer-img.png" alt="designer-img">
             </div>
@@ -43,7 +43,7 @@
                 pellentesque volutpat netus
                 metus proin malesuada viverra quis eu pulvinar bibendum non est integer proin feugiat euismod cras
                 nisl, arcu, fa.</p>
-        </div>
+        </div> -->
 
         <div class="userpage-button-container">
             <!-- <button>Edit Account</button>

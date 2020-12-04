@@ -19,7 +19,7 @@
             <button class="dropbtn">˅</button>
             <h4></h4>
             <div class="dropdown-content">
-                <a href="user-page.php">Your Fonts</a>
+                <a href="user-page.php">User Page</a>
                 <a href="update-profile.php">Preferences</a>
                 <a href="php-backend/log-out.php">Log Out</a>
             </div>
