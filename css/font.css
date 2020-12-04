@@ -62,42 +62,42 @@
 
 /* HEADINGS */
 h1 {
-  font-family: Epilogue;
+  /* font-family: Epilogue; */
   font-size: 2.6em;
   font-weight: 800;
 }
 h2 {
-  font-family: Epilogue;
+  /* font-family: Epilogue; */
   font-size: 2.2em;
   font-weight: 400;
 }
 h3 {
-  font-family: Epilogue;
+  /* font-family: Epilogue; */
   font-size: 1.5em;
   font-weight: 500;
 }
 h4 {
-  font-family: Epilogue;
+  /* font-family: Epilogue; */
   font-size: 1.3em;
   font-weight: 500;
 }
 h5 {
-  font-family: Epilogue;
+  /* font-family: Epilogue; */
   font-size: 0.9em;
   font-weight: 300;
 }
 h6 {
-  font-family: Epilogue;
+  /* font-family: Epilogue; */
   font-size: 0.8em;
   font-weight: 200;
 }
 
 .ibm-font {
-  font-family: IBM-Plex-Sans;
+  /* font-family: IBM-Plex-Sans; */
 }
 
 p {
-  font-family: Epilogue;
+  /* font-family: Epilogue; */
   font-size: 0.75em;
 }
 
