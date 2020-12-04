@@ -22,9 +22,6 @@
 <body class="explore">
 
     <?php
-    // load font-family page helper 
-    include "php-backend/index-query.php";
-
     // header varies between member and visitor
     include "php-backend/set-header.php";
 
@@ -38,204 +35,8 @@
 
             <div class="explore-container">
                 <a onclick="plusSlides(-1)">&#10094;</a>
-                <!--                 
-                in PA3, i will work on putting these content blocks into a for loop,
-                so they will be dynamically generated  -->
 
-                <!-- SLIDE ONE -->
-                <div class="explore-slide">
-                    <?php
-                    while ($firstRow = mysqli_fetch_assoc($firstFontQuery)) {
-                        // retrieve font name, designer name, tags from database
-                        $family_id_display = $firstRow['family_id'];
-                        $family_name_display = $firstRow['family_name'];
-                        $designer_name_display = $firstRow['designer'];
-                        $tags_display = $firstRow['font_type'];
-
-                        // Assign Associative Array into a variable
-                        $tagsArray = (explode(",", $tags_display));
-
-                        // Get size of Assoc Array
-                        $tagsArraySize = sizeof($tagsArray);
-
-                        // display designer name & font-family name
-                        echo "<h6 class='margin-bottom-lv1'></h6>
-                    <h5>Designed by <span class='italic'>$designer_name_display</span></h5>
-                    <h1 style='font-size: 7em; font-family:LeagueGothic'>$family_name_display</h1>";
-                    }
-                    ?>
-                    <div class='explore-font-tags-container'>
-                        <?php
-                        // run a for loop to dynamically generate all tags
-                        for ($x = 0; $x < $tagsArraySize; $x++) {
-                            // grab assoc array values and put in variables
-                            $tagsPrint = $tagsArray[$x];
-                            echo "<div class='explore-font-tags'>
-                            <img src='../assets/img/tag-lines.png' alt='no tag lines'>
-                            <h6>$tagsPrint</h6>
-                        </div> ";
-                        }
-                        ?>
-                    </div>
-                    <a href="font-family-page.php?varname=<?php echo $family_id_display ?>">
-                        View Font Family</a>
-                </div>
-
-                <!-- SLIDE TWO -->
-                <div class="explore-slide">
-                    <?php
-                    while ($secondRow = mysqli_fetch_assoc($secondFontQuery)) {
-                        // retrieve font name, designer name, tags from database
-                        $family_id_display = $secondRow['family_id'];
-                        $family_name_display = $secondRow['family_name'];
-                        $designer_name_display = $secondRow['designer'];
-                        $tags_display = $secondRow['font_type'];
-
-                        // Assign Associative Array into a variable
-                        $tagsArray = (explode(",", $tags_display));
-
-                        // Get size of Assoc Array
-                        $tagsArraySize = sizeof($tagsArray);
-
-                        // display designer name & font-family name
-                        echo "<h6 class='margin-bottom-lv1'></h6>
-                    <h5>Designed by <span class='italic'>$designer_name_display</span></h5>
-                    <h1 style='font-size: 7em; font-family:LeagueGothic'>$family_name_display</h1>";
-                    }
-                    ?>
-                    <div class='explore-font-tags-container'>
-                        <?php
-                        // run a for loop to dynamically generate all tags
-                        for ($x = 0; $x < $tagsArraySize; $x++) {
-                            // grab assoc array values and put in variables
-                            $tagsPrint = $tagsArray[$x];
-                            echo "<div class='explore-font-tags'>
-                            <img src='../assets/img/tag-lines.png' alt='no tag lines'>
-                            <h6>$tagsPrint</h6>
-                        </div> ";
-                        }
-                        ?>
-                    </div>
-                    <a href="font-family-page.php?varname=<?php echo $family_id_display ?>">
-                        View Font Family</a>
-                </div>
-
-                <!-- SLIDE THREE -->
-                <div class="explore-slide">
-                    <?php
-                    while ($thirdRow = mysqli_fetch_assoc($thirdFontQuery)) {
-                        // retrieve font name, designer name, tags from database
-                        $family_id_display = $thirdRow['family_id'];
-                        $family_name_display = $thirdRow['family_name'];
-                        $designer_name_display = $thirdRow['designer'];
-                        $tags_display = $thirdRow['font_type'];
-
-                        // Assign Associative Array into a variable
-                        $tagsArray = (explode(",", $tags_display));
-
-                        // Get size of Assoc Array
-                        $tagsArraySize = sizeof($tagsArray);
-
-                        // display designer name & font-family name
-                        echo "<h6 class='margin-bottom-lv1'></h6>
-                    <h5>Designed by <span class='italic'>$designer_name_display</span></h5>
-                    <h1 style='font-size: 7em; font-family:LeagueGothic'>$family_name_display</h1>";
-                    }
-                    ?>
-                    <div class='explore-font-tags-container'>
-                        <?php
-                        // run a for loop to dynamically generate all tags
-                        for ($x = 0; $x < $tagsArraySize; $x++) {
-                            // grab assoc array values and put in variables
-                            $tagsPrint = $tagsArray[$x];
-                            echo "<div class='explore-font-tags'>
-                            <img src='../assets/img/tag-lines.png' alt='no tag lines'>
-                            <h6>$tagsPrint</h6>
-                        </div> ";
-                        }
-                        ?>
-                    </div>
-                    <a href="font-family-page.php?varname=<?php echo $family_id_display ?>">
-                        View Font Family</a>
-                </div>
-
-                <!-- SLIDE FOUR -->
-                <div class="explore-slide">
-                    <?php
-                    while ($fourthRow = mysqli_fetch_assoc($fourthFontQuery)) {
-                        // retrieve font name, designer name, tags from database
-                        $family_id_display = $fourthRow['family_id'];
-                        $family_name_display = $fourthRow['family_name'];
-                        $designer_name_display = $fourthRow['designer'];
-                        $tags_display = $fourthRow['font_type'];
-
-                        // Assign Associative Array into a variable
-                        $tagsArray = (explode(",", $tags_display));
-
-                        // Get size of Assoc Array
-                        $tagsArraySize = sizeof($tagsArray);
-
-                        // display designer name & font-family name
-                        echo "<h6 class='margin-bottom-lv1'></h6>
-                    <h5>Designed by <span class='italic'>$designer_name_display</span></h5>
-                    <h1 style='font-size: 7em; font-family:LeagueGothic'>$family_name_display</h1>";
-                    }
-                    ?>
-                    <div class='explore-font-tags-container'>
-                        <?php
-                        // run a for loop to dynamically generate all tags
-                        for ($x = 0; $x < $tagsArraySize; $x++) {
-                            // grab assoc array values and put in variables
-                            $tagsPrint = $tagsArray[$x];
-                            echo "<div class='explore-font-tags'>
-                            <img src='../assets/img/tag-lines.png' alt='no tag lines'>
-                            <h6>$tagsPrint</h6>
-                        </div> ";
-                        }
-                        ?>
-                    </div>
-                    <a href="font-family-page.php?varname=<?php echo $family_id_display ?>">
-                        View Font Family</a>
-                </div>
-
-                <!-- SLIDE FIVE -->
-                <div class="explore-slide">
-                    <?php
-                    while ($fifthRow = mysqli_fetch_assoc($fifthFontQuery)) {
-                        // retrieve font name, designer name, tags from database
-                        $family_id_display = $fifthRow['family_id'];
-                        $family_name_display = $fifthRow['family_name'];
-                        $designer_name_display = $fifthRow['designer'];
-                        $tags_display = $fifthRow['font_type'];
-
-                        // Assign Associative Array into a variable
-                        $tagsArray = (explode(",", $tags_display));
-
-                        // Get size of Assoc Array
-                        $tagsArraySize = sizeof($tagsArray);
-
-                        // display designer name & font-family name
-                        echo "<h6 class='margin-bottom-lv1'></h6>
-                    <h5>Designed by <span class='italic'>$designer_name_display</span></h5>
-                    <h1 style='font-size: 7em; font-family:LeagueGothic'>$family_name_display</h1>";
-                    }
-                    ?>
-                    <div class='explore-font-tags-container'>
-                        <?php
-                        // run a for loop to dynamically generate all tags
-                        for ($x = 0; $x < $tagsArraySize; $x++) {
-                            // grab assoc array values and put in variables
-                            $tagsPrint = $tagsArray[$x];
-                            echo "<div class='explore-font-tags'>
-                            <img src='../assets/img/tag-lines.png' alt='no tag lines'>
-                            <h6>$tagsPrint</h6>
-                        </div> ";
-                        }
-                        ?>
-                    </div>
-                    <a href="font-family-page.php?varname=<?php echo $family_id_display ?>">
-                        View Font Family</a>
-                </div>
+                <?php include "php-backend/populate-font-family-slides.php"; ?>
 
                 <a onclick="plusSlides(1)">&#10095;</a>
             </div>
@@ -256,9 +57,9 @@
 
 
 
-                <!-- <a href="font-family-page.php?varname=" 
+                <!-- <a href="font-family-page.php?varname="
                 >View Font Family</a>
-              
+
                     // echo $family_id_display;
                 ?> -->
                 <!-- <form method="post" action="font-family-page.php">
@@ -272,7 +73,7 @@
         </div>
 
         <script>
-            // slideshow code 
+            // slideshow code
             var slideIndex = 1;
             showSlides(slideIndex);
 
