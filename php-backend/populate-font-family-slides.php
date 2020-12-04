@@ -9,49 +9,49 @@
 -->
 
 <?php
-  // 0 - Import helper methods and procedures.
-  // Already done in set-header.php
+// 0 - Import helper methods and procedures.
+// Already done in set-header.php
 
-  function isSuggestedFontFamily($fav_types_list, $family_types_list) {
+function isSuggestedFontFamily($fav_types_list, $family_types_list)
+{
 
-    foreach($fav_types_list as $fav_type) {
-      if(!in_array($fav_type, $family_types_list)) {
-        return false;
-      }
+    foreach ($fav_types_list as $fav_type) {
+        if (!in_array($fav_type, $family_types_list)) {
+            return false;
+        }
     }
 
     return true;
+}
 
-  }
+// Session is already declared in set_header.php.
 
-  // Session is already declared in set_header.php.
+// 2 - Open a connection to the josh_fenandez database.
+$db_connection = openDBConnection();
 
-  // 2 - Open a connection to the josh_fenandez database.
-  $db_connection = openDBConnection();
+// 3 - SELECT query to access full rows in the database
+$font_families_result = $db_connection->query("SELECT * FROM font_families;");
 
-  // 3 - SELECT query to access full rows in the database
-  $font_families_result = $db_connection -> query("SELECT * FROM font_families;");
-
-  if(!$font_families_result) {
+if (!$font_families_result) {
     die("Database query failed.");
-  }
+}
 
-  // 4A - Write the SELECT SQL query for the user's favourite font types.
-  $fav_types_query = "SELECT members.favourite_font_types FROM members WHERE members.username = '" . $logged_user ."';";
+// 4A - Write the SELECT SQL query for the user's favourite font types.
+$fav_types_query = "SELECT members.favourite_font_types FROM members WHERE members.username = '" . $logged_user . "';";
 
-  $fav_types_result = $db_connection->query($fav_types_query);
+$fav_types_result = $db_connection->query($fav_types_query);
 
-  if(!$fav_types_result) {
+if (!$fav_types_result) {
     die("Database query failed.");
-  }
+}
 
-  // 4B - Extract the list of favourite types.
-  $fav_types_list_str = mysqli_fetch_row($fav_types_result)[0];
-  $fav_types_list = explode(",", $fav_types_list_str);
+// 4B - Extract the list of favourite types.
+$fav_types_list_str = mysqli_fetch_row($fav_types_result)[0];
+$fav_types_list = explode(",", $fav_types_list_str);
 
-  // 4 - Populate the explore page with slides.
-  // Copied from populate-font-type-checkboxes.php
-  while ($font_family_arr = mysqli_fetch_assoc($font_families_result)) {
+// 4 - Populate the explore page with slides.
+// Copied from populate-font-type-checkboxes.php
+while ($font_family_arr = mysqli_fetch_assoc($font_families_result)) {
 
     // First, retrieve font family's tags.
     $tags_display = $font_family_arr['font_type'];
@@ -59,49 +59,81 @@
     $tagsArray = (explode(",", $tags_display));
 
     // Only print if it is a suggested font family.
-    if(isSuggestedFontFamily($fav_types_list, $tagsArray)) {
+    if (isSuggestedFontFamily($fav_types_list, $tagsArray)) {
 
-      // Get size of Assoc Array
-      $tagsArraySize = sizeof($tagsArray);
+        // Get size of Assoc Array
+        $tagsArraySize = sizeof($tagsArray);
 
-      // retrieve font name, designer name, tags from database
-      $family_id_display = $font_family_arr['family_id'];
-      $family_name_display = $font_family_arr['family_name'];
-      $designer_name_display = $font_family_arr['designer'];
+        // retrieve font name, designer name, tags from database
+        $family_id_display = $font_family_arr['family_id'];
+        $family_name_display = $font_family_arr['family_name'];
+        $designer_name_display = $font_family_arr['designer'];
 
-      echo "<div class=\"explore-slide\">";
+        echo "<div class=\"explore-slide\">";
+        include "explore-font-helper.php";
+        echo "<style> ";
+        $famname = "";
+        while ($record_arr = mysqli_fetch_assoc($individual_fonts)) {
+            $font_owner = $record_arr['username'];
+            $family_name = $record_arr['family_name'];
+            $famname = strtolower($family_name);
 
-      // display designer name & font-family name
-      echo "<h6 class='margin-bottom-lv1'></h6>" .
-      "<h5>Designed by <span class='italic'>$designer_name_display</span></h5>" .
-      "<h1 style='font-size: 7em; font-family:LeagueGothic'>$family_name_display</h1>";
+            $famname = str_replace(' ', '', $famname);
 
-      echo "<div class=\"explore-font-tags-container\">";
+            $font_css_name = $record_arr['css_name'];
+            $folder_path = '../../../iat352_beak-and-spur/user-fonts/' . $font_owner . '/' . $famname . $fam_id . '/' . $font_css_name;
 
-      // run a for loop to dynamically generate all tags
-      for ($x = 0; $x < $tagsArraySize; $x++) {
-          // grab assoc array values and put in variables
-          $tagsPrint = $tagsArray[$x];
-          echo "<div class='explore-font-tags'>" .
-          "<img src='../assets/img/tag-lines.png' alt='no tag lines'>" .
-          "<h6>$tagsPrint</h6>" .
-          "</div> ";
-      }
+            $font_weight = $record_arr['weights'];
+            $font_style = $record_arr['italics'];
 
-      echo "</div>"; // Closes explore-font-tags-container
+            echo "
+    @font-face {
+        font-weight: " . $font_weight . ";
+        font-style: " . $font_style . ";
+ 
 
-      echo "<a href=\"font-family-page.php?varname=" . $family_id_display . "\">View Font Family</a>";
+        font-family: '" . $famname . "';
+        src: url('" . $folder_path . ".otf') format('opentype'),
+        url('" . $folder_path . ".woff') format('woff');  
+    }";
+        }
 
-      echo "</div>"; // Closes explore-slide
+        echo "
+</style>
+";
+        // display designer name & font-family name
+        echo "<h6 class='margin-bottom-lv1'></h6>" .
+            "<h5>Designed by <span class='italic'>$designer_name_display</span></h5>" .
+            "<h1 style='font-size: 7em; font-family:'";
+        echo $famname . ">";
+        echo $family_name_display;
+        echo "</h1>";
+
+        echo "<div class=\"explore-font-tags-container\">";
+
+        // run a for loop to dynamically generate all tags
+        for ($x = 0; $x < $tagsArraySize; $x++) {
+            // grab assoc array values and put in variables
+            $tagsPrint = $tagsArray[$x];
+            echo "<div class='explore-font-tags'>" .
+                "<img src='../assets/img/tag-lines.png' alt='no tag lines'>" .
+                "<h6>$tagsPrint</h6>" .
+                "</div> ";
+        }
+
+        echo "</div>"; // Closes explore-font-tags-container
+
+        echo "<a href=\"font-family-page.php?varname=" . $family_id_display . "\">View Font Family</a>";
+
+        echo "</div>"; // Closes explore-slide
 
     }
+};
 
-  };
+// 5 - Release returned data.
+mysqli_free_result($font_families_result);
 
-  // 5 - Release returned data.
-  mysqli_free_result($font_families_result);
-
-  // 6 - Close the database connection.
-  mysqli_close($db_connection);
+// 6 - Close the database connection.
+mysqli_close($db_connection);
 
 ?>
