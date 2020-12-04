@@ -100,4 +100,25 @@ if(isset($_POST['searchbar_f']) && !empty($_POST['searchbar_f'])){
     
     // encode the query into JSON format
     json_encode($font_list);
+
+// method for echoing query results
+function assoc_fetcher_echoer($arr, $field)
+{
+    while ($clean_arr = mysqli_fetch_assoc($arr)) {
+        $var = $clean_arr[$field];
+        echo $var;
+    }
+}
+
+// method for returning cleaned query results
+
+function assoc_fetcher($arr, $field)
+{
+    while ($clean_arr = mysqli_fetch_assoc($arr)) {
+        $var = $clean_arr[$field];
+        // echo $var;
+        return $var;
+    }
+}
+
 ?>

@@ -123,7 +123,7 @@ main contains an ajax function that tracks whether the user clicks queries -->
 //         </label>
 //     </span> 
         
-//         ';
+//         '; 
 //     }
 // };
 ?>

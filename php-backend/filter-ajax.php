@@ -6,23 +6,15 @@ while ($row = mysqli_fetch_assoc($font_list)) {
     // link filter-font-block to the respective font-family page here
     // grab the number of the family id, pass it into a page
     echo '<a href="font-family-page.php?varname= '.$row['family_id'] .' .  "class="filter-font-block">';
+include "filter-font-helper.php";
 
-    // echo '
-    // <div class="filter-font-bookmark">
-    //     <p></p>
-    //     <div class="filter-font-bookmark-row">
-    //         <form>
-    //             <input type="checkbox" id="filter-favorites" name="filter-favorites"></input>
-    //         </form>
-    //         <img src="../assets/img/star-filled.png" alt="star">
-    //     </div>
-    // </div>';
+
     
     // display contents of code here
     echo '
     <div class="filter-font-block-text">
         <h6 class="h7">4 STYLES</h6>
-        <h1 style="font-family: ;">
+        <h1 style="font-family: '. $family_name .';">
         ' . $row['family_name'] . '
         </h1>
         <h6 class="h7">Designed by <span> 
