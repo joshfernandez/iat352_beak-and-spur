@@ -2,8 +2,8 @@
 
 
 
-$fam_id = $row["family_id"];
-echo $fam_id;
+$fam_id = $family_id_display; 
+// echo $fam_id;
 
 
 $individual_fonts = $db_connection->query("SELECT * FROM individual_fonts INNER JOIN font_families ON individual_fonts.family_id=font_families.family_id WHERE individual_fonts.family_id = '$fam_id' LIMIT 1 ");

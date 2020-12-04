@@ -9,10 +9,11 @@
 -->
 
 <?php
-  // 0 - Import helper methods and procedures.
-  // Already done in set-header.php
+// 0 - Import helper methods and procedures.
+// Already done in set-header.php
 
-  function isSuggestedFontFamily($fav_types_list, $family_types_list) {
+function isSuggestedFontFamily($fav_types_list, $family_types_list)
+{
 
     // If the user does not have any favourite font types,
     // just show all the font families.
@@ -36,7 +37,8 @@
 
   }
 
-  // Session is already declared in set_header.php.
+// 2 - Open a connection to the josh_fenandez database.
+$db_connection = openDBConnection();
 
   /***********
     Helper methods
@@ -143,6 +145,7 @@
     if(!$font_families_result) {
       die("Database query failed.");
     }
+};
 
     // 4 - Populate the explore page with slides.
     // Copied from populate-font-type-checkboxes.php

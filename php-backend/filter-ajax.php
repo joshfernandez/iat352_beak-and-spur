@@ -13,7 +13,7 @@ include "filter-font-helper.php";
     // display contents of code here
     echo '
     <div class="filter-font-block-text">
-        <h6 class="h7">4 STYLES</h6>
+        <h6 class="h7"></h6>
         <h1 style="font-family:';
          echo'\''.$family_name.'\''.'" > 
         ' . $row['family_name'] . '
