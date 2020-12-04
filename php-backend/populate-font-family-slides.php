@@ -14,13 +14,25 @@
 
   function isSuggestedFontFamily($fav_types_list, $family_types_list) {
 
-    foreach($fav_types_list as $fav_type) {
-      if(!in_array($fav_type, $family_types_list)) {
-        return false;
-      }
+    // If the user does not have any favourite font types,
+    // just show all the font families.
+    if((count($fav_types_list) == 1) && $fav_types_list[0] == "") {
+      return true;
     }
 
-    return true;
+    // If the user does, only show font families with his/her
+    // preferred font types.
+    else {
+
+      foreach($fav_types_list as $fav_type) {
+        if(!in_array($fav_type, $family_types_list)) {
+          return false;
+        }
+      }
+
+      return true;
+
+    }
 
   }
 
@@ -54,7 +66,11 @@
 
     // 4B - Extract the list of favourite types.
     $fav_types_list_str = mysqli_fetch_row($fav_types_result)[0];
-    $fav_types_list = explode(",", $fav_types_list_str);
+
+    $fav_types_list = array();
+    if($fav_types_list != "") {
+      $fav_types_list = explode(",", $fav_types_list_str);
+    }
 
     // 4 - Populate the explore page with slides.
     // Copied from populate-font-type-checkboxes.php
@@ -128,19 +144,6 @@
       die("Database query failed.");
     }
 
-    // // 4A - Write the SELECT SQL query for the user's favourite font types.
-    // $fav_types_query = "SELECT members.favourite_font_types FROM members WHERE members.username = '" . $logged_user ."';";
-    //
-    // $fav_types_result = $db_connection->query($fav_types_query);
-    //
-    // if(!$fav_types_result) {
-    //   die("Database query failed.");
-    // }
-    //
-    // // 4B - Extract the list of favourite types.
-    // $fav_types_list_str = mysqli_fetch_row($fav_types_result)[0];
-    // $fav_types_list = explode(",", $fav_types_list_str);
-
     // 4 - Populate the explore page with slides.
     // Copied from populate-font-type-checkboxes.php
     while ($font_family_arr = mysqli_fetch_assoc($font_families_result)) {
@@ -149,9 +152,6 @@
       $tags_display = $font_family_arr['font_type'];
       // Assign Associative Array into a variable
       $tagsArray = (explode(",", $tags_display));
-
-      // Only print if it is a suggested font family.
-      // if(isSuggestedFontFamily($fav_types_list, $tagsArray)) {
 
         // Get size of Assoc Array
         $tagsArraySize = sizeof($tagsArray);
@@ -185,8 +185,6 @@
         echo "<a href=\"font-family-page.php?varname=" . $family_id_display . "\">View Font Family</a>";
 
         echo "</div>"; // Closes explore-slide
-
-      // }
 
     };
 
