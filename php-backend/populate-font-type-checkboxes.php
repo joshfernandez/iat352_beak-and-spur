@@ -16,6 +16,14 @@
 include "helpers/db-connection-methods.php";
 include "helpers/form-analysis-methods.php";
 
+function updateCheckbox($checkbox_value, $checkbox_list) {
+
+  if(in_array($checkbox_value, $checkbox_list)) {
+    return "checked = 'checked'";
+  }
+
+}
+
 session_start();
 $logged_user = (!empty($_SESSION["logged_user"]) ? initializeField($_SESSION["logged_user"]) : "");
 $result = "";
@@ -26,7 +34,7 @@ if (isset($logged_user)) {
     // 1 - Open a connection to the josh_fernandez database.
     $db_connection = openDBConnection();
 
-    // 2 - Write the SELECT SQL query.
+    // 2 - Write the SELECT SQL query for the different font types.
     // Copied from filter-options.php
     $font_types_result = $db_connection->query("SELECT COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='members' AND COLUMN_NAME='favourite_font_types'");
 
@@ -34,6 +42,20 @@ if (isset($logged_user)) {
       die("Database query failed.");
     }
 
+    // 3 - Write the SELECT SQL query for the user's favourite font types.
+    $fav_types_query = "SELECT members.favourite_font_types FROM members WHERE members.username = '" . $logged_user ."';";
+
+    $fav_types_result = $db_connection->query($fav_types_query);
+
+    if(!$fav_types_result) {
+      die("Database query failed.");
+    }
+
+    // 4A - Extract the list of favourite types.
+    $checkbox_list_str = mysqli_fetch_row($fav_types_result)[0];
+    $checkbox_list = explode(",", $checkbox_list_str);
+
+    // 4B - Populate the form with checkboxes.
     // Copied from filter.php
     while ($font_types_arr = mysqli_fetch_assoc($font_types_result)) {
         $font_type_string = "";
@@ -46,7 +68,7 @@ if (isset($logged_user)) {
             $font_type = trim($font_type, "'");
 
             // Source: https://www.w3schools.com/php/func_string_ucfirst.asp
-            echo "<input type=\"checkbox\" name=\"fav-font-types[]\" value=" . $font_type . "/> " . ucfirst($font_type) . "<br />";
+            echo "<input type=\"checkbox\" name=\"fav-font-types[]\" value=" . $font_type . " " . updateCheckbox($font_type, $checkbox_list) . "/> " . ucfirst($font_type) . "<br />";
         }
     };
 
