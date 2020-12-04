@@ -22,6 +22,16 @@ function main(){
     console.log(filterValue);
     var primaryData = "font_type_filter=" + filterValue; 
 
+    // prepping it into a json
+    var toSend = {
+        "searchbar_f": fontNameValue,
+        "font_type_filter": filterValue,
+    };
+
+    var jsonString = JSON.stringify(toSend);
+
+    console.log(jsonString);
+
     //XMLHttpRequest is created and configured
     var xhr;
     // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -32,17 +42,18 @@ function main(){
     }
 
     // processes the echo from the PHP file 
-        xhr.open("POST", "php-backend/filter-ajax.php", true);     
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");                  
-        // xhr.send(searchBarData,primaryData);
-        xhr.send(searchBarData + '&' + primaryData);
-        console.log(searchBarData + '&' + primaryData);
+        xhr.open("GET", "php-backend/filter-ajax.php?x=" + jsonString, true);     
+        xhr.setRequestHeader("Content-Type", "application/json"); 
+        xhr.send();  
+        console.log(jsonString);               
+        // xhr.send(searchBarData + '&' + primaryData);
+        // console.log(searchBarData + '&' + primaryData);
         xhr.onreadystatechange = display_data;
 
         function display_data() {
             if (xhr.readyState == 4) {
             if (xhr.status == 200) {
-                
+            
             document.getElementById("filter-container").innerHTML = xhr.responseText;
             //sends back result through filter-text
             // console.log(xhr.responseText);

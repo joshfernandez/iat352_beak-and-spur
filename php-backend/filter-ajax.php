@@ -4,7 +4,8 @@ include "filter-populator.php";
 
 while ($row = mysqli_fetch_assoc($font_list)) {
     // link filter-font-block to the respective font-family page here
-    echo '<a href=' . "#" . ' class="filter-font-block">';
+    // grab the number of the family id, pass it into a page
+    echo '<a href="font-family-page.php?varname= '.$row['family_id'] .' .  "class="filter-font-block">';
 
     // code for personalization
     echo '

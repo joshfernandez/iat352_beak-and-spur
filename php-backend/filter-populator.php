@@ -1,6 +1,13 @@
 <?php
 // Open a connection to the josh_fenandez database.
 
+header("Content-Type: application/json; charset=UTF-8");
+// $searchBar = json_decode($_GET["searchbar_f"]);
+// $primaryFilter = json_decode($_GET["font_type_filter"]);
+
+// echo "$searchbar";
+// echo "$primaryFilter";
+
 if(!isset($db_connection)){
  include "helpers/db-connection-methods.php";
  include "helpers/query-append-methods.php";
@@ -81,6 +88,7 @@ if(isset($_POST['searchbar_f']) && !empty($_POST['searchbar_f'])){
     $n = "two";
 }
 
+$font_list = $db_connection->query($f_query);
 
 
 // primary filter
@@ -153,5 +161,7 @@ if(isset($_POST['searchbar_f']) && !empty($_POST['searchbar_f'])){
     // echo "$f_query";
     // returns correct query based on user input
     $font_list = $db_connection->query($f_query);
+
+    echo json_encode($font_list);
 
 ?>

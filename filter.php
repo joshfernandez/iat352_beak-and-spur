@@ -29,7 +29,7 @@
     <?php
     include "php-backend/set-header.php";
     include "php-backend/filter-options.php";
-    include "php-backend/filter-populator.php";
+    // include "php-backend/filter-populator.php";
     ?>
 
     <main class="margin-top-lv8">
