@@ -13,7 +13,7 @@
 <?php
 
 // 0 - Import helper methods and procedures and start a session.
-include "helpers/db-connection-methods.php";
+// include "helpers/db-connection-methods.php"; // Done by set-header.php
 include "helpers/form-analysis-methods.php";
 
 function updateCheckbox($checkbox_value, $checkbox_list) {
@@ -24,9 +24,10 @@ function updateCheckbox($checkbox_value, $checkbox_list) {
 
 }
 
-session_start();
-$logged_user = (!empty($_SESSION["logged_user"]) ? initializeField($_SESSION["logged_user"]) : "");
-$result = "";
+// Session is already started by set-header.php
+// session_start();
+// $logged_user = (!empty($_SESSION["logged_user"]) ? initializeField($_SESSION["logged_user"]) : "");
+// $result = "";
 
 
 if (isset($logged_user)) {

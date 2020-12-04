@@ -27,7 +27,7 @@
 
     <main class="margin-top-lv8">
 
-        <div class="userpage-profile-container">
+        <!-- <div class="userpage-profile-container">
             <div>
                 <img src="../assets/img/designer-img.png" alt="designer-img">
             </div>
@@ -43,7 +43,7 @@
                 pellentesque volutpat netus
                 metus proin malesuada viverra quis eu pulvinar bibendum non est integer proin feugiat euismod cras
                 nisl, arcu, fa.</p>
-        </div>
+        </div> -->
 
         <div class="userpage-button-container">
             <!-- <button>Edit Account</button>
@@ -51,39 +51,29 @@
         </div>
 
         <div class="userpage-font-block-container">
-            <button>Uploaded Fonts</button>
+            <!-- <button>Uploaded Fonts</button> -->
         </div>
 
-        <div class="filter-container">
 
-            <div class="filter-font-block">
-                <div class="filter-font-block-text">
-                    <h6 class="h7">4 STYLES</h6>
-                    <h1 style="font-family: LeagueGothic;">League Gothic</h1>
-                    <h6 class="h7">Designed by <span> Tyler Finck </span></h6>
-                </div>
-
-                <div class="filter-font-tags-container">
-
-                    <div class="filter-font-tags">
-                        <img src="../assets/img/tag-lines.png" alt="no tag lines">
-                        <h6>Serif</h6>
-                    </div>
-
-                    <div class="filter-font-tags">
-                        <img src="../assets/img/tag-lines.png" alt="no tag lines">
-                        <h6>Glyph Serif</h6>
-                    </div>
-                </div>
-
+        <!-- Josh's personalization / preferences form -->
+        <div class="userpage-preferences">
+            <div>
+                <h1>Personalize your fonts and font searches</h1>
+                <p class="descriptor">Choose your favourite font types from the list below.</p>
             </div>
 
+            <form action="preferences-complete.php" method="post">
+
+                <p>
+                    <?php include "php-backend/populate-font-type-checkboxes.php"; ?>
+                </p>
+
+
+                <input type="submit" name="update-preferences" value="Update your preferences" />
+
+            </form>
         </div>
-
     </main>
-
-    <!-- <img src="assets/assets/img/x.png" alt="no"> -->
-
 </body>
 
 </html>
