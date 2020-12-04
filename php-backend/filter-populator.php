@@ -1,12 +1,16 @@
 <?php
 // Open a connection to the josh_fenandez database.
 
-header("Content-Type: application/json; charset=UTF-8");
-// $searchBar = json_decode($_GET["searchbar_f"]);
-// $primaryFilter = json_decode($_GET["font_type_filter"]);
+// header("Content-Type: application/json; charset=UTF-8");
+// $searchBar = json_decode($_GET["searchbar_f"],false);
+// $primaryFilter = json_decode($_GET["font_type_filter"],false);
 
 // echo "$searchbar";
 // echo "$primaryFilter";
+
+$json = file_get_contents('php://input');
+$data = json_decode($json);
+echo $json;
 
 if(!isset($db_connection)){
  include "helpers/db-connection-methods.php";
@@ -162,6 +166,6 @@ $font_list = $db_connection->query($f_query);
     // returns correct query based on user input
     $font_list = $db_connection->query($f_query);
 
-    echo json_encode($font_list);
+    // echo json_encode($font_list);
 
 ?>

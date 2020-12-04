@@ -30,8 +30,6 @@ function main(){
 
     var jsonString = JSON.stringify(toSend);
 
-    console.log(jsonString);
-
     //XMLHttpRequest is created and configured
     var xhr;
     // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -42,9 +40,9 @@ function main(){
     }
 
     // processes the echo from the PHP file 
-        xhr.open("GET", "php-backend/filter-ajax.php?x=" + jsonString, true);     
+        xhr.open("POST", "php-backend/filter-ajax.php", true);     
         xhr.setRequestHeader("Content-Type", "application/json"); 
-        xhr.send();  
+        xhr.send(jsonString);  
         console.log(jsonString);               
         // xhr.send(searchBarData + '&' + primaryData);
         // console.log(searchBarData + '&' + primaryData);
