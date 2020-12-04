@@ -26,6 +26,7 @@ session_start();
 $logged_user = (!empty($_SESSION["logged_user"]) ? initializeField($_SESSION["logged_user"]) : "");
 $result = "";
 
+$db_connection = openDBConnection();
 
 
 if (isset($logged_user)) {
