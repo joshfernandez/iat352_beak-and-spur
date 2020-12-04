@@ -1,16 +1,26 @@
 <?php
 // Open a connection to the josh_fenandez database.
 
-// header("Content-Type: application/json; charset=UTF-8");
-// $searchBar = json_decode($_GET["searchbar_f"],false);
-// $primaryFilter = json_decode($_GET["font_type_filter"],false);
+// // grabs JSON formatting from main.js
+// $json = file_get_contents('php://input');
+// $data = json_decode($json);
 
-// echo "$searchbar";
-// echo "$primaryFilter";
+// // iterates through JSON & puts in associate array
+// $jsonIterator = new RecursiveIteratorIterator(
+//     new RecursiveArrayIterator(json_decode($json, TRUE)),
+//     RecursiveIteratorIterator::SELF_FIRST);
 
-$json = file_get_contents('php://input');
-$data = json_decode($json);
-echo $json;
+// foreach ($jsonIterator as $key => $val) {
+//     if(is_array($val)) {
+//         // echo "$key:\n";
+//         $_POST['font_type_filter'] = $val;
+//     } else {
+//         $_POST['searchbar_f'] = $val;
+//         echo $_POST['searchbar_f'];
+//         // echo "$key => $val\n";
+//     }
+// }
+
 
 if(!isset($db_connection)){
  include "helpers/db-connection-methods.php";
@@ -35,6 +45,7 @@ if(isset($_POST['searchbar_f']) && !empty($_POST['searchbar_f'])){
     
     $searchbar_s = $_SESSION['searchbar_session'];
     // echo "$message = searchbar only";
+    echo "<br>$searchbar_s";
 
     if (isset($_POST['font_type_filter']) && !empty($_POST['font_type_filter']) ) {
         $primary = $_POST['font_type_filter'];
@@ -165,7 +176,6 @@ $font_list = $db_connection->query($f_query);
     // echo "$f_query";
     // returns correct query based on user input
     $font_list = $db_connection->query($f_query);
-
-    // echo json_encode($font_list);
-
+    
+    json_encode($font_list);
 ?>

@@ -19,16 +19,16 @@ function main(){
             // console.log(checked[i].value);
         } 
     }
-    console.log(filterValue);
+    // console.log(filterValue);
     var primaryData = "font_type_filter=" + filterValue; 
 
     // prepping it into a json
-    var toSend = {
-        "searchbar_f": fontNameValue,
-        "font_type_filter": filterValue,
-    };
+    // var toSend = {
+    //     "searchbar_f": fontNameValue,
+    //     "font_type_filter": filterValue,
+    // };
 
-    var jsonString = JSON.stringify(toSend);
+    // var jsonString = JSON.stringify(toSend);
 
     //XMLHttpRequest is created and configured
     var xhr;
@@ -41,10 +41,10 @@ function main(){
 
     // processes the echo from the PHP file 
         xhr.open("POST", "php-backend/filter-ajax.php", true);     
-        xhr.setRequestHeader("Content-Type", "application/json"); 
-        xhr.send(jsonString);  
-        console.log(jsonString);               
-        // xhr.send(searchBarData + '&' + primaryData);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); 
+        // xhr.send(jsonString);  
+        // console.log(jsonString);               
+        xhr.send(searchBarData + '&' + primaryData);
         // console.log(searchBarData + '&' + primaryData);
         xhr.onreadystatechange = display_data;
 
