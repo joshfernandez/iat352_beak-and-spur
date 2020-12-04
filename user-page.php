@@ -51,34 +51,29 @@
         </div>
 
         <div class="userpage-font-block-container">
-            <button>Uploaded Fonts</button>
+            <!-- <button>Uploaded Fonts</button> -->
         </div>
 
 
         <!-- Josh's personalization / preferences form -->
+        <div class="userpage-preferences">
+            <div>
+                <h1>Personalize your fonts and font searches</h1>
+                <p class="descriptor">Choose your favourite font types from the list below.</p>
+            </div>
 
-        <h1>Personalize your fonts and font searches</h1>
+            <form action="preferences-complete.php" method="post">
 
-
-        <h2>Favourite font types</h2>
-
-        <p>Choose your favourite font types from the list below.</p>
-
-        <form action="preferences-complete.php" method="post">
-
-          <p>
-            <?php include "php-backend/populate-font-type-checkboxes.php"; ?>
-          </p>
-
-          <input type="submit" name="update-preferences" value="Update your preferences" />
-
-        </form>
+                <p>
+                    <?php include "php-backend/populate-font-type-checkboxes.php"; ?>
+                </p>
 
 
+                <input type="submit" name="update-preferences" value="Update your preferences" />
+
+            </form>
+        </div>
     </main>
-
-    <!-- <img src="assets/assets/img/x.png" alt="no"> -->
-
 </body>
 
 </html>
