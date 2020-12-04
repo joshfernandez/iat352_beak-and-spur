@@ -21,12 +21,12 @@ module.exports = function (grunt) {
             dist: {
                 files: {
                     'build/js/main.js': [
-                        'js/main.js'
+                        'js/*.js'
                     ]
                 },
                 options: {
-                    sourceMap: 'build/js/main.map',
-                    sourceMappingURL: 'build/js/main.js.map'
+                    // sourceMap: 'build/js/main.map',
+                    // sourceMappingURL: 'build/js/main.js.map'
                 }
             }
         },
@@ -111,7 +111,7 @@ module.exports = function (grunt) {
                 files: [
                     'js/**/*.js'
                 ],
-                tasks: ['jshint', 'uglify']
+                tasks: ['uglify']
             },
             php: {
                 files: [
