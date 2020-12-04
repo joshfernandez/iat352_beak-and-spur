@@ -21,7 +21,7 @@ function delIt(eleId) {
 }
 
 $(document).ready(function(){
-    
+     
 new_link();
 });
 

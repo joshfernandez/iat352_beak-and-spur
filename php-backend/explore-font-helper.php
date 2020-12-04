@@ -5,17 +5,11 @@
 $fam_id = $row["family_id"];
 echo $fam_id;
 
-// $font_username = $db_connection->query("SELECT font_families.username FROM font_families INNER JOIN members ON font_families.username=members.username WHERE family_id = '$familyId'");
-
-// $font_username = $db_connection->query("SELECT font_families.username FROM font_families INNER JOIN members ON font_families.username=members.username WHERE family_id = '$fam_id'");
-
-
 
 $individual_fonts = $db_connection->query("SELECT * FROM individual_fonts INNER JOIN font_families ON individual_fonts.family_id=font_families.family_id WHERE individual_fonts.family_id = '$fam_id' LIMIT 1 ");
 
 // $family_name = assoc_fetcher($fontname, 'family_name');
 $family_name ="";
-$font_css_name ="";
  echo "<style> ";
 while ($record_arr = mysqli_fetch_assoc($individual_fonts)) {
     // USER_FONTS_PATH = str_replace('\','')
@@ -41,14 +35,13 @@ $fontfamily_name = str_replace(' ', '', $fontfamily_name);
     $font_style = $record_arr['italics'];  
 
     echo "
-    @font-face { 
+    @font-face {
         font-weight: " . $font_weight. ";
         font-style: ". $font_style.";
-  
+ 
 
         font-family: '" . $family_name . "';
         src: url('" . $folder_path . ".otf') format('opentype'),
-        url('" . $folder_path . ".ttf') format('ttf'), 
         url('" . $folder_path . ".woff') format('woff');  
     }";
 }
