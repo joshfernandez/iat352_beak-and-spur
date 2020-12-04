@@ -7,17 +7,16 @@ while ($row = mysqli_fetch_assoc($font_list)) {
     // grab the number of the family id, pass it into a page
     echo '<a href="font-family-page.php?varname= '.$row['family_id'] .' .  "class="filter-font-block">';
 
-    // code for personalization
-    echo '
-    <div class="filter-font-bookmark">
-        <p></p>
-        <div class="filter-font-bookmark-row">
-            <form>
-                <input type="checkbox" id="filter-favorites" name="filter-favorites"></input>
-            </form>
-            <img src="../assets/img/star-filled.png" alt="star">
-        </div>
-    </div>';
+    // echo '
+    // <div class="filter-font-bookmark">
+    //     <p></p>
+    //     <div class="filter-font-bookmark-row">
+    //         <form>
+    //             <input type="checkbox" id="filter-favorites" name="filter-favorites"></input>
+    //         </form>
+    //         <img src="../assets/img/star-filled.png" alt="star">
+    //     </div>
+    // </div>';
     
     // display contents of code here
     echo '

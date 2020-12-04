@@ -51,24 +51,12 @@
         </div>
 
         <div class="userpage-font-block-container">
-            <button>Liked</button>
             <button>Uploaded Fonts</button>
-            <button>Forked Fonts</button>
         </div>
 
         <div class="filter-container">
 
-            <article class="filter-font-block">
-                <div class="filter-font-bookmark">
-                    <p></p>
-                    <div class="filter-font-bookmark-row">
-                        <form>
-                            <input type="checkbox" id="filter-favorites" name="filter-favorites"></input>
-                        </form>
-                        <img src="../assets/img/star-filled.png" alt="star">
-                    </div>
-                </div>
-
+            <div class="filter-font-block">
                 <div class="filter-font-block-text">
                     <h6 class="h7">4 STYLES</h6>
                     <h1 style="font-family: LeagueGothic;">League Gothic</h1>
@@ -88,8 +76,7 @@
                     </div>
                 </div>
 
-            </article>
-
+            </div>
 
         </div>
 
