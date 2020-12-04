@@ -23,11 +23,11 @@ if(isset($_POST['searchbar_f']) && !empty($_POST['searchbar_f'])){
     $_SESSION['searchbar_session'] = htmlentities($_POST['searchbar_f']); 
     
     $searchbar_s = $_SESSION['searchbar_session'];
-    echo "$message = searchbar only";
+    // echo "$message = searchbar only";
 
     if (isset($_POST['font_type_filter']) && !empty($_POST['font_type_filter']) ) {
         $primary = $_POST['font_type_filter'];
-        echo "$primary";
+        // echo "$primary";
         $f_query .= " WHERE family_name LIKE '%" . $searchbar_s . "%'";
         $f_query .= "AND ";
 
@@ -35,7 +35,7 @@ if(isset($_POST['searchbar_f']) && !empty($_POST['searchbar_f'])){
         $primaryValues = explode(",", $primary);
         $numPrimaryValues = count($primaryValues);
         // print
-        echo "$numPrimaryValues;";
+        // echo "$numPrimaryValues;";
         $count = 0;
 
     foreach ($primaryValues as $item){
@@ -53,7 +53,7 @@ if(isset($_POST['searchbar_f']) && !empty($_POST['searchbar_f'])){
         // echo "$primary";
     }
 }
-    echo "$searchbar_s";
+    // echo "$searchbar_s";
     
 } else if (isset($_POST['font_type_filter']) && !empty($_POST['font_type_filter'])){
 
@@ -63,7 +63,7 @@ if(isset($_POST['searchbar_f']) && !empty($_POST['searchbar_f'])){
     $primaryValues = explode(",", $primary);
     $numPrimaryValues = count($primaryValues);
     // print
-    echo "$numPrimaryValues;";
+    // echo "$numPrimaryValues;";
     $count = 0;
 
     foreach ($primaryValues as $item){
@@ -78,9 +78,10 @@ if(isset($_POST['searchbar_f']) && !empty($_POST['searchbar_f'])){
             $f_query .= " WHERE FIND_IN_SET('$item',font_type)";
         }
     }
-    
     $n = "two";
 }
+
+
 
 // primary filter
 // if (!empty($_POST['font_type_filter'])) {
@@ -122,38 +123,6 @@ if(isset($_POST['searchbar_f']) && !empty($_POST['searchbar_f'])){
 // }
 
 
-// variable for the switch statement
-// switch ($n){
-//     case "one": // Searchbar
-//         // write to query
-//         $f_query .= " WHERE family_name LIKE '%" . $searchbar_s . "%'";
-//         echo "ONE!";
-        
-//     break;
-
-//     case "two": // Primary Filter
-//         // write to query
-//         echo "TWO!";
-
-//     break;
-
-//     case "three": // Searchbar + Primary Filter
-//         $f_query .= " WHERE family_name LIKE '%" . $searchbar_s . "%'";
-//         $f_query .= "AND ";
-//         $f_query .= " WHERE FIND_IN_SET('$primary',font_type)>0 ";
-//         echo "THREE!";
-
-//     break;
-
-//     case "four": // Primary Filter
-//         // write to query
-//         $f_query .= " WHERE FIND_IN_SET('$primary',font_type)>0 ";
-//         echo "FOUR!";
-        
-//     break;
-    
-// }
-
     // // checks that font_type_filter is assigned & not empty
     // if (isset($_POST['font_type_filter']) && !empty($_POST['font_type_filter'])) {
     //     $primary = $_POST['font_type_filter'];
@@ -181,7 +150,7 @@ if(isset($_POST['searchbar_f']) && !empty($_POST['searchbar_f'])){
     //     $f_query = rtrim($f_query, ' OR ');
     // }
 
-    echo "$f_query";
+    // echo "$f_query";
     // returns correct query based on user input
     $font_list = $db_connection->query($f_query);
 

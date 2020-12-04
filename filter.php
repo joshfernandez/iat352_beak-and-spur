@@ -45,7 +45,7 @@
 
             <!-- PRIMARY FILTER TAG CONTENT -->
             <div class="filter-primary">
-                <h5 class="margin-bottom-lv1">Primary Filters</h5>
+                <h5 class="margin-bottom-lv1">Font Types</h5>
 
                 <?php
         while ($font_types_arr = mysqli_fetch_assoc($font_types_result)) {
@@ -85,50 +85,50 @@
             </div>
 
             <div class="filter-secondary">
-                <h5 class="margin-bottom-lv1">Secondary Filters</h5>
+                <!-- <h5 class="margin-bottom-lv1">Secondary Filters</h5> -->
                 <?php
-                    while ($font_xheights_arr = mysqli_fetch_assoc($font_xheights_result)) {
+//                     while ($font_xheights_arr = mysqli_fetch_assoc($font_xheights_result)) {
 
-                        $string = "";
-                        $string .= serialize($font_xheights_arr);
-                        $string = substr($string, 35);
-                        $string = rtrim($string, ')";}');
+//                         $string = "";
+//                         $string .= serialize($font_xheights_arr);
+//                         $string = substr($string, 35);
+//                         $string = rtrim($string, ')";}');
 
-                        $ind = 0;
+//                         $ind = 0;
 
-                        $font_xheights = explode(",", $string);
+//                         $font_xheights = explode(",", $string);
 
-                        foreach ($font_xheights as $font_xheight) {
-                            $ind += 1;
+//                         foreach ($font_xheights as $font_xheight) {
+//                             $ind += 1;
 
-                            // echo $ind;
+//                             // echo $ind;
 
-                            $font_xheight = trim($font_xheight, "'");
-                            $check = "";
-                            if (isset($_POST["x_height_filter"][$ind])) {
-                                $check = 'checked="checked"';
-                            }
+//                             $font_xheight = trim($font_xheight, "'");
+//                             $check = "";
+//                             if (isset($_POST["x_height_filter"][$ind])) {
+//                                 $check = 'checked="checked"';
+//                             }
 
-    echo '
-    <span class="checkbox-holder">
-    <input
-    class="checkbox-item" 
-    type="checkbox" 
-    ' . $check . '
-    id="' . $font_xheight . '" 
-    name="x_height_filter[' . $font_xheight . ']"             
-    value="' . $font_xheight . '"
-    >
-    <label 
-    for="' . $font_xheight . '"
-    >
-        ' . $font_xheight .  ' 
-        </label>
-    </span> 
+//     echo '
+//     <span class="checkbox-holder">
+//     <input
+//     class="checkbox-item" 
+//     type="checkbox" 
+//     ' . $check . '
+//     id="' . $font_xheight . '" 
+//     name="x_height_filter[' . $font_xheight . ']"             
+//     value="' . $font_xheight . '"
+//     >
+//     <label 
+//     for="' . $font_xheight . '"
+//     >
+//         ' . $font_xheight .  ' 
+//         </label>
+//     </span> 
         
-        ';
-    }
-};
+//         ';
+//     }
+// };
 ?>
         </form>
 
