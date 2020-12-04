@@ -19,11 +19,8 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 
-<!-- The onload functions serve two purposes
-1. filter_suggestion() intitally loads all the font content blocks
-2. getCheckboxes() retrieves the state of all checkboxes with the class (checkbox-item) -->
-
-<!-- <body class="filter" onload="filter_suggestion(); getCheckboxes();"> -->
+<!-- the function main() is called when the page is loaded intially
+main contains an ajax function that tracks whether the user clicks queries -->
 
 <body class="filter" onload="main()">
     <?php
